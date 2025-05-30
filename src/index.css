@@ -1,15 +1,22 @@
-/* index.css */
+/* src/index.css */
 
-/* Importa la fuente Inter para asegurar que esté disponible globalmente */
+/* Tailwind CSS Directives */
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+/* Import Google Fonts (can stay here or move below custom variables) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-@import 'tailwindcss';
-
+/* Your custom CSS variables and base styles */
+/* These should come AFTER @tailwind base to allow Tailwind's base styles to apply first,
+   or if they are utility-like, they might be better as Tailwind theme extensions or components. */
 :root {
   --background: #ffffff;
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
   --accent: #3b82f6;
+  /* Consider consolidating variables from src/styles/variables.css here
+     or referencing them in tailwind.config.js theme.extend */
 }
 
 [data-theme='dark'] {
@@ -19,7 +26,6 @@
   --accent: #60a5fa;
 }
 
-/* Estilos base del cuerpo */
 body {
   background-color: var(--background);
   color: var(--text-primary);
@@ -31,12 +37,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Estilos para el contenedor principal de la aplicación React */
-/* Asegura que la aplicación ocupe al menos toda la altura de la ventana,
-   sea un contenedor flex y centre sus elementos hijos verticalmente */
+/* Styles for the #root > div from your original index.css */
+/* Ensure these styles are compatible with Tailwind's defaults or override as needed */
 #root > div {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */ /* This centers all direct children of #root > div horizontally.
+                               You might want more specific layout control for your pages. */
 }
+
+/* Note on other CSS files:
+   - src/App.css: Can continue to be used for component-specific styles.
+   - src/styles/globals.css: Appears redundant if src/index.css is your main entry.
+     Ensure it's not importing Tailwind directives again.
+     If it has unique global styles or variables, consider merging them into src/index.css
+     or importing src/styles/globals.css (without Tailwind directives) into src/index.css.
+   - src/styles/variables.css: The variables here can be used to customize Tailwind's theme
+     in tailwind.config.js as shown in the example, or directly in your custom CSS.
+*/
