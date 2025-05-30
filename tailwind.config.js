@@ -5,9 +5,9 @@ export default {
 
   // Specify the paths to all of your template files
   content: [
-    "./index.html",                     // Main HTML file at the project root
-    "./public/index.html",              // If public/index.html also contains Tailwind classes
-    "./src/**/*.{js,jsx,ts,tsx}",       // All JS, JSX, TS, TSX files in the src directory
+    "./index.html",                     
+    "./public/index.html",              
+    "./src/**/*.{js,jsx,ts,tsx}",      
   ],
 
   // Extend Tailwind's default theme (optional)
