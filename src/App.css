@@ -1,0 +1,95 @@
+/* App.css */
+
+/* Estilos para el contenedor del encabezado */
+.header-container {
+    background: linear-gradient(to right, #2563eb, #6d28d9); /* Degradado de azul a púrpura */
+    color: white; /* Texto blanco */
+    border-radius: 0.75rem; /* Bordes redondeados */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra grande */
+    margin-bottom: 2rem; /* Margen inferior */
+    text-align: center; /* Texto centrado */
+}
+
+/* Estilos para el título principal del encabezado */
+.header-title {
+    font-weight: 800; /* Negrita extra */
+    margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+/* Estilos para el subtítulo del encabezado */
+.header-subtitle {
+    font-weight: 300; /* Ligero */
+}
+
+/* Estilos para los contenedores de sección */
+.section-container {
+    background-color: white; /* Fondo blanco */
+    border-radius: 0.75rem; /* Bordes redondeados */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra media */
+    margin-bottom: 2rem; /* Margen inferior */
+}
+
+/* Estilos para los títulos de sección */
+.section-title {
+    font-weight: 700; /* Negrita */
+    color: #6d28d9; /* Color púrpura */
+    margin-bottom: 1.5rem; /* Margen inferior */
+}
+
+/* Estilos para los párrafos dentro de las secciones */
+.section-paragraph {
+    margin-bottom: 1rem; /* Margen inferior */
+    line-height: 1.625; /* Altura de línea relajada */
+}
+
+/* Estilos para los bloques de contenido individuales (cards) */
+.card-block {
+    background-color: #f9fafb; /* Fondo gris muy claro */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Sombra pequeña */
+    padding: 1rem; /* p-4 */
+}
+
+/* Estilos para los títulos de las cards */
+.card-title {
+    font-weight: 600; /* Seminegrita */
+    color: #2563eb; /* Color azul */
+    margin-bottom: 0.75rem; /* Margen inferior */
+}
+
+/* Estilos para el texto dentro de las cards */
+.card-text {
+    margin-bottom: 0.75rem; /* Margen inferior */
+}
+
+/* Estilos para las imágenes dentro de las cards */
+.card-image {
+    width: 100%; /* Ancho completo */
+    object-fit: cover; /* Ajuste de imagen */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra media */
+}
+
+/* Estilos para las leyendas de las imágenes */
+.image-caption {
+    font-size: 0.75rem; /* Tamaño de texto extra pequeño */
+    color: #6b7280; /* Color gris */
+    margin-top: 0.5rem; /* Margen superior */
+}
+
+/* Estilos para las listas */
+.list-style {
+    list-style-type: disc; /* Puntos de lista */
+    list-style-position: inside; /* Puntos de lista dentro del texto */
+    line-height: 1.5; /* Altura de línea */
+}
+
+/* Estilos para el pie de página */
+.footer-container {
+    background-color: #e5e7eb; /* Fondo gris claro */
+    color: #4b5563; /* Texto gris oscuro */
+    border-radius: 0.75rem; /* Bordes redondeados */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra grande */
+    margin-top: 2rem; /* Margen superior */
+    text-align: center; /* Texto centrado */
+}
