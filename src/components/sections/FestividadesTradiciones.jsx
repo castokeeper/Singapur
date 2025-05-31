@@ -1,186 +1,129 @@
 import React from 'react';
-import ImageGallery from '../ui/ImageGallery';
-import Quote from '../common/Quote';
-import Timeline from '../ui/Timeline';
-import ImageWithFallback from '../common/ImageWithFallback';
-// Importar el contexto
 import { useTheme } from '../../context/ThemeContext';
+import Quote from '../common/Quote';
+import ImageGallery from '../ui/ImageGallery';
+import Timeline from '../ui/Timeline';
+import { getAssetPath } from '../../utils/assetUtils';
 
-/**
- * Componente que muestra información sobre festividades y tradiciones de Singapur
- */
-const Festividades = () => {
+const FestividadesTradiciones = () => {
   const { isDark } = useTheme();
   
-  // Ajustar la variante de alertas/cards para modo oscuro
-  const cardHeaderClass = isDark ? 'bg-info text-white' : 'bg-warning text-white';
-  const cardBorderClass = isDark ? 'border-info' : 'border-warning';
-
-  // Imágenes para la galería
   const imagenesFestividades = [
     {
-      src: "/images/gardens-by-the-bay.jpg",
-      alt: "Celebración del Año Nuevo Chino",
-      caption: "Decoraciones durante las celebraciones del Año Nuevo Chino en Singapur"
+      src: getAssetPath("/images/festival-chino.jpg"),
+      alt: "Celebración del Año Nuevo Chino en Chinatown",
+      caption: "Luces y decoraciones durante el Año Nuevo Chino en Chinatown"
     },
     {
-      src: "/images/merlion-statue.jpg",
-      alt: "Festival de Deepavali",
-      caption: "Luces y decoraciones coloridas durante el Festival de Deepavali"
+      src: getAssetPath("/images/festival-deepavali.jpg"),
+      alt: "Celebración de Deepavali en Little India",
+      caption: "Colorida decoración de luces y rangolis para Deepavali"
+    },
+    {
+      src: getAssetPath("/images/festival-hari-raya.jpg"),
+      alt: "Celebración de Hari Raya Puasa",
+      caption: "Familias celebrando Hari Raya en Geylang Serai"
     }
   ];
   
-  // Eventos para la línea de tiempo anual
-  const timelineFestividades = [
+  // Línea de tiempo de eventos festivos
+  const eventosFestivos = [
     {
-      year: "Enero-Febrero",
-      title: "Año Nuevo Chino",
-      description: "La festividad más importante para la comunidad china. Se celebra con desfiles, leones danzantes y reuniones familiares."
+      año: "Enero/Febrero",
+      titulo: "Año Nuevo Chino",
+      descripcion: "La celebración más importante para la comunidad china, incluye desfiles, danzas de león y reuniones familiares con intercambio de sobres rojos.",
+      importancia: "alta"
     },
     {
-      year: "Abril-Mayo",
-      title: "Vesak",
-      description: "Festividad budista que conmemora el nacimiento, iluminación y muerte de Buda con ceremonias en templos."
+      año: "Abril/Mayo",
+      titulo: "Vesak",
+      descripcion: "Celebración budista del nacimiento, iluminación y fallecimiento de Buda. Los templos se llenan de devotos para ceremonias y ofrendas.",
+      importancia: "media"
     },
     {
-      year: "Mayo-Junio",
-      title: "Hari Raya Puasa",
-      description: "Marca el fin del Ramadán para la comunidad musulmana con oraciones, festines y reuniones familiares."
+      año: "Mayo/Junio",
+      titulo: "Hari Raya Puasa",
+      descripcion: "Marca el fin del Ramadán con oraciones especiales, visitas familiares y platos tradicionales como rendang y ketupat.",
+      importancia: "alta"
     },
     {
-      year: "Agosto",
-      title: "Día Nacional",
-      description: "Celebración de la independencia de Singapur con un gran desfile, espectáculos aéreos y fuegos artificiales."
+      año: "Julio/Agosto",
+      titulo: "Festival del Dragón Hambriento",
+      descripcion: "Conocido por sus carreras de botes dragón y el consumo de zongzi (bollos de arroz glutinoso envueltos en hojas de bambú).",
+      importancia: "media"
     },
     {
-      year: "Octubre-Noviembre",
-      title: "Deepavali",
-      description: "Festival de las luces hindú, celebrado con decoraciones brillantes en Little India y ceremonias religiosas."
+      año: "Agosto",
+      titulo: "Día Nacional",
+      descripcion: "Conmemora la independencia de Singapur con un desfile militar, exhibiciones aéreas y espectáculos culturales masivos.",
+      importancia: "alta"
     },
     {
-      year: "Diciembre",
-      title: "Navidad",
-      description: "Celebrada ampliamente con decoraciones espectaculares en Orchard Road y eventos públicos."
+      año: "Octubre/Noviembre",
+      titulo: "Deepavali",
+      descripcion: "Festival hindú de las luces que simboliza el triunfo del bien sobre el mal, con iluminación de lámparas y elaborados rangolis (patrones decorativos).",
+      importancia: "alta"
+    },
+    {
+      año: "Diciembre",
+      titulo: "Navidad",
+      descripcion: "Celebrada ampliamente con decoraciones en Orchard Road, conciertos y mercados navideños que reflejan la influencia occidental.",
+      importancia: "media"
     }
   ];
 
   return (
     <div className="festividades-tradiciones">
       <section className="mb-5">
-        <h2 className="h3 mb-4">Calendario Multicultural</h2>
-        <p className="mb-3">
-          Singapur celebra festividades de todas sus principales comunidades étnicas y religiosas, 
-          reflejando su rica diversidad cultural. Los días festivos oficiales incluyen celebraciones 
-          chinas, malayas, indias y occidentales, creando un tapiz único de tradiciones compartidas.
-        </p>
-        
-        <div className="table-responsive mb-4">
-          <table className="table table-striped table-hover">
-            <thead className="table-warning">
-              <tr>
-                <th>Festividad</th>
-                <th>Origen</th>
-                <th>Fecha</th>
-                <th>Comunidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Año Nuevo Chino</td>
-                <td>Chino</td>
-                <td>Enero-Febrero (lunar)</td>
-                <td>China</td>
-              </tr>
-              <tr>
-                <td>Hari Raya Puasa</td>
-                <td>Islámico</td>
-                <td>Variable (lunar)</td>
-                <td>Malaya</td>
-              </tr>
-              <tr>
-                <td>Deepavali</td>
-                <td>Hindú</td>
-                <td>Octubre-Noviembre</td>
-                <td>India</td>
-              </tr>
-              <tr>
-                <td>Navidad</td>
-                <td>Cristiano</td>
-                <td>25 de diciembre</td>
-                <td>Occidental</td>
-              </tr>
-              <tr>
-                <td>Vesak</td>
-                <td>Budista</td>
-                <td>Mayo (luna llena)</td>
-                <td>China/Asia</td>
-              </tr>
-              <tr>
-                <td>Día Nacional</td>
-                <td>Singapur</td>
-                <td>9 de agosto</td>
-                <td>Todas</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <ImageGallery 
-        images={imagenesFestividades} 
-        title="Festividades en Singapur" 
-      />
-
-      <section className="mb-5">
-        <h2 className="h3 mb-4">Año Nuevo Chino</h2>
-        <div className="row align-items-center">
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Multiculturalidad Festiva</h2>
+        <div className="row">
           <div className="col-lg-8">
-            <p className="mb-3">
-              El Año Nuevo Chino es una de las festividades más importantes de Singapur, particularmente 
-              para la comunidad china que constituye aproximadamente el 75% de la población. Las calles 
-              se adornan con linternas rojas y decoraciones festivas.
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              Singapur celebra una rica variedad de festividades culturales y religiosas que 
+              reflejan la diversidad étnica de su población. El calendario festivo oficial reconoce 
+              celebraciones de todas las principales religiones y grupos étnicos.
             </p>
-            <p className="mb-3">
-              Las celebraciones incluyen el intercambio de hongbao (sobres rojos con dinero), reuniones 
-              familiares con abundantes comidas, y el espectacular desfile Chingay con carrozas, 
-              bailarines y artistas de todo el mundo.
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              Las principales festividades incluyen el Año Nuevo Chino, Hari Raya Puasa, 
+              Deepavali, Navidad y el Día Nacional de Singapur. Cada celebración se caracteriza 
+              por decoraciones distintivas en espacios públicos, eventos comunitarios y 
+              tradiciones culinarias específicas.
             </p>
-            <div className="alert alert-warning">
-              <div className="d-flex">
-                <div className="me-3">
-                  <i className="fas fa-dragon fa-2x"></i>
-                </div>
-                <div>
-                  <h5 className="alert-heading">Lo yuen-hei (捞鱼生)</h5>
-                  <p className="mb-0">
-                    Una tradición única del Año Nuevo Chino en Singapur y Malasia es el "lo-hei" o 
-                    "prosperidad lanzada", un plato festivo de pescado crudo y verduras que los comensales 
-                    mezclan juntos con palillos mientras expresan buenos deseos para el año nuevo.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              El gobierno promueve activamente la participación intercultural en estas festividades 
+              como parte de su política de armonía racial, animando a los singapurenses de todos los 
+              orígenes a compartir y experimentar las tradiciones de los demás.
+            </p>
           </div>
           <div className="col-lg-4">
-            <div className={`card ${cardBorderClass} mb-4`}>
-              <div className={`card-header ${cardHeaderClass}`}>
-                Tradiciones del Año Nuevo Chino
+            <div className={`card mb-4 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className={`card-header ${isDark ? 'bg-warning bg-opacity-75' : 'bg-warning'} text-white`}>
+                <h5 className="card-title mb-0">Principales festividades</h5>
               </div>
               <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
-                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  Reunión familiar en Nochevieja lunar
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Año Nuevo Chino</span>
+                  <span className={`badge ${isDark ? 'bg-warning bg-opacity-75' : 'bg-warning'} rounded-pill`}>
+                    Comunidad china
+                  </span>
                 </li>
-                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  Intercambio de hongbao (sobres rojos)
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Hari Raya</span>
+                  <span className={`badge ${isDark ? 'bg-warning bg-opacity-75' : 'bg-warning'} rounded-pill`}>
+                    Comunidad malaya
+                  </span>
                 </li>
-                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  Limpieza completa de la casa antes del año nuevo
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Deepavali</span>
+                  <span className={`badge ${isDark ? 'bg-warning bg-opacity-75' : 'bg-warning'} rounded-pill`}>
+                    Comunidad india
+                  </span>
                 </li>
-                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  Desfiles con danza del león y dragón
-                </li>
-                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  Decoraciones rojas y doradas para buena suerte
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Día Nacional</span>
+                  <span className={`badge ${isDark ? 'bg-warning bg-opacity-75' : 'bg-warning'} rounded-pill`}>
+                    Nacional
+                  </span>
                 </li>
               </ul>
             </div>
@@ -188,41 +131,73 @@ const Festividades = () => {
         </div>
       </section>
 
+      <ImageGallery 
+        images={imagenesFestividades} 
+        title="Festivales culturales" 
+      />
+
       <section className="mb-5">
-        <h2 className="h3 mb-4">Hari Raya y Festividades Malayas</h2>
-        <p className="mb-3">
-          Para la comunidad malaya de Singapur, mayoritariamente musulmana, el Hari Raya Puasa 
-          (que marca el fin del Ramadán) y el Hari Raya Haji son celebraciones significativas 
-          que reúnen a familias y comunidades.
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Tradiciones culturales</h2>
+        <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+          Más allá de las festividades oficiales, Singapur mantiene tradiciones culturales específicas 
+          de cada comunidad étnica. Estas prácticas han evolucionado para adaptarse al contexto urbano 
+          y a la sociedad moderna, pero siguen siendo importantes marcadores de identidad.
         </p>
-        <div className="row g-4">
-          <div className="col-md-6">
-            <div className="card h-100">
+
+        <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <h5 className="card-title">Hari Raya Puasa</h5>
-                <p className="card-text">
-                  Marca el final del mes sagrado de Ramadán con oraciones en las mezquitas, 
-                  seguidas de visitas a familiares y amigos. Es tradicional pedir perdón por 
-                  ofensas pasadas y fortalecer lazos familiares.
-                </p>
-                <p className="card-text">
-                  En Geylang Serai, se instala un bazar festivo con alimentos tradicionales, 
-                  decoraciones y ropa. La zona se ilumina con decoraciones espectaculares.
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-utensils text-warning me-2"></i>
+                  Tradiciones culinarias
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  La gastronomía de cada grupo étnico se destaca durante sus festividades. Los mooncakes 
+                  durante el Festival del Medio Otoño, el rendang durante Hari Raya, y los dulces durante 
+                  Deepavali forman parte integral de las celebraciones.
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-md-6">
-            <div className="card h-100">
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <h5 className="card-title">Gastronomía festiva</h5>
-                <p className="card-text">
-                  Los platos tradicionales incluyen el ketupat (pastel de arroz en hojas de palma), 
-                  rendang (carne en salsa de coco picante), y diversos kuih (pasteles tradicionales).
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-theater-masks text-warning me-2"></i>
+                  Artes escénicas
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  La ópera china, el wayang kulit (teatro de sombras malayo) y el bharatanatyam (danza clásica india)
+                  se presentan regularmente durante festivales culturales, preservando formas artísticas ancestrales.
                 </p>
-                <p className="card-text">
-                  Las casas se abren a visitantes con abundantes mesas de buffet, siguiendo 
-                  la tradición de hospitalidad malaya.
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-hands text-warning me-2"></i>
+                  Rituales familiares
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  Las reuniones familiares durante festividades, como la cena de reunión en Año Nuevo Chino 
+                  o la ruptura del ayuno durante Ramadán, mantienen la cohesión social y la transmisión de valores.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-store-alt text-warning me-2"></i>
+                  Mercados festivos
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  Los bazares temporales como el Pasar Malam durante Ramadán o los mercados de Año Nuevo Chino 
+                  en Chinatown son espacios vibrantes donde se comercian artículos festivos especiales.
                 </p>
               </div>
             </div>
@@ -231,98 +206,19 @@ const Festividades = () => {
       </section>
 
       <Quote 
-        text="Las festividades en Singapur son un reflejo perfecto de nuestra identidad multicultural. Celebramos juntos, aprendemos de las tradiciones de los demás, y creamos un sentido único de unidad en la diversidad."
-        author="Edwin Tong, Ministro de Cultura, Comunidad y Juventud"
+        text="Las festividades en Singapur no son solo celebraciones, sino puentes culturales que permiten a los ciudadanos experimentar y apreciar las tradiciones de sus compatriotas de diferentes etnias."
+        author="Lawrence Wong, Ministro de Finanzas de Singapur"
         variant="warning"
+        citation="9"
       />
 
-      <section className="mb-5">
-        <h2 className="h3 mb-4">Deepavali: Festival de las Luces</h2>
-        <p className="mb-3">
-          Deepavali, también conocido como Diwali, es el festival hindú de las luces que simboliza 
-          la victoria de la luz sobre la oscuridad y el bien sobre el mal. En Singapur, Little India 
-          se transforma con espectaculares decoraciones y luces coloridas.
-        </p>
-        
-        <div className="row align-items-center">
-          <div className="col-md-8">
-            <p>
-              Las familias indias limpian y decoran sus hogares con rangoli (diseños coloridos), 
-              encienden lámparas de aceite y velas, realizan oraciones (puja) e intercambian dulces 
-              y regalos. Los templos hindúes están especialmente activos durante este periodo.
-            </p>
-            <p>
-              El Bazar Festivo de Deepavali en Little India atrae a singapurenses de todas las etnias 
-              que vienen a comprar dulces tradicionales, lámparas de aceite, artículos religiosos y ropa festiva.
-            </p>
-          </div>
-          <div className="col-md-4">
-            <div className="card text-center">
-              <div className="card-body">
-                <h5 className="card-title">Kolam/Rangoli</h5>
-                <p className="card-text">
-                  Diseños intrincados creados con arroz coloreado, harina o tiza en polvo, 
-                  que adornan las entradas de los hogares para dar la bienvenida a las deidades.
-                </p>
-                <div className="mt-3">
-                  <span className="badge bg-danger m-1">Rojo: Amor</span>
-                  <span className="badge bg-warning m-1">Amarillo: Conocimiento</span>
-                  <span className="badge bg-success m-1">Verde: Fertilidad</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <h2 className="h3 mb-4">Día Nacional de Singapur</h2>
-        <p className="mb-3">
-          El 9 de agosto marca el Día Nacional de Singapur, conmemorando su independencia de Malasia 
-          en 1965. Es una celebración vibrante que une a todos los singapurenses independientemente 
-          de su origen étnico o religioso.
-        </p>
-
-        <div className="card mb-4">
-          <div className="card-body">
-            <h5 className="card-title">National Day Parade (NDP)</h5>
-            <p className="card-text">
-              El evento principal es el gran desfile que incluye un desfile militar, actuaciones 
-              multiculturales, espectáculos aéreos y un impresionante espectáculo de fuegos artificiales. 
-              Cada año tiene un tema diferente que refleja los valores y aspiraciones nacionales.
-            </p>
-            <p className="card-text">
-              Los singapurenses visten con orgullo los colores nacionales rojo y blanco, y los 
-              HDB (bloques de viviendas públicas) están decorados con banderas. Las comunidades 
-              organizan celebraciones locales que fomentan la cohesión social.
-            </p>
-          </div>
-        </div>
-
-        <div className="alert alert-warning">
-          <div className="d-flex">
-            <div className="me-3">
-              <i className="fas fa-music fa-2x"></i>
-            </div>
-            <div>
-              <h5 className="alert-heading">Canciones nacionales</h5>
-              <p className="mb-0">
-                Las canciones patrióticas como "Majulah Singapura" (el himno nacional), "Count on Me, Singapore", 
-                "Stand Up for Singapore" y "Home" son cantadas con entusiasmo durante este periodo. Se convierten 
-                en sintonías populares en las semanas previas al Día Nacional.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Timeline 
-        events={timelineFestividades} 
-        title="Calendario anual de festividades" 
+        events={eventosFestivos} 
+        title="Calendario festivo anual" 
         variant="warning" 
       />
     </div>
   );
 };
 
-export default Festividades;
+export default FestividadesTradiciones;

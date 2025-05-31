@@ -1,22 +1,17 @@
 {
   "name": "singapur",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@ampproject/remapping": "file:tailwindcss/oxide@types/nodededentlightningcssmagic-stringsource-map-js",
-    "@fortawesome/fontawesome-free": "^6.4.2",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.6",
-    "framer-motion": "^10.16.4",
-    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0"

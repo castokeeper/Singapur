@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { getAssetPath } from '../../utils/assetUtils';
 
 /**
- * Componente de imagen con manejo de errores
- * Muestra una imagen de reemplazo si la original no se puede cargar
+ * Componente de imagen con fallback automático
+ * @param {string} src - URL de la imagen principal
+ * @param {string} alt - Texto alternativo
+ * @param {string} fallbackSrc - URL de imagen de respaldo
+ * @param {string} className - Clases CSS adicionales
  */
 const ImageWithFallback = ({ 
   src, 
   alt, 
-  fallbackSrc = "/images/singapore-skyline.jpg", 
+  fallbackSrc = getAssetPath("/images/placeholder.jpg"), 
   className = "",
   ...props 
 }) => {
   const [error, setError] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   const handleError = () => {
     if (!error) {
@@ -19,15 +25,28 @@ const ImageWithFallback = ({
     }
   };
 
+  const handleLoad = () => {
+    setLoaded(true);
+  };
+
   return (
-    <img
+    <img 
       src={error ? fallbackSrc : src}
-      alt={alt}
+      alt={alt || 'Imagen'}
+      className={`image-with-fallback ${className} ${loaded ? 'opacity-100' : 'opacity-0'}`}
       onError={handleError}
-      className={`img-fluid ${className}`}
+      onLoad={handleLoad}
+      style={{ transition: 'opacity 0.3s ease' }}
       {...props}
     />
   );
+};
+
+ImageWithFallback.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  fallbackSrc: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default ImageWithFallback;

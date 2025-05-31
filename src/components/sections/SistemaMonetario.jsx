@@ -3,95 +3,129 @@ import ImageGallery from '../ui/ImageGallery';
 import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
 import ImageWithFallback from '../common/ImageWithFallback';
-// Importar el contexto
 import { useTheme } from '../../context/ThemeContext';
+import { getAssetPath } from '../../utils/assetUtils';
 
 /**
  * Componente que muestra información sobre el sistema monetario de Singapur
  */
 const SistemaMonetario = () => {
-  // Using underscore prefix to indicate an intentionally unused variable
-  const { isDark: _isDark } = useTheme();
+  const { isDark } = useTheme();
   
-  // Imágenes para la galería monetaria
+  // Imágenes para la galería monetaria con rutas actualizadas
   const imagenesBilletes = [
     {
-      src: "/images/singapore-skyline.jpg",
-      alt: "Distrito financiero de Singapur",
-      caption: "El distrito financiero de Singapur, centro del sistema monetario del país"
+      src: getAssetPath("/images/sgd-notes.jpg"),
+      alt: "Billetes del dólar de Singapur",
+      caption: "Serie actual de billetes del dólar singapurense con motivos nacionales"
     },
     {
-      src: "/images/merlion-statue.jpg", 
+      src: getAssetPath("/images/mas-building.jpg"), 
       alt: "Autoridad Monetaria de Singapur",
       caption: "El edificio de la Autoridad Monetaria de Singapur (MAS)"
+    },
+    {
+      src: getAssetPath("/images/singapore-coins.jpg"),
+      alt: "Monedas de Singapur",
+      caption: "Serie actual de monedas del dólar singapurense"
+    },
+    {
+      src: getAssetPath("/images/singapore-fintech.jpg"),
+      alt: "Fintech en Singapur",
+      caption: "Festival Fintech de Singapur, reflejo de la innovación financiera del país"
     }
   ];
   
-  // Eventos para la línea de tiempo
-  const timelineMonetario = [
+  // Línea de tiempo del sistema monetario
+  const eventosMoney = [
     {
-      year: 1967,
-      title: "Creación del dólar de Singapur",
-      description: "Tras la separación de Malasia, Singapur establece su propia moneda independiente."
+      año: "1967",
+      titulo: "Creación del dólar singapurense",
+      descripcion: "Tras su independencia, Singapur establece su propia moneda separándose del dólar malayo.",
+      importancia: "alta"
     },
     {
-      year: 1971,
-      title: "Fundación de la MAS",
-      description: "Se establece la Autoridad Monetaria de Singapur (MAS) como banco central y regulador financiero."
+      año: "1971",
+      titulo: "Establecimiento de la MAS",
+      descripcion: "Se crea la Autoridad Monetaria de Singapur (MAS) como banco central y regulador financiero.",
+      importancia: "alta"
     },
     {
-      year: 1985,
-      title: "Política de tipo de cambio",
-      description: "La MAS adopta una política monetaria centrada en la gestión del tipo de cambio en lugar de tasas de interés."
+      año: "1985",
+      titulo: "Política cambiaria",
+      descripcion: "Adopción de una política cambiaria basada en bandas de fluctuación administradas.",
+      importancia: "media"
     },
     {
-      year: 1999,
-      title: "Acuerdos financieros internacionales",
-      description: "Singapur firma acuerdos de libre comercio con énfasis en servicios financieros."
+      año: "2002",
+      titulo: "Serie Portrait",
+      descripcion: "Lanzamiento de la serie Portrait de billetes con medidas de seguridad avanzadas.",
+      importancia: "media"
     },
     {
-      year: 2004,
-      title: "Billetes de polímero",
-      description: "Singapur introduce billetes de polímero para mayor durabilidad y seguridad."
+      año: "2011",
+      titulo: "Core Inflation",
+      descripcion: "MAS comienza a usar la inflación núcleo como indicador principal para la política monetaria.",
+      importancia: "media"
     },
     {
-      year: 2019,
-      title: "Serie conmemorativa del Bicentenario",
-      description: "Emisión de billetes conmemorativos por el bicentenario de la fundación moderna de Singapur."
+      año: "2017",
+      titulo: "Singapore FinTech Festival",
+      descripcion: "Singapur establece el mayor festival fintech del mundo, reforzando su posición como hub fintech.",
+      importancia: "alta"
     }
   ];
 
   return (
     <div className="sistema-monetario">
       <section className="mb-5">
-        <h2 className="h3 mb-4">El Dólar Singapurense (SGD)</h2>
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>El Dólar de Singapur</h2>
         <div className="row">
           <div className="col-lg-8">
-            <p className="mb-3">
-              El dólar de Singapur (SGD) es reconocido como una de las monedas más estables y confiables 
-              de Asia. Su estabilidad radica en la sólida economía del país y en las políticas prudentes
-              implementadas por la Autoridad Monetaria de Singapur (MAS).
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              El dólar de Singapur (SGD) es la moneda oficial de la República de Singapur desde 1967, 
+              cuando el país estableció su propia autoridad monetaria tras separarse de Malasia. Actualmente, 
+              es una de las monedas más estables y fuertes de Asia, reflejo de la solidez económica del país.
             </p>
-            <p className="mb-3">
-              A diferencia de muchos bancos centrales que utilizan tasas de interés como principal herramienta
-              de política monetaria, la MAS emplea el tipo de cambio como instrumento primario. La moneda
-              se gestiona frente a una canasta ponderada de divisas de sus principales socios comerciales.
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              La Autoridad Monetaria de Singapur (MAS), que funciona como banco central, gestiona la política 
+              monetaria principalmente a través del tipo de cambio en lugar de las tasas de interés, un enfoque 
+              único adaptado a la economía abierta y dependiente del comercio exterior de Singapur.
             </p>
-            <p className="mb-3">
-              Los billetes de Singapur destacan por su colorido diseño y avanzadas medidas de seguridad,
-              representando los diversos aspectos culturales y el progreso del país.
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              Los billetes actuales presentan al primer presidente de Singapur, Yusof bin Ishak, e incorporan 
+              avanzadas medidas de seguridad. Las monedas muestran motivos de la flora y fauna local, reflejando 
+              la identidad cultural y natural del país.
             </p>
           </div>
           <div className="col-lg-4">
-            <div className="card mb-4">
-              <div className="card-body bg-light">
-                <h5 className="card-title">Datos rápidos</h5>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item bg-transparent">Código ISO: SGD</li>
-                  <li className="list-group-item bg-transparent">Símbolo: S$</li>
-                  <li className="list-group-item bg-transparent">Subdivisión: 100 céntimos</li>
-                  <li className="list-group-item bg-transparent">Emisor: Autoridad Monetaria de Singapur</li>
-                  <li className="list-group-item bg-transparent">Ranking: Entre las 15 monedas más comerciadas</li>
+            <div className="mb-4">
+              <div className="card bg-success text-white">
+                <div className="card-body">
+                  <h5 className="card-title">Ranking Global</h5>
+                  <p className="display-4 text-center mb-3">4º</p>
+                  <p className="card-text text-center">
+                    Posición de Singapur en el Índice de Centros Financieros Globales
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className={`card mb-4 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>Características clave</h5>
+                <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
+                  <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                    <i className="fas fa-chart-line text-success me-2"></i>
+                    Moneda de reserva en Asia
+                  </li>
+                  <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                    <i className="fas fa-lock text-success me-2"></i>
+                    Alta seguridad anticopia
+                  </li>
+                  <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                    <i className="fas fa-exchange-alt text-success me-2"></i>
+                    Política cambiaria administrada
+                  </li>
                 </ul>
               </div>
             </div>
@@ -101,33 +135,74 @@ const SistemaMonetario = () => {
 
       <ImageGallery 
         images={imagenesBilletes} 
-        title="El sistema financiero de Singapur" 
+        title="Sistema monetario singapurense" 
       />
 
       <section className="mb-5">
-        <h2 className="h3 mb-4">Centro Financiero Internacional</h2>
-        <div className="row align-items-center">
-          <div className="col-md-6">
-            <p>
-              Singapur ha consolidado su posición como uno de los principales centros financieros del 
-              mundo, rivalizando con ciudades como Londres, Nueva York y Hong Kong. Su éxito se basa en:
-            </p>
-            <ul className="mb-4">
-              <li>Marco regulatorio estable y transparente</li>
-              <li>Excelente infraestructura y conectividad global</li>
-              <li>Fuerza laboral altamente calificada y multilingüe</li>
-              <li>Régimen fiscal favorable para negocios</li>
-              <li>Estabilidad política y económica</li>
-            </ul>
-          </div>
-          <div className="col-md-6">
-            <div className="card bg-success text-white">
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Centro Financiero Global</h2>
+        <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+          Singapur se ha consolidado como uno de los principales centros financieros del mundo, 
+          compitiendo directamente con Nueva York, Londres y Hong Kong. Su estabilidad política, 
+          marco regulatorio transparente y ubicación estratégica lo han posicionado como hub 
+          financiero de referencia en Asia-Pacífico.
+        </p>
+        
+        <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <h5 className="card-title">Ranking Global</h5>
-                <p className="display-4 text-center mb-3">4º</p>
-                <p className="card-text text-center">
-                  Posición de Singapur en el Índice de Centros Financieros Globales 
-                  (Global Financial Centres Index)
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-university text-success me-2"></i>
+                  Banca internacional
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  Más de 200 bancos tienen presencia en Singapur, incluyendo las principales 
+                  instituciones financieras del mundo que utilizan la ciudad como base para 
+                  sus operaciones en el sureste asiático.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-chart-pie text-success me-2"></i>
+                  Gestión de patrimonios
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  El país gestiona más de 4 billones de SGD en activos, posicionándose como 
+                  el principal centro de gestión de patrimonios de Asia y atrayendo fortunas 
+                  de toda la región.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-laptop-code text-success me-2"></i>
+                  Hub Fintech
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  Con más de 1.400 empresas fintech, Singapur lidera la innovación financiera 
+                  en áreas como pagos digitales, blockchain, seguros tecnológicos y banca digital.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-balance-scale text-success me-2"></i>
+                  Marco regulatorio
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  La MAS ha desarrollado un sistema regulatorio robusto pero flexible que 
+                  equilibra la innovación con la estabilidad, incluyendo sandbox regulatorios 
+                  para nuevas tecnologías financieras.
                 </p>
               </div>
             </div>
@@ -136,134 +211,15 @@ const SistemaMonetario = () => {
       </section>
 
       <Quote 
-        text="La política de tipo de cambio de Singapur es única porque responde a la naturaleza de su economía: pequeña, abierta y con un sector comercial importante en relación con el PIB."
-        author="Tharman Shanmugaratnam, ex-Ministro de Finanzas de Singapur"
+        text="El sistema financiero de Singapur representa uno de los mejores ejemplos de cómo una visión clara, políticas consistentes y adaptación a las tendencias globales pueden transformar un pequeño mercado local en un centro financiero de clase mundial."
+        author="Ravi Menon, Director Ejecutivo de la MAS"
         variant="success"
-        citation="4"
+        citation="8"
       />
 
-      <section className="mb-5">
-        <h2 className="h3 mb-4">La Autoridad Monetaria de Singapur (MAS)</h2>
-        <p>
-          Fundada en 1971, la MAS funciona como banco central y regulador financiero integrado, 
-          supervisando todos los aspectos del sector financiero de Singapur: banca, seguros, 
-          valores y gestión de activos.
-        </p>
-        
-        <div className="row mt-4">
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-header">Funciones principales de la MAS</div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Conducir la política monetaria</li>
-                <li className="list-group-item">Emitir moneda y administrar reservas</li>
-                <li className="list-group-item">Supervisar el sector financiero</li>
-                <li className="list-group-item">Desarrollar Singapur como centro financiero</li>
-                <li className="list-group-item">Representar a Singapur en foros financieros internacionales</li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-header">Enfoque único de la MAS</div>
-              <div className="card-body">
-                <p className="card-text">
-                  A diferencia de otros bancos centrales que establecen tasas de interés para 
-                  controlar la inflación, la MAS gestiona el valor del dólar singapurense contra 
-                  una canasta ponderada de monedas de los principales socios comerciales.
-                </p>
-                <p className="card-text mb-0">
-                  Este enfoque es adecuado para una economía pequeña y abierta como la de Singapur, 
-                  donde el comercio exterior tiene un impacto significativo en la inflación y el 
-                  crecimiento económico.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <h2 className="h3 mb-4">Billetes y Monedas</h2>
-        <div className="row g-4">
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Serie de billetes "Portrait"</h5>
-                <p>
-                  La serie actual de billetes de Singapur presenta a Yusof bin Ishak, el primer 
-                  presidente de Singapur, junto con motivos que representan la cultura, el patrimonio 
-                  y los valores de la nación.
-                </p>
-                <p>
-                  Incorporan avanzadas características de seguridad, incluidos hologramas, 
-                  marcas de agua y elementos de tinta que cambian de color.
-                </p>
-                <div className="mt-3">
-                  <span className="badge bg-success me-2">S$2</span>
-                  <span className="badge bg-success me-2">S$5</span>
-                  <span className="badge bg-success me-2">S$10</span>
-                  <span className="badge bg-success me-2">S$50</span>
-                  <span className="badge bg-success me-2">S$100</span>
-                  <span className="badge bg-success me-2">S$1000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Monedas en circulación</h5>
-                <p>
-                  Las monedas singapurenses presentan motivos que reflejan la identidad y los valores 
-                  del país, con diseños que celebran su biodiversidad, arquitectura y cultura.
-                </p>
-                <p>
-                  En 2013, Singapur introdujo una nueva serie de monedas con diseños actualizados y 
-                  mejores características de seguridad.
-                </p>
-                <div className="mt-3">
-                  <span className="badge bg-secondary me-2">1¢</span>
-                  <span className="badge bg-secondary me-2">5¢</span>
-                  <span className="badge bg-secondary me-2">10¢</span>
-                  <span className="badge bg-secondary me-2">20¢</span>
-                  <span className="badge bg-secondary me-2">50¢</span>
-                  <span className="badge bg-secondary me-2">S$1</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <h2 className="h3 mb-4">Innovación financiera</h2>
-        <div className="alert alert-success">
-          <div className="d-flex">
-            <div className="me-3">
-              <i className="fas fa-lightbulb fa-2x"></i>
-            </div>
-            <div>
-              <h5 className="alert-heading">Sandbox regulatorio</h5>
-              <p className="mb-0">
-                La MAS fue una de las primeras autoridades reguladoras en implementar un sandbox 
-                regulatorio para fintech, permitiendo experimentar con innovaciones financieras 
-                en un entorno controlado. Esto ha posicionado a Singapur como un centro 
-                para la innovación financiera en Asia.
-              </p>
-            </div>
-          </div>
-        </div>
-        <p>
-          El compromiso de Singapur con la innovación financiera se evidencia en sus iniciativas 
-          para adoptar pagos digitales, tecnología blockchain y regular de manera equilibrada las 
-          criptomonedas y activos digitales.
-        </p>
-      </section>
-
       <Timeline 
-        events={timelineMonetario} 
-        title="Evolución del sistema monetario de Singapur" 
+        events={eventosMoney} 
+        title="Evolución del sistema monetario" 
         variant="success" 
       />
     </div>

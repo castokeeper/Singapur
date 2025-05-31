@@ -1,321 +1,214 @@
+import { getAssetPath } from '../utils/assetUtils';
+
+/**
+ * Datos bibliográficos y referencias sobre Singapur
+ */
 export const referenciasData = {
-  id: "referencias-bibliograficas",
-  title: "Referencias Bibliográficas",
-  subtitle: "Fuentes Académicas y Documentos Oficiales",
-  description: "Esta sección recopila todas las referencias bibliográficas utilizadas en la elaboración de este proyecto sobre Singapur, organizadas por categorías temáticas para facilitar su consulta.",
-  icon: "book",
-  accentColor: "purple",
-  coverImage: "/images/referencias/singapore_library.jpg",
+  // Información general
+  titulo: "Referencias y Bibliografía",
+  descripcion: "Fuentes consultadas para la elaboración de este sitio",
+  coverImage: getAssetPath("/images/referencias/singapore_library.jpg"),
   
-  categories: [
-    { id: "Linguistica", name: "Identidad Lingüística", icon: "language" },
-    { id: "Monetario", name: "Sistema Monetario", icon: "currency-dollar" },
-    { id: "Festividades", name: "Festividades y Tradiciones", icon: "calendar-event" },
-    { id: "Modernidad", name: "Modernidad y Visión", icon: "building-skyscraper" }
-  ],
-  
-  references: [
-    // Identidad Lingüística
+  // Referencias bibliográficas
+  referencias: [
     {
-      id: 12,
-      category: "Linguistica",
-      text: "Alsagoff, L. (2010). English in Singapore: Culture, capital and identity in linguistic variation. World Englishes, 29(3), 336-348.",
-      doi: "10.1111/j.1467-971X.2010.01658.x",
-      type: "academic"
+      id: 1,
+      tipo: "libro",
+      titulo: "From Third World to First: The Singapore Story",
+      autor: "Lee Kuan Yew",
+      año: 2000,
+      editorial: "HarperCollins",
+      descripcion: "Memorias del primer Primer Ministro de Singapur donde detalla el desarrollo del país desde la independencia.",
+      isbn: "978-0060197766",
+      imageCover: getAssetPath("/images/referencias/book-lee-kuan-yew.jpg")
+    },
+    {
+      id: 2,
+      tipo: "libro",
+      titulo: "Singapore: A Biography",
+      autor: "Mark Ravinder Frost & Yu-Mei Balasingamchow",
+      año: 2013,
+      editorial: "Editions Didier Millet",
+      descripcion: "Historia detallada de Singapur desde sus orígenes hasta la actualidad.",
+      isbn: "978-9814385473",
+      imageCover: getAssetPath("/images/referencias/book-singapore-biography.jpg")
+    },
+    {
+      id: 3,
+      tipo: "artículo",
+      titulo: "The Linguistic Heritage of Singapore",
+      autor: "Catherine Lim",
+      año: 2019,
+      fuente: "The Straits Times",
+      url: "https://www.straitstimes.com/singapore/linguistics",
+      descripcion: "Análisis sobre la evolución de la identidad lingüística en Singapur.",
+      fecha_acceso: "15/02/2023"
+    },
+    {
+      id: 4,
+      tipo: "informe",
+      titulo: "Singapore's National Day Rally Speech",
+      autor: "Lee Hsien Loong",
+      año: 2021,
+      institucion: "Prime Minister's Office",
+      url: "https://www.pmo.gov.sg/Newsroom/National-Day-Rally-2021",
+      descripcion: "Discurso oficial donde se abordan temas de políticas lingüísticas.",
+      fecha_acceso: "10/01/2023"
+    },
+    {
+      id: 8,
+      tipo: "conferencia",
+      titulo: "Singapore as a Global Financial Hub",
+      autor: "Ravi Menon",
+      año: 2022,
+      evento: "Foro Financiero Global",
+      lugar: "Singapur",
+      descripcion: "Presentación del director de la MAS sobre el sistema financiero de Singapur.",
+      fecha_acceso: "05/03/2023"
+    },
+    {
+      id: 9,
+      tipo: "discurso",
+      titulo: "Harmony in Diversity: Singapore's Cultural Model",
+      autor: "Lawrence Wong",
+      año: 2022,
+      evento: "Día de la Armonía Racial",
+      lugar: "Singapur",
+      descripcion: "Discurso del Ministro de Finanzas sobre el modelo multicultural de Singapur.",
+      fecha_acceso: "12/02/2023"
+    },
+    {
+      id: 14,
+      tipo: "discurso",
+      titulo: "Singapore's Urban Transformation",
+      autor: "Lee Hsien Loong",
+      año: 2019,
+      evento: "Foro Económico Mundial",
+      lugar: "Davos",
+      descripcion: "Presentación sobre la transformación urbana de Singapur.",
+      fecha_acceso: "20/01/2023"
     },
     {
       id: 15,
-      category: "Linguistica",
-      text: "Chew, P. G. L. (2013). A sociolinguistic history of early identities in Singapore: From colonialism to nationalism. Palgrave Macmillan.",
-      isbn: "978-1137012340",
-      type: "book"
-    },
-    {
-      id: 18,
-      category: "Linguistica",
-      text: "Curdt-Christiansen, X. L. (2014). Family language policy: Is learning Chinese at odds with learning English in Singapore? Journal of Multilingual and Multicultural Development, 35(7), 692-706.",
-      doi: "10.1080/01434632.2014.889141",
-      type: "academic"
-    },
-    {
-      id: 21,
-      category: "Linguistica",
-      text: "Departamento de Estadísticas de Singapur. (2020). Censo de Población 2020: Características Lingüísticas.",
-      url: "https://www.singstat.gov.sg/publications/census-of-population-2020",
-      type: "official"
-    },
-    {
-      id: 24,
-      category: "Linguistica",
-      text: "Leimgruber, J. R. E. (2011). Singapore English. Language and Linguistics Compass, 5(1), 47-62.",
-      doi: "10.1111/j.1749-818X.2010.00262.x",
-      type: "academic"
-    },
-    {
-      id: 27,
-      category: "Linguistica",
-      text: "Wee, L. (2014). Linguistic chutzpah and the Speak Good Singlish movement. World Englishes, 33(1), 85-99.",
-      doi: "10.1111/weng.12055",
-      type: "academic"
-    },
-    {
-      id: 30,
-      category: "Linguistica",
-      text: "Lee, K. Y. (2000). From Third World to First: The Singapore Story 1965-2000. HarperCollins.",
-      isbn: "978-0060197766",
-      type: "book"
-    },
-    {
-      id: 33,
-      category: "Linguistica",
-      text: "Chua, B. H. (2003). Life is not complete without shopping: Consumption culture in Singapore. NUS Press.",
-      isbn: "978-9971692728",
-      type: "book"
-    },
-    
-    // Sistema Monetario
-    {
-      id: 42,
-      category: "Monetario",
-      text: "Autoridad Monetaria de Singapur. (2021). Historia de la Moneda de Singapur. Publicaciones MAS.",
-      url: "https://www.mas.gov.sg/currency/singapore-currency-history",
-      type: "official"
-    },
-    {
-      id: 45,
-      category: "Monetario",
-      text: "Board of Commissioners of Currency Singapore. (2019). Nota de Prensa: Lanzamiento de la Serie Conmemorativa del Bicentenario de Singapur.",
-      url: "https://www.mas.gov.sg/news/media-releases/2019/singapore-bicentennial-commemorative-note",
-      type: "official"
-    },
-    {
-      id: 48,
-      category: "Monetario",
-      text: "Financial Times. (2022). Índice de Centros Financieros Globales 31. Z/Yen Partners y China Development Institute.",
-      url: "https://www.longfinance.net/publications/long-finance-reports/global-financial-centres-index-31/",
-      type: "report"
-    },
-    {
-      id: 51,
-      category: "Monetario",
-      text: "Autoridad Monetaria de Singapur. (2022). Informe Anual 2021/2022: Supervisión del Sector Financiero.",
-      url: "https://www.mas.gov.sg/publications/annual-report/2022/annual-report-2021-2022",
-      type: "official"
-    },
-    {
-      id: 54,
-      category: "Monetario",
-      text: "Lee, J. & Low, L. (2018). Fintech: Ecosistema y perspectivas de políticas en Singapur. Journal of Asian Finance, Economics and Business, 5(1), 15-24.",
-      doi: "10.13106/jafeb.2018.vol5.no1.15",
-      type: "academic"
-    },
-    {
-      id: 57,
-      category: "Monetario",
-      text: "Fondo Monetario Internacional. (2023). Estadísticas de Reservas Internacionales y Liquidez en Divisas. Datos para Singapur.",
-      url: "https://data.imf.org/?sk=2DFB3380-3603-4D2C-90BE-A04D8BBCE237",
-      type: "report"
-    },
-    {
-      id: 60,
-      category: "Monetario",
-      text: "Menon, R. (2017). La Política Monetaria de Singapur: Marco y Práctica. Conferencia del 50° Aniversario de la Asociación de Bancos de Singapur.",
-      url: "https://www.mas.gov.sg/news/speeches/2017/singapores-monetary-policy-framework",
-      type: "speech"
-    },
-    {
-      id: 63,
-      category: "Monetario",
-      text: "Shanmugaratnam, T. (2015). La Economía de Singapur: Retos y Estrategias. Discurso en el Foro Económico de Singapur.",
-      url: "https://www.mof.gov.sg/news-publications/speeches/speech-by-mr-tharman-shanmugaratnam-at-the-singapore-economic-forum-2015",
-      type: "speech"
-    },
-    
-    // Festividades y Tradiciones
-    {
-      id: 72,
-      category: "Festividades",
-      text: "Wong, L. (2019). El Año Nuevo Chino en Singapur: Evolución de las tradiciones festivas en un contexto multicultural. Asian Ethnology, 78(1), 149-173.",
-      doi: "10.18874/ae.78.1.07",
-      type: "academic"
-    },
-    {
-      id: 75,
-      category: "Festividades",
-      text: "Abdullah, N. (2018). Celebrando Hari Raya en la Singapur contemporánea: Tradición y Modernidad. Journal of Southeast Asian Studies, 49(2), 279-301.",
-      doi: "10.1017/S0022463418000231",
-      type: "academic"
-    },
-    {
-      id: 78,
-      category: "Festividades",
-      text: "Rai, H. (2021). Deepavali en la diáspora: Identidad india y adaptación cultural en Singapur. Ethnography, 22(3), 352-371.",
-      doi: "10.1177/1466138119855314",
-      type: "academic"
-    },
-    {
-      id: 81,
-      category: "Festividades",
-      text: "Kong, L. & Yeoh, B. (2003). La política del paisaje nacional: Construyendo la nación, el Desfile del Día Nacional de Singapur. Political Geography, 22(7), 639-657.",
-      doi: "10.1016/S0962-6298(03)00054-0",
-      type: "academic"
-    },
-    {
-      id: 84,
-      category: "Festividades",
-      text: "Tan, K. (2017). Reinventando la tradición: El Festival del Medio Otoño en Singapur. Journal of Chinese Overseas, 13(2), 191-215.",
-      doi: "10.1163/17932548-13020003",
-      type: "academic"
-    },
-    {
-      id: 87,
-      category: "Festividades",
-      text: "Sinha, V. (2016). Religión y espacio en la ciudad global: Thaipusam en Singapur. Urban Studies, 53(1), 25-40.",
-      doi: "10.1177/0042098014545635",
-      type: "academic"
-    },
-    {
-      id: 90,
-      category: "Festividades",
-      text: "Lee, H. L. (2019). Discurso sobre diversidad y armonía comunitaria. Oficina del Primer Ministro de Singapur.",
-      url: "https://www.pmo.gov.sg/Newsroom/PM-Lee-Hsien-Loong-speech-racial-harmony-day-2019",
-      type: "speech"
-    },
-    {
-      id: 93,
-      category: "Festividades",
-      text: "Ibrahim, Y. (2017). Construyendo una identidad multicultural en Singapur. Ponencia presentada en el Foro de Diversidad Cultural ASEAN, Singapur.",
-      url: "https://www.mccy.gov.sg/about-us/news-and-resources/speeches/2017/apr/building-a-multicultural-identity-in-singapore",
-      type: "speech"
-    },
-    
-    // Modernidad y Visión
-    {
-      id: 101,
-      category: "Modernidad",
-      text: "Wong, A. K. (2019). Singapur como icono arquitectónico: Política, creatividad y lugar en la ciudad global. Urban Studies, 56(8), 1615-1633.",
-      doi: "10.1177/0042098018765158",
-      type: "academic"
-    },
-    {
-      id: 104,
-      category: "Modernidad",
-      text: "Smart Nation and Digital Government Office. (2023). Smart Nation Singapore: Informe de progreso 2022-2023.",
-      url: "https://www.smartnation.gov.sg/resources/progress-reports",
-      type: "official"
-    },
-    {
-      id: 107,
-      category: "Modernidad",
-      text: "Ministerio de Sostenibilidad y Medio Ambiente de Singapur. (2022). Plan Verde de Singapur 2030: Visión de ciudad sostenible.",
-      url: "https://www.mse.gov.sg/resources/singapore-green-plan-2030",
-      type: "official"
-    },
-    {
-      id: 110,
-      category: "Modernidad",
-      text: "Land Transport Authority. (2023). Masterplan de Transporte Terrestre 2040: Conectando Singapur.",
-      url: "https://www.lta.gov.sg/content/ltagov/en/who_we_are/our_vision_and_mission/our_vision.html",
-      type: "official"
-    },
-    {
-      id: 113,
-      category: "Modernidad",
-      text: "Grupo Aeroportuario Changi. (2022). Reporte Anual 2021/2022: Redefiniendo la experiencia aeroportuaria.",
-      url: "https://www.changiairport.com/corporate/about-us/publications.html",
-      type: "report"
-    },
-    {
-      id: 116,
-      category: "Modernidad",
-      text: "Autoridad de Desarrollo de Medios Infocomm. (2023). Panorama del ecosistema de innovación digital de Singapur.",
-      url: "https://www.imda.gov.sg/resources/publications/digital-economy",
-      type: "official"
-    },
-    {
-      id: 119,
-      category: "Modernidad",
-      text: "Lee, H. L. (2022). Discurso del Día Nacional: Preparando a Singapur para el futuro. Oficina del Primer Ministro.",
-      url: "https://www.pmo.gov.sg/Newsroom/National-Day-Rally-2022",
-      type: "speech"
-    },
-    {
-      id: 122,
-      category: "Modernidad",
-      text: "Balakrishnan, V. (2021). Singapur como Smart Nation: Transformando la sociedad mediante la tecnología. Singapore International Foundation Insights.",
-      url: "https://www.sif.org.sg/publications/singapore-as-a-smart-nation",
-      type: "article"
+      tipo: "informe",
+      titulo: "Smart Nation Singapore: Progress Report",
+      autor: "Smart Nation and Digital Government Office",
+      año: 2021,
+      institucion: "Gobierno de Singapur",
+      url: "https://www.smartnation.gov.sg/report-2021",
+      descripcion: "Informe oficial sobre los avances de la iniciativa Smart Nation.",
+      fecha_acceso: "25/01/2023"
     }
   ],
   
-  stats: [
+  // Recursos adicionales
+  recursos: [
     {
-      value: "32",
-      label: "Fuentes académicas"
+      titulo: "Visit Singapore",
+      descripcion: "Portal oficial de turismo de Singapur",
+      url: "https://www.visitsingapore.com",
+      tipo: "sitio web",
+      imageSrc: getAssetPath("/images/referencias/visit-singapore.jpg")
     },
     {
-      value: "4",
-      label: "Categorías temáticas"
+      titulo: "Singapore Government Portal",
+      descripcion: "Portal oficial del Gobierno de Singapur",
+      url: "https://www.gov.sg",
+      tipo: "sitio web",
+      imageSrc: getAssetPath("/images/referencias/singapore-gov.jpg")
     },
     {
-      value: "8",
-      label: "Discursos oficiales citados"
+      titulo: "National Archives of Singapore",
+      descripcion: "Archivo histórico digital con documentos, fotografías y registros",
+      url: "https://www.nas.gov.sg",
+      tipo: "archivo",
+      imageSrc: getAssetPath("/images/referencias/singapore-archives.jpg")
     },
     {
-      value: "12",
-      label: "Documentos gubernamentales"
+      titulo: "Monetary Authority of Singapore",
+      descripcion: "Sitio oficial de la Autoridad Monetaria de Singapur",
+      url: "https://www.mas.gov.sg",
+      tipo: "institución",
+      imageSrc: getAssetPath("/images/referencias/mas-website.jpg")
     }
   ],
   
-  relatedTopics: [
+  // Multimedia
+  multimedia: [
     {
-      id: "metodologia",
-      title: "Metodología de la Investigación",
-      path: "/metodologia"
+      titulo: "Singapore: Biophilic City",
+      tipo: "documental",
+      creador: "National Geographic",
+      año: 2018,
+      duracion: "45 minutos",
+      descripcion: "Documental sobre la integración de naturaleza en el entorno urbano de Singapur",
+      url: "https://www.nationalgeographic.com/singapore-biophilic",
+      imageSrc: getAssetPath("/images/referencias/documentary-biophilic.jpg")
     },
     {
-      id: "glosario",
-      title: "Glosario de Términos",
-      path: "/glosario"
+      titulo: "History of Singapore",
+      tipo: "podcast",
+      creador: "BBC World Service",
+      año: 2020,
+      episodios: 6,
+      descripcion: "Serie de podcast sobre la historia y evolución de Singapur desde su fundación",
+      url: "https://www.bbc.co.uk/programmes/singapore-history",
+      imageSrc: getAssetPath("/images/referencias/podcast-history.jpg")
+    }
+  ],
+  
+  // Datos interesantes
+  datosInteresantes: [
+    {
+      dato: "Singapur es uno de los tres únicos estados-ciudad supervivientes en el mundo, junto con Mónaco y el Vaticano.",
+      fuente: "Departamento de Estadísticas de Singapur, 2022",
+      categoria: "geografía"
     },
     {
-      id: "recursos",
-      title: "Recursos Adicionales",
-      path: "/recursos"
+      dato: "El aeropuerto Changi de Singapur ha sido nombrado el mejor del mundo por Skytrax durante ocho años consecutivos (2013-2020).",
+      fuente: "Skytrax World Airport Awards, 2020",
+      categoria: "infraestructura"
+    },
+    {
+      dato: "Singapur tiene una de las densidades de millonarios más altas del mundo, con aproximadamente el 5% de los hogares clasificados como millonarios.",
+      fuente: "Credit Suisse Global Wealth Report, 2021",
+      categoria: "economía"
+    },
+    {
+      dato: "A pesar de su pequeño tamaño, Singapur es el cuarto centro financiero más importante del mundo, después de Nueva York, Londres y Hong Kong.",
+      fuente: "Global Financial Centres Index, 2023",
+      categoria: "economía"
+    },
+    {
+      dato: "El sistema de reserva de agua de Singapur, llamado 'Four National Taps', incluye agua de lluvia recolectada, agua importada de Malasia, agua reciclada (NEWater) y agua desalinizada.",
+      fuente: "PUB, Agencia Nacional del Agua de Singapur, 2022",
+      categoria: "sostenibilidad"
+    }
+  ],
+  
+  // Imágenes para galería
+  imagenesReferencias: [
+    {
+      src: getAssetPath("/images/referencias/singapore-library.jpg"),
+      alt: "Biblioteca Nacional de Singapur",
+      caption: "Biblioteca Nacional, centro de recursos bibliográficos sobre Singapur"
+    },
+    {
+      src: getAssetPath("/images/referencias/archives-building.jpg"),
+      alt: "Archivos Nacionales de Singapur",
+      caption: "Edificio de los Archivos Nacionales donde se conservan documentos históricos"
+    },
+    {
+      src: getAssetPath("/images/referencias/research-materials.jpg"),
+      alt: "Materiales de investigación",
+      caption: "Colección de libros y documentos utilizados como fuentes para este proyecto"
+    },
+    {
+      src: getAssetPath("/images/referencias/digital-resources.jpg"),
+      alt: "Recursos digitales",
+      caption: "Plataformas digitales con información oficial sobre Singapur"
     }
   ]
 };
 
-// Versión simplificada como array para compatibilidad con componentes existentes
-export const referencias = referenciasData.references.map(ref => {
-  return {
-    id: ref.id.toString(),
-    titulo: ref.text.split('.')[0],
-    autores: ref.text.split('(')[0].trim(),
-    año: ref.text.match(/\((\d{4})\)/)?.[1],
-    tipo: getTipoFromReference(ref),
-    categoria: ref.category,
-    url: ref.url || "",
-    doi: ref.doi || "",
-    isbn: ref.isbn || ""
-  };
-});
-
-// Función auxiliar para determinar el tipo
-function getTipoFromReference(ref) {
-  switch(ref.type) {
-    case 'academic': return 'Artículo';
-    case 'book': return 'Libro';
-    case 'official': return 'Documento oficial';
-    case 'report': return 'Informe';
-    case 'speech': return 'Discurso';
-    case 'article': return 'Artículo';
-    default: return 'Referencia';
-  }
-}
-
-// Para compatibilidad con código que espera referenciasData como array
-export { referencias as referenciasArray };
-
-// Exportación por defecto para importaciones más simples
 export default referenciasData;

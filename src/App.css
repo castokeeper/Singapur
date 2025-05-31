@@ -1,3 +1,178 @@
+/**
+ * Estilos principales para la aplicación Singapur
+ * Optimizado para GitHub Pages
+ */
+
+/* Importar variables CSS globales */
+@import './styles/variables.css';
+
+/* Estilos base para la aplicación */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-content {
+  flex: 1;
+}
+
+/* Estilos para tema claro/oscuro */
+.App.light-theme {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.App.dark-theme {
+  background-color: var(--bg-dark-mode);
+  color: var(--text-dark-mode);
+}
+
+/* Estilos para el logo */
+.App-logo {
+  height: 40px;
+  pointer-events: none;
+}
+
+/* Animación del logo opcional */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos de cabecera */
+.App-header {
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: var(--border-width) solid var(--color-secondary-light);
+}
+
+.dark-theme .App-header {
+  border-bottom-color: var(--border-dark-mode);
+}
+
+/* Fondo de página con patrón */
+.page-background {
+  background-image: url('../assets/images/patterns/light-pattern.png');
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+.dark-theme .page-background {
+  background-image: url('../assets/images/patterns/dark-pattern.png');
+}
+
+/* Hero section con imagen de fondo */
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+}
+
+/* Secciones con imágenes de fondo específicas */
+.section-hero-historia {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/historia-header.jpg');
+}
+
+.section-hero-identidad {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/identidad-header.jpg');
+}
+
+.section-hero-linguistica {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/linguistica-header.jpg');
+}
+
+.section-hero-festividades {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/festividades-header.jpg');
+}
+
+.section-hero-gastronomia {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/gastronomia-header.jpg');
+}
+
+.section-hero-monetario {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/monetario-header.jpg');
+}
+
+.section-hero-modernidad {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/modernidad-header.jpg');
+}
+
+/* Contenedor principal */
+.main-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* Estilos para tarjetas */
+.card {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed), 
+              box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.dark-theme .card {
+  background-color: var(--bg-dark-mode-secondary);
+  border: 1px solid var(--border-dark-mode);
+}
+
+/* Imágenes responsivas */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Transiciones suaves al cambiar el tema */
+body {
+  transition: background-color var(--transition-speed),
+              color var(--transition-speed);
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .main-container {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Utilidades para espaciado consistente */
+.section-padding {
+  padding: var(--spacing-xl) 0;
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
 /* Transición suave al cambiar temas */
 .theme-transition {
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;

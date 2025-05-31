@@ -2,99 +2,122 @@ import React from 'react';
 import ImageGallery from '../ui/ImageGallery';
 import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
-import ImageWithFallback from '../common/ImageWithFallback';
+import { useTheme } from '../../context/ThemeContext';
+import { getAssetPath } from '../../utils/assetUtils';
 
 /**
  * Componente que muestra información sobre la modernidad y visión de futuro de Singapur
  */
 const ModernidadVision = () => {
-  // Imágenes para la galería
+  const { isDark } = useTheme();
+  
+  // Imágenes para la galería con rutas actualizadas
   const imagenesModernidad = [
     {
-      src: "/images/gardens-by-the-bay.jpg",
+      src: getAssetPath("/images/gardens-by-the-bay.jpg"),
       alt: "Gardens by the Bay",
       caption: "Gardens by the Bay, símbolo de la innovación arquitectónica y sostenibilidad"
     },
     {
-      src: "/images/singapore-skyline.jpg",
+      src: getAssetPath("/images/singapore-skyline.jpg"),
       alt: "Horizonte de Singapur",
       caption: "El moderno horizonte de Singapur, reflejo de su desarrollo económico"
+    },
+    {
+      src: getAssetPath("/images/changi-airport.jpg"),
+      alt: "Aeropuerto Changi",
+      caption: "El premiado aeropuerto Changi, considerado uno de los mejores del mundo"
+    },
+    {
+      src: getAssetPath("/images/smart-nation.jpg"),
+      alt: "Iniciativas Smart Nation",
+      caption: "Tecnología urbana como parte de la iniciativa Smart Nation"
     }
   ];
   
-  // Eventos para la línea de tiempo
-  const timelineModernidad = [
+  // Línea de tiempo de desarrollo urbano
+  const hitos = [
     {
-      year: 1965,
-      title: "Independencia",
-      description: "Singapur se independiza de Malasia e inicia su camino de desarrollo."
+      año: "1965",
+      titulo: "Independencia",
+      descripcion: "Separación de Malasia y fundación de la República independiente de Singapur bajo el liderazgo de Lee Kuan Yew.",
+      importancia: "alta"
     },
     {
-      year: 1980,
-      title: "Plan Maestro de Tecnología",
-      description: "Se establece el primer plan maestro para la informatización nacional."
+      año: "1972",
+      titulo: "Estrategia industrial",
+      descripcion: "Cambio de política hacia industrias intensivas en tecnología y atracción de inversión extranjera.",
+      importancia: "media"
     },
     {
-      year: 1999,
-      title: "Iniciativa Singapore ONE",
-      description: "Primera red nacional de banda ancha para conectar hogares y empresas."
+      año: "1980s",
+      titulo: "Centro financiero",
+      descripcion: "Desarrollo como centro financiero regional con la liberalización del sector bancario.",
+      importancia: "media"
     },
     {
-      year: 2006,
-      title: "iN2015 Master Plan",
-      description: "Plan para transformar Singapur en un centro global de tecnología y medios."
+      año: "2000",
+      titulo: "Focus en conocimiento",
+      descripcion: "Transición hacia una economía basada en el conocimiento con inversiones en biotecnología y educación superior.",
+      importancia: "media"
     },
     {
-      year: 2014,
-      title: "Smart Nation Initiative",
-      description: "Lanzamiento de la iniciativa para transformar Singapur mediante tecnología digital."
+      año: "2014",
+      titulo: "Smart Nation",
+      descripcion: "Lanzamiento de la iniciativa Smart Nation para integrar tecnología en todos los aspectos de la vida urbana.",
+      importancia: "alta"
     },
     {
-      year: 2020,
-      title: "Smart Nation 2025",
-      description: "Expansión de la iniciativa con enfoque en IA, datos e infraestructura digital."
+      año: "2019",
+      titulo: "Plan Verde 2030",
+      descripcion: "Ambicioso plan de sostenibilidad para combatir el cambio climático y mantener la ciudad habitable.",
+      importancia: "alta"
     }
   ];
 
   return (
     <div className="modernidad-vision">
       <section className="mb-5">
-        <h2 className="h3 mb-4">Smart Nation Initiative</h2>
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Ciudad del Futuro</h2>
         <div className="row">
           <div className="col-lg-8">
-            <p className="mb-3">
-              Lanzada en 2014, la iniciativa Smart Nation busca transformar Singapur mediante 
-              la tecnología para mejorar la vida de sus ciudadanos, crear más oportunidades 
-              económicas y construir comunidades más fuertes y conectadas.
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              Singapur se ha establecido como un modelo global de planificación urbana innovadora, 
+              combinando alta densidad de población con excelente calidad de vida. La ciudad-estado 
+              ha transformado sus limitaciones geográficas en catalizadores para la innovación.
             </p>
-            <p className="mb-3">
-              Esta visión aprovecha las redes digitales, datos y tecnologías inteligentes para 
-              crear soluciones urbanas innovadoras y sostenibles que posicionen a Singapur a la 
-              vanguardia de las ciudades globales.
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              Con una visión estratégica clara, Singapur ha desarrollado infraestructuras de 
+              vanguardia como el aeropuerto Changi, el sistema de transporte público MRT, y proyectos 
+              emblemáticos como Marina Bay Sands y Gardens by the Bay que han redefinido su horizonte.
             </p>
-            <p className="mb-3">
-              Los proyectos incluyen sistemas de transporte inteligente, pagos digitales universales, 
-              y servicios públicos digitalizados que hacen de Singapur uno de los países 
-              más conectados tecnológicamente del mundo.
+            <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+              La iniciativa Smart Nation, lanzada en 2014, busca aprovechar la tecnología para 
+              mejorar la vida urbana, implementando soluciones innovadoras en movilidad, salud, 
+              administración pública y servicios al ciudadano.
             </p>
           </div>
           <div className="col-lg-4">
-            <div className="card border-info mb-4">
-              <div className="card-header bg-info text-white">
-                Pilares de Smart Nation
+            <div className={`card mb-4 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className={`card-header ${isDark ? 'bg-success bg-opacity-75' : 'bg-success'} text-white`}>
+                <h5 className="card-title mb-0">Pilares de desarrollo</h5>
               </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item d-flex align-items-center">
-                  <i className="fas fa-network-wired text-info me-2"></i> Infraestructura digital
+              <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Planificación a largo plazo</span>
+                  <i className="fas fa-check-circle text-success"></i>
                 </li>
-                <li className="list-group-item d-flex align-items-center">
-                  <i className="fas fa-database text-info me-2"></i> Economía de datos
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Uso eficiente del espacio</span>
+                  <i className="fas fa-check-circle text-success"></i>
                 </li>
-                <li className="list-group-item d-flex align-items-center">
-                  <i className="fas fa-university text-info me-2"></i> Gobierno digital
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Sostenibilidad ambiental</span>
+                  <i className="fas fa-check-circle text-success"></i>
                 </li>
-                <li className="list-group-item d-flex align-items-center">
-                  <i className="fas fa-users text-info me-2"></i> Sociedad digital inclusiva
+                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <span className="fw-medium">Innovación tecnológica</span>
+                  <i className="fas fa-check-circle text-success"></i>
                 </li>
               </ul>
             </div>
@@ -104,53 +127,74 @@ const ModernidadVision = () => {
 
       <ImageGallery 
         images={imagenesModernidad} 
-        title="Infraestructura moderna de Singapur" 
+        title="Símbolos de modernidad" 
       />
 
       <section className="mb-5">
-        <h2 className="h3 mb-4">Proyectos de Innovación Tecnológica</h2>
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Sostenibilidad Urbana</h2>
+        <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
+          A pesar de su limitada extensión territorial, Singapur ha desarrollado estrategias 
+          innovadoras para lograr un desarrollo sostenible que equilibra crecimiento económico, 
+          conservación ambiental y bienestar social.
+        </p>
+        
+        <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
           <div className="col">
-            <div className="card h-100">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <div className="text-info mb-3">
-                  <i className="fas fa-car fa-2x"></i>
-                </div>
-                <h5 className="card-title">Transporte Autónomo</h5>
-                <p className="card-text">
-                  Singapur está a la vanguardia en pruebas de vehículos autónomos, con zonas 
-                  designadas para probar taxis sin conductor y buses autónomos que mejorarán 
-                  la eficiencia del transporte público.
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-leaf text-success me-2"></i>
+                  Ciudad Jardín
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  Desde la visión de Lee Kuan Yew de convertir Singapur en una "Ciudad Jardín", 
+                  el país ha integrado la vegetación en el diseño urbano, con corredores verdes, 
+                  jardines verticales y más de 350 parques.
                 </p>
               </div>
             </div>
           </div>
           <div className="col">
-            <div className="card h-100">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <div className="text-info mb-3">
-                  <i className="fas fa-clinic-medical fa-2x"></i>
-                </div>
-                <h5 className="card-title">Telemedicina</h5>
-                <p className="card-text">
-                  La iniciativa de Telemedicina Nacional permite a los pacientes consultar 
-                  a médicos a distancia, reduciendo las visitas innecesarias a hospitales y 
-                  mejorando el acceso a la atención médica.
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-water text-success me-2"></i>
+                  Gestión del agua
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  El sistema NEWater recicla aguas residuales hasta estándares potables, cubriendo 
+                  hasta el 40% de las necesidades hídricas del país y reduciendo la dependencia 
+                  de importaciones desde Malasia.
                 </p>
               </div>
             </div>
           </div>
           <div className="col">
-            <div className="card h-100">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <div className="text-info mb-3">
-                  <i className="fas fa-wallet fa-2x"></i>
-                </div>
-                <h5 className="card-title">PayNow</h5>
-                <p className="card-text">
-                  Un sistema de pago universal que permite transferencias instantáneas entre 
-                  cuentas bancarias utilizando solo un número de teléfono o número de identidad, 
-                  acelerando la adopción de pagos digitales.
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-subway text-success me-2"></i>
+                  Movilidad sostenible
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  El sistema de cuotas vehiculares (COE) y peajes electrónicos (ERP) limitan la 
+                  congestión vehicular, mientras que el transporte público eficiente cubre el 78% 
+                  de los desplazamientos en hora punta.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-building text-success me-2"></i>
+                  Edificios verdes
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  El programa Green Mark certifica edificios sostenibles, con más del 80% 
+                  de edificios proyectados para 2030 con certificación verde, reduciendo el 
+                  consumo energético de la isla.
                 </p>
               </div>
             </div>
@@ -159,123 +203,16 @@ const ModernidadVision = () => {
       </section>
 
       <Quote 
-        text="Queremos crear una nación donde las personas vivan de forma significativa y plena, permitidas e impulsadas por la tecnología; un Smart Nation. Esto permitirá que nuestros hijos y nietos tengan oportunidades emocionantes y que nuestras empresas puedan innovar."
+        text="Singapur es una ciudad creada a partir de la imaginación. Dentro de una generación, hemos pasado de un asentamiento de bajos ingresos a una metrópolis global que supera por mucho nuestro tamaño."
         author="Lee Hsien Loong, Primer Ministro de Singapur"
-        variant="info"
+        variant="success"
+        citation="14"
       />
 
-      <section className="mb-5">
-        <h2 className="h3 mb-4">Sostenibilidad y Medio Ambiente</h2>
-        <p className="mb-3">
-          A pesar de su limitado espacio territorial, Singapur ha logrado equilibrar el desarrollo urbano 
-          con la conservación ambiental, implementando iniciativas innovadoras:
-        </p>
-
-        <div className="row g-4 mb-4">
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title"><i className="fas fa-leaf text-success me-2"></i> Ciudad Jardín</h5>
-                <p className="card-text">
-                  Singapur se conoce como "Ciudad Jardín" gracias a su extensiva cobertura verde. 
-                  Más del 50% del territorio está cubierto de vegetación, con parques, reservas naturales 
-                  y jardines verticales integrados en los edificios.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title"><i className="fas fa-water text-primary me-2"></i> NEWater</h5>
-                <p className="card-text">
-                  Sistema de reciclaje de agua altamente avanzado que trata aguas residuales hasta 
-                  convertirlas en agua potable de alta calidad, reduciendo la dependencia de importaciones 
-                  de agua y garantizando la seguridad hídrica.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title"><i className="fas fa-solar-panel text-warning me-2"></i> Energía Solar</h5>
-                <p className="card-text">
-                  Singapur está aumentando significativamente el uso de energía solar con paneles 
-                  instalados en tejados de viviendas públicas, estructuras flotantes en embalses y 
-                  fachadas de edificios comerciales.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title"><i className="fas fa-building text-secondary me-2"></i> Edificios Ecológicos</h5>
-                <p className="card-text">
-                  La certificación Green Mark incentiva la construcción de edificios sostenibles con 
-                  eficiencia energética, conservación de agua y materiales ecológicos. El objetivo es 
-                  certificar el 80% de los edificios para 2030.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <h2 className="h3 mb-4">Desafíos del Futuro</h2>
-        <div className="alert alert-info">
-          <div className="d-flex">
-            <div className="me-3">
-              <i className="fas fa-chart-line fa-2x"></i>
-            </div>
-            <div>
-              <h5 className="alert-heading">Envejecimiento de la población</h5>
-              <p className="mb-0">
-                Para 2030, uno de cada cuatro singapurenses tendrá más de 65 años. Singapur está 
-                implementando tecnologías para el envejecimiento activo y servicios de salud adaptados 
-                a una población mayor.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="alert alert-info">
-          <div className="d-flex">
-            <div className="me-3">
-              <i className="fas fa-globe-asia fa-2x"></i>
-            </div>
-            <div>
-              <h5 className="alert-heading">Cambio climático</h5>
-              <p className="mb-0">
-                Como isla de baja altitud, Singapur es vulnerable a la subida del nivel del mar. 
-                El país ha destinado más de S$100 mil millones para infraestructura de protección 
-                climática en las próximas décadas.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="alert alert-info">
-          <div className="d-flex">
-            <div className="me-3">
-              <i className="fas fa-robot fa-2x"></i>
-            </div>
-            <div>
-              <h5 className="alert-heading">Adaptación laboral</h5>
-              <p className="mb-0">
-                La automatización y la IA transformarán el mercado laboral. Singapur invierte en 
-                programas de recapacitación como SkillsFuture para preparar a su población para 
-                los trabajos del futuro.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Timeline 
-        events={timelineModernidad} 
-        title="Evolución tecnológica de Singapur" 
-        variant="info" 
+        events={hitos} 
+        title="Evolución urbana" 
+        variant="success" 
       />
     </div>
   );
