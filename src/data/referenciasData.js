@@ -3,7 +3,7 @@ import { getAssetPath } from '../utils/assetUtils';
 /**
  * Datos bibliográficos y referencias sobre Singapur
  */
-export const referenciasData = {
+export const referencias = {
   // Información general
   titulo: "Referencias y Bibliografía",
   descripcion: "Fuentes consultadas para la elaboración de este sitio",
@@ -211,4 +211,4 @@ export const referenciasData = {
   ]
 };
 
-export default referenciasData;
+export default referencias;
