@@ -102,12 +102,12 @@ img {
 
 /* Fondos y patrones */
 .bg-pattern-light {
-  background-image: url('../assets/images/patterns/light-pattern.png');
+  background-image: url('./assets/images/patterns/light-pattern.png');
   background-repeat: repeat;
 }
 
 .bg-pattern-dark {
-  background-image: url('../assets/images/patterns/dark-pattern.png');
+  background-image: url('./assets/images/patterns/dark-pattern.png');
   background-repeat: repeat;
 }
 
@@ -119,11 +119,11 @@ img {
 }
 
 .bg-singapore-skyline {
-  background-image: url('../assets/images/singapore-skyline.jpg');
+  background-image: url('./images/singapore-skyline.jpg');
 }
 
 .bg-marina-bay {
-  background-image: url('../assets/images/marina-bay-hero.jpg');
+  background-image: url('./assets/images/marina-bay-hero.jpg');
 }
 
 /* Contenedor */

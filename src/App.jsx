@@ -1,11 +1,9 @@
 import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
 import LoadingFallback from './components/ui/LoadingFallback';
-
-// Corregir importaciones - separar ThemeProvider y useTheme
 import ThemeProvider from './context/ThemeProvider';
 import { useTheme } from './context/ThemeContext';
 
@@ -14,17 +12,18 @@ const Home = lazy(() => import('./pages/Home'));
 const DetalleSeccion = lazy(() => import('./pages/DetalleSeccion'));
 const Referencias = lazy(() => import('./pages/Referencias'));
 
-function App() {
-  
+// Componentes
+const NotFound = () => {
+  const { isDark } = useTheme();
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <div className="text-center py-5">
+      <h2 className={`display-6 ${isDark ? 'text-light' : ''}`}>Página no encontrada</h2>
+      <p className="lead">La página que buscas no existe.</p>
+    </div>
   );
-}
+};
 
-// Componente adicional para usar el contexto dentro del Provider
-const AppContent = () => {
+const Layout = () => {
   const { isDark } = useTheme();
   
   return (
@@ -34,17 +33,7 @@ const AppContent = () => {
         <Navbar />
         <main className="container py-4 flex-grow-1">
           <Suspense fallback={<LoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/seccion/:id" element={<DetalleSeccion />} />
-              <Route path="/referencias" element={<Referencias />} />
-              <Route path="*" element={
-                <div className="text-center py-5">
-                  <h2 className={`display-6 ${isDark ? 'text-light' : ''}`}>Página no encontrada</h2>
-                  <p className="lead">La página que buscas no existe.</p>
-                </div>
-              } />
-            </Routes>
+            <Outlet />
           </Suspense>
         </main>
         <Footer />
@@ -52,5 +41,36 @@ const AppContent = () => {
     </div>
   );
 };
+
+// Configuración del router
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { path: "/", element: <Home /> },
+        { path: "/seccion/:id", element: <DetalleSeccion /> },
+        { path: "/referencias", element: <Referencias /> },
+        { path: "*", element: <NotFound /> }
+      ]
+    }
+  ],
+  { 
+    basename: "/Singapur",
+    future: {
+      v7_relativeSplatPath: true
+    }
+  }
+);
+
+// Componente principal
+function App() {
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
+}
 
 export default App;

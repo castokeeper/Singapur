@@ -101,14 +101,14 @@
   --z-index-modal: 1050;
   --z-index-tooltip: 1070;
   
-  /* Rutas a imágenes (para cuando se necesiten en CSS) */
-  --img-path-patterns: url('../assets/images/patterns/');
-  --img-path-backgrounds: url('../assets/images/backgrounds/');
-  --img-path-icons: url('../assets/images/icons/');
+  /* Rutas a imágenes (para cuando se necesiten en CSS) - ACTUALIZADAS */
+  --img-path-patterns: url('../../assets/images/patterns/');
+  --img-path-backgrounds: url('../../assets/images/backgrounds/');
+  --img-path-icons: url('../../assets/images/icons/');
   
-  /* Patrones de fondo */
-  --pattern-light: url('../assets/images/patterns/light-pattern.png');
-  --pattern-dark: url('../assets/images/patterns/dark-pattern.png');
+  /* Patrones de fondo - ACTUALIZADOS */
+  --pattern-light: url('../../assets/images/patterns/light-pattern.png');
+  --pattern-dark: url('../../assets/images/patterns/dark-pattern.png');
   
   /* Layout */
   --header-height: 4rem;

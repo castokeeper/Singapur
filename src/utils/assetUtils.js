@@ -1,15 +1,26 @@
 /**
- * Obtiene la ruta correcta para un asset considerando la base URL
- * @param {string} path - Ruta del asset (con o sin / inicial)
- * @returns {string} - Ruta completa para cualquier entorno
+ * Obtiene la ruta completa para un recurso (asset)
+ * @param {string} path - Ruta relativa al directorio de assets
+ * @returns {string} Ruta completa para el recurso
  */
 export const getAssetPath = (path) => {
-  // Si no hay path, devolver string vacío
   if (!path) return '';
   
-  // Eliminar slash inicial si existe para evitar doble slash
-  const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+  // Normalizar la ruta eliminando dobles barras y espacios
+  let cleanPath = path.trim().replace(/\/+/g, '/');
   
-  // En desarrollo: usar directamente, en producción: añadir base
-  return import.meta.env.BASE_URL + cleanPath;
+  // Detectar patrones de ruta para estandarizarlos
+  if (cleanPath.startsWith('/images/')) {
+    // Desde raíz: /images/algo.jpg -> ./assets/images/algo.jpg
+    cleanPath = './assets' + cleanPath;
+  } else if (cleanPath.startsWith('../assets/images/') || 
+             cleanPath.startsWith('../images/')) {
+    // Desde relativo: ../assets/images/algo.jpg -> ./assets/images/algo.jpg
+    cleanPath = './' + cleanPath.replace(/^\.\.\//, '');
+  } else if (!cleanPath.startsWith('./')) {
+    // Ningún prefijo: algo.jpg -> ./assets/images/algo.jpg
+    cleanPath = './assets/images/' + cleanPath;
+  }
+  
+  return cleanPath;
 };

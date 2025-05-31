@@ -67,18 +67,18 @@
 
 /* Fondo de página con patrón */
 .page-background {
-  background-image: url('../assets/images/patterns/light-pattern.png');
+  background-image: url('./assets/images/patterns/light-pattern.png');
   background-repeat: repeat;
   min-height: 100vh;
 }
 
 .dark-theme .page-background {
-  background-image: url('../assets/images/patterns/dark-pattern.png');
+  background-image: url('./assets/images/patterns/dark-pattern.png');
 }
 
 /* Hero section con imagen de fondo */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/hero-bg.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -88,31 +88,31 @@
 
 /* Secciones con imágenes de fondo específicas */
 .section-hero-historia {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/historia-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/secciones/historia-header.jpg');
 }
 
 .section-hero-identidad {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/identidad-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/secciones/identidad-header.jpg');
 }
 
 .section-hero-linguistica {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/linguistica-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/secciones/linguistica-header.jpg');
 }
 
 .section-hero-festividades {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/festividades-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/secciones/festividades-header.jpg');
 }
 
 .section-hero-gastronomia {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/gastronomia-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/secciones/gastronomia-header.jpg');
 }
 
 .section-hero-monetario {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/monetario-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/secciones/monetario-header.jpg');
 }
 
 .section-hero-modernidad {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/secciones/modernidad-header.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/secciones/modernidad-header.jpg');
 }
 
 /* Contenedor principal */
