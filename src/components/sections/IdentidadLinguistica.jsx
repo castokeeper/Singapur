@@ -3,11 +3,14 @@ import ImageGallery from '../ui/ImageGallery';
 import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
 import ImageWithFallback from '../common/ImageWithFallback';
+import { useTheme } from '../../context/ThemeContext';
 
 /**
  * Componente que muestra información detallada sobre la identidad lingüística de Singapur
  */
 const IdentidadLinguistica = () => {
+  const { isDark } = useTheme();
+
   // Imágenes para la galería
   const imagenesLinguistica = [
     {
@@ -51,6 +54,15 @@ const IdentidadLinguistica = () => {
     }
   ];
 
+  // Ejemplos de Singlish
+  const ejemplosSinglish = [
+    { frase: "Can or not?", traduccion: "¿Es posible?" },
+    { frase: "Don't play play!", traduccion: "¡No bromees!" },
+    { frase: "Shiok!", traduccion: "¡Excelente! (expresión de deleite)" },
+    { frase: "Kiasu", traduccion: "Miedo a perder o quedarse atrás" },
+    { frase: "Makan", traduccion: "Comer (del malayo)" }
+  ];
+
   return (
     <div className="identidad-linguistica">
       <section className="mb-5">
@@ -71,26 +83,57 @@ const IdentidadLinguistica = () => {
             </p>
           </div>
           <div className="col-lg-4">
-            <div className="card mb-4">
-              <div className="card-header bg-primary text-white">
+            <div className={`card mb-4 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className={`card-header ${isDark ? 'bg-primary bg-opacity-75' : 'bg-primary'} text-white`}>
                 <h5 className="card-title mb-0">Idiomas oficiales</h5>
               </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Inglés
-                  <span className="badge bg-primary rounded-pill">Administración y negocios</span>
+              <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <div className="d-flex flex-column">
+                    <div className="d-flex align-items-center mb-1">
+                      <span className="fw-medium fs-5 me-2">Inglés</span>
+                      <i className="fas fa-check-circle text-primary ms-1"></i>
+                    </div>
+                    <span className={`badge ${isDark ? 'bg-primary bg-opacity-75' : 'bg-primary'}`}>
+                      Administración y negocios
+                    </span>
+                  </div>
                 </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Mandarín
-                  <span className="badge bg-primary rounded-pill">Comunidad china</span>
+                
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <div className="d-flex flex-column">
+                    <div className="d-flex align-items-center mb-1">
+                      <span className="fw-medium fs-5 me-2">Mandarín</span>
+                      <i className="fas fa-check-circle text-primary ms-1"></i>
+                    </div>
+                    <span className={`badge ${isDark ? 'bg-primary bg-opacity-75' : 'bg-primary'}`}>
+                      Comunidad china
+                    </span>
+                  </div>
                 </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Malayo
-                  <span className="badge bg-primary rounded-pill">Idioma nacional</span>
+                
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <div className="d-flex flex-column">
+                    <div className="d-flex align-items-center mb-1">
+                      <span className="fw-medium fs-5 me-2">Malayo</span>
+                      <i className="fas fa-flag text-primary ms-1"></i>
+                    </div>
+                    <span className={`badge ${isDark ? 'bg-primary bg-opacity-75' : 'bg-primary'}`}>
+                      Idioma nacional
+                    </span>
+                  </div>
                 </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Tamil
-                  <span className="badge bg-primary rounded-pill">Comunidad india</span>
+                
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  <div className="d-flex flex-column">
+                    <div className="d-flex align-items-center mb-1">
+                      <span className="fw-medium fs-5 me-2">Tamil</span>
+                      <i className="fas fa-check-circle text-primary ms-1"></i>
+                    </div>
+                    <span className={`badge ${isDark ? 'bg-primary bg-opacity-75' : 'bg-primary'}`}>
+                      Comunidad india
+                    </span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -115,16 +158,23 @@ const IdentidadLinguistica = () => {
           significado, y ha evolucionado como una expresión de la identidad nacional compartida.
         </p>
         
-        <div className="card bg-light mb-4">
+        <div className={`card ${isDark ? 'bg-dark border-secondary' : 'bg-white'} mb-4`}>
           <div className="card-body">
-            <h5 className="card-title">Ejemplos de Singlish</h5>
-            <ul className="mb-0">
-              <li><strong>"Can or not?"</strong> - ¿Es posible?</li>
-              <li><strong>"Don't play play!"</strong> - ¡No bromees!</li>
-              <li><strong>"Shiok!"</strong> - ¡Excelente! (expresión de deleite)</li>
-              <li><strong>"Kiasu"</strong> - Miedo a perder o quedarse atrás</li>
-              <li><strong>"Makan"</strong> - Comer (del malayo)</li>
-            </ul>
+            <h3 className={`h4 mb-3 ${isDark ? 'text-light' : ''}`}>Ejemplos de Singlish</h3>
+            
+            {ejemplosSinglish.map((ejemplo, index) => (
+              <div key={index} className="mb-3">
+                <div className={`p-3 rounded ${isDark ? 'bg-secondary bg-opacity-25 text-light' : 'bg-light'}`}>
+                  <p className="mb-0 font-monospace">"{ejemplo.frase}"</p>
+                </div>
+                <p className={`mt-2 ${isDark ? 'text-light' : ''}`}>
+                  <span className="fw-bold">Traducción:</span> 
+                  <span className={`ms-2 ${isDark ? 'text-info' : 'text-primary'}`}>
+                    {ejemplo.traduccion}
+                  </span>
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         

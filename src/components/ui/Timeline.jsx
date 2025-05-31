@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTheme } from '../../context/ThemeContext';
 
 /**
  * Componente Timeline para mostrar eventos cronológicos
+ * Compatible con tema oscuro/claro
+ * 
  * @param {Array} events - Array de eventos para mostrar en la línea del tiempo
  * @param {String} title - Título opcional para la línea del tiempo
  * @param {String} variant - Variante de color para la línea y los puntos
+ * @param {String} className - Clases adicionales
  */
 const Timeline = ({ 
   events = [], 
@@ -13,12 +17,18 @@ const Timeline = ({
   variant = 'primary',
   className = '' 
 }) => {
+  const { isDark } = useTheme();
+  
   if (!events.length) return null;
+  
+  // Ajustar variante si es modo oscuro para mejor contraste
+  const timelineVariant = isDark && variant === 'primary' ? 'info' : variant;
+  const titleClass = isDark ? 'text-light' : '';
   
   return (
     <div className={`mb-5 ${className}`}>
       {title && (
-        <h2 className="h3 mb-4">{title}</h2>
+        <h2 className={`h3 mb-4 ${titleClass}`}>{title}</h2>
       )}
       
       <div className="position-relative">
@@ -28,8 +38,9 @@ const Timeline = ({
             key={index}
             event={event} 
             index={index}
-            variant={variant}
+            variant={timelineVariant}
             isLast={index === events.length - 1}
+            isDark={isDark}
           />
         ))}
       </div>
@@ -40,8 +51,13 @@ const Timeline = ({
 /**
  * Componente individual para cada evento en la línea de tiempo
  */
-const TimelineItem = ({ event, index, variant = 'primary', isLast }) => {
+const TimelineItem = ({ event, index, variant = 'primary', isLast, isDark }) => {
   const isEven = index % 2 === 0;
+  
+  // Clases para la tarjeta según el tema
+  const cardClass = isDark ? 'bg-dark text-light border-secondary' : '';
+  const captionClass = isDark ? 'text-secondary' : 'text-muted';
+  const citationClass = isDark ? 'text-info small' : 'text-primary small';
   
   return (
     <div className="row mb-4">
@@ -91,13 +107,13 @@ const TimelineItem = ({ event, index, variant = 'primary', isLast }) => {
       
       {/* Contenido del evento - siempre visible */}
       <div className="col-12 col-md-5 offset-md-0">
-        <div className="card shadow-sm h-100">
+        <div className={`card shadow-sm h-100 ${cardClass}`}>
           <div className="card-body">
-            <h3 className="h5 card-title">{event.title}</h3>
+            <h3 className={`h5 card-title ${isDark ? 'text-light' : ''}`}>{event.title}</h3>
             
             {/* Descripción */}
             {event.description && (
-              <p className="card-text">{event.description}</p>
+              <p className={`card-text ${isDark ? 'text-light' : ''}`}>{event.description}</p>
             )}
             
             {/* Imagen opcional */}
@@ -107,9 +123,10 @@ const TimelineItem = ({ event, index, variant = 'primary', isLast }) => {
                   src={event.image} 
                   alt={event.imageAlt || event.title}
                   className="img-fluid rounded"
+                  style={{ filter: isDark ? 'brightness(0.9)' : 'none' }} // Suavizar imagen en modo oscuro
                 />
                 {event.imageCaption && (
-                  <p className="small text-muted mt-1 fst-italic">
+                  <p className={`small ${captionClass} mt-1 fst-italic`}>
                     {event.imageCaption}
                   </p>
                 )}
@@ -119,7 +136,7 @@ const TimelineItem = ({ event, index, variant = 'primary', isLast }) => {
             {/* Cita bibliográfica opcional */}
             {event.citation && (
               <div className="mt-3 text-end">
-                <span className="text-primary small">
+                <span className={citationClass}>
                   [cite: {event.citation}]
                 </span>
               </div>

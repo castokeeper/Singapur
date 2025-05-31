@@ -3,11 +3,16 @@ import ImageGallery from '../ui/ImageGallery';
 import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
 import ImageWithFallback from '../common/ImageWithFallback';
+// Importar el contexto
+import { useTheme } from '../../context/ThemeContext';
 
 /**
  * Componente que muestra información sobre el sistema monetario de Singapur
  */
 const SistemaMonetario = () => {
+  // Using underscore prefix to indicate an intentionally unused variable
+  const { isDark: _isDark } = useTheme();
+  
   // Imágenes para la galería monetaria
   const imagenesBilletes = [
     {

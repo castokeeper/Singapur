@@ -4,6 +4,7 @@ import ImageGallery from '../components/ui/ImageGallery';
 import Timeline from '../components/ui/Timeline';
 import Quote from '../components/common/Quote';
 import MapView from '../components/ui/MapView';
+import { useTheme } from '../context/ThemeContext';
 
 // Importaciones de componentes específicos
 import SistemaMonetario from '../components/sections/SistemaMonetario';
@@ -18,6 +19,7 @@ const DetalleSeccion = () => {
   const navigate = useNavigate();
   const [seccion, setSeccion] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     // Simulación de carga de datos
@@ -41,7 +43,7 @@ const DetalleSeccion = () => {
   if (loading) {
     return (
       <div className="d-flex justify-content-center py-5">
-        <div className="spinner-border text-primary" role="status">
+        <div className={`spinner-border ${isDark ? 'text-light' : 'text-primary'}`} role="status">
           <span className="visually-hidden">Cargando...</span>
         </div>
       </div>
@@ -67,8 +69,8 @@ const DetalleSeccion = () => {
           <>
             {seccion.contenido && seccion.contenido.map((bloque, index) => (
               <div key={index} className="mb-5">
-                <h2 className="mb-4">{bloque.titulo}</h2>
-                <div className="fs-5">
+                <h2 className={`mb-4 ${isDark ? 'text-light' : ''}`}>{bloque.titulo}</h2>
+                <div className={`fs-5 ${isDark ? 'text-light' : ''}`}>
                   {bloque.parrafos.map((parrafo, i) => (
                     <p key={i}>{parrafo}</p>
                   ))}
@@ -100,19 +102,39 @@ const DetalleSeccion = () => {
 
   // Determinar la clase de color de la sección
   const getVariantClass = () => {
-    switch (id) {
-      case 'linguistica': return 'primary';
-      case 'monetario': return 'success';
-      case 'festividades': return 'warning';
-      case 'modernidad': return 'info';
-      default: return 'primary';
+    // Para tema oscuro, algunos colores pueden ser ajustados para mejor contraste
+    if (isDark) {
+      switch (id) {
+        case 'linguistica': return 'primary';
+        case 'monetario': return 'success';
+        case 'festividades': return 'info'; // cambiado de warning para mejor contraste en oscuro
+        case 'modernidad': return 'info';
+        default: return 'primary';
+      }
+    } else {
+      // Tema claro - colores originales
+      switch (id) {
+        case 'linguistica': return 'primary';
+        case 'monetario': return 'success';
+        case 'festividades': return 'warning';
+        case 'modernidad': return 'info';
+        default: return 'primary';
+      }
     }
   };
 
+  // Determinar clases para el header según el tema
+  const getHeaderClass = () => {
+    const baseClass = `p-4 rounded-3 bg-${getVariantClass()} mb-4 `;
+    return isDark 
+      ? `${baseClass} bg-opacity-25 border border-${getVariantClass()}` 
+      : `${baseClass} bg-opacity-10`;
+  };
+
   return (
-    <div>
+    <div className={`theme-transition ${isDark ? 'text-light' : ''}`}>
       {/* Encabezado de la sección */}
-      <div className={`p-4 rounded-3 bg-${getVariantClass()} bg-opacity-10 mb-4`}>
+      <div className={getHeaderClass()}>
         <h1 className="display-5 fw-bold">{seccion.titulo}</h1>
         <p className="fs-5">{seccion.descripcion}</p>
       </div>
@@ -135,12 +157,12 @@ const DetalleSeccion = () => {
 
         <div className="col-lg-4">
           {/* Información lateral */}
-          <div className="card mb-4 shadow-sm">
+          <div className={`card mb-4 shadow-sm ${isDark ? 'bg-dark border-secondary' : ''}`}>
             <div className="card-body">
-              <h3 className="card-title h4">Datos Clave</h3>
-              <ul className="list-group list-group-flush">
+              <h3 className={`card-title h4 ${isDark ? 'text-light' : ''}`}>Datos Clave</h3>
+              <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
                 {seccion.datosClave && seccion.datosClave.map((dato, index) => (
-                  <li key={index} className="list-group-item">
+                  <li key={index} className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
                     <strong>{dato.titulo}:</strong> {dato.valor}
                   </li>
                 ))}
@@ -150,9 +172,9 @@ const DetalleSeccion = () => {
 
           {/* Mapa si existe */}
           {seccion.ubicaciones && (
-            <div className="card mb-4 shadow-sm">
+            <div className={`card mb-4 shadow-sm ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <h3 className="card-title h4">Ubicaciones Relevantes</h3>
+                <h3 className={`card-title h4 ${isDark ? 'text-light' : ''}`}>Ubicaciones Relevantes</h3>
                 <MapView 
                   markers={seccion.ubicaciones}
                 />

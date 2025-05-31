@@ -1,0 +1,9 @@
+{
+  "name": "Singapur: Una Mirada Profunda",
+  "short_name": "Singapur",
+  "theme_color": "#0d6efd",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/"
+}

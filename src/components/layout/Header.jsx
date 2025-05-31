@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../../context/theme-context-value';
+import { ThemeContext, useTheme } from '../../context/ThemeContext';
 
 const Header = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useTheme();
   
   return (
     <header className="bg-primary text-white py-4">
@@ -19,15 +19,11 @@ const Header = () => {
           </div>
           
           <button 
-            className="btn btn-outline-light" 
-            onClick={toggleTheme}
-            aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
+            onClick={toggleTheme} 
+            className="btn btn-sm btn-outline-light"
+            aria-label="Cambiar tema"
           >
-            {theme === 'light' ? (
-              <i className="fas fa-moon"></i>
-            ) : (
-              <i className="fas fa-sun"></i>
-            )}
+            {theme === 'dark' ? '☀️' : '🌙'}
           </button>
         </div>
       </div>

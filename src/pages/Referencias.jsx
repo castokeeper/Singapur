@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReferenciasCard from '../components/sections/ReferenciasCard';
+import { useTheme } from '../context/ThemeContext';
 
 // Importación de ambos archivos de referencias
 import { referenciasData } from '../data/referencias';
@@ -9,6 +10,16 @@ const Referencias = () => {
   const [filtro, setFiltro] = useState('');
   const [categoriaSel, setCategoriaSel] = useState('todas');
   const [referenciasCompletas, setReferenciasCompletas] = useState([]);
+  const { isDark } = useTheme();
+  
+  // Clases condicionales según el tema
+  const headerClass = isDark ? 'p-4 rounded-3 bg-dark border border-secondary mb-4' : 'p-4 rounded-3 bg-light mb-4';
+  const textClass = isDark ? 'text-light' : '';
+  const cardClass = isDark ? 'bg-dark border-secondary' : '';
+  const formControlClass = isDark ? 'bg-dark text-light border-secondary' : '';
+  const statNumberClass = isDark ? 'text-info' : 'text-primary';
+  const citeBgClass = isDark ? 'bg-dark border-secondary' : 'bg-white border';
+  const citeTextClass = isDark ? 'text-secondary' : 'text-muted';
   
   // Combinar y normalizar referencias de ambas fuentes al cargar el componente
   useEffect(() => {
@@ -51,6 +62,22 @@ const Referencias = () => {
     return mapping[type] || 'referencia';
   };
   
+  // Función para ajustar variantes de color según el tema
+  const getVariant = (baseVariant) => {
+    if (!isDark) return baseVariant;
+    
+    // Ajustar colores para mejor contraste en modo oscuro
+    const variantMap = {
+      'primary': 'primary',
+      'info': 'info',
+      'success': 'success',
+      'warning': 'info', // Cambiar warning a info en modo oscuro
+      'danger': 'danger'
+    };
+    
+    return variantMap[baseVariant] || baseVariant;
+  };
+  
   // Extraer categorías únicas de las referencias combinadas
   const categorias = referenciasCompletas.length > 0 
     ? ['todas', ...new Set(referenciasCompletas.map(ref => ref.categoria))]
@@ -69,17 +96,17 @@ const Referencias = () => {
   });
   
   return (
-    <div>
-      <div className="p-4 rounded-3 bg-light mb-4">
-        <h1 className="display-5 fw-bold">Referencias</h1>
-        <p className="fs-5">
+    <div className={`theme-transition ${isDark ? 'bg-dark' : ''}`}>
+      <div className={headerClass}>
+        <h1 className={`display-5 fw-bold ${textClass}`}>Referencias</h1>
+        <p className={`fs-5 ${textClass}`}>
           Fuentes bibliográficas y recursos consultados para la elaboración de este proyecto.
         </p>
       </div>
 
       <div className="row">
         <div className="col-lg-8">
-          <p className="lead mb-4">
+          <p className={`lead mb-4 ${textClass}`}>
             Las siguientes referencias han sido utilizadas como fuentes de información para el desarrollo 
             del contenido presentado en este sitio sobre Singapur.
           </p>
@@ -87,13 +114,13 @@ const Referencias = () => {
           <div className="mb-4">
             <input 
               type="text" 
-              className="form-control mb-2" 
+              className={`form-control mb-2 ${formControlClass}`}
               placeholder="Buscar por título o autor..."
               value={filtro}
               onChange={(e) => setFiltro(e.target.value)}
             />
             <select 
-              className="form-select"
+              className={`form-select ${formControlClass}`}
               value={categoriaSel}
               onChange={(e) => setCategoriaSel(e.target.value)}
             >
@@ -108,49 +135,52 @@ const Referencias = () => {
           </div>
 
           {/* Filtrar referencias por tipo */}
-          <h2 className="h3 mb-3">Libros y publicaciones académicas</h2>
+          <h2 className={`h3 mb-3 ${textClass}`}>Libros y publicaciones académicas</h2>
           {referenciasFiltradas
             .filter(ref => ['libro', 'artículo', 'articulo', 'book', 'academic'].includes(ref.tipo?.toLowerCase()))
             .map((referencia, index) => (
               <ReferenciasCard 
                 key={referencia.id || index} 
                 {...referencia} 
-                variant={index % 2 === 0 ? 'primary' : 'info'}
+                variant={getVariant(index % 2 === 0 ? 'primary' : 'info')}
+                isDark={isDark}
               />
             ))}
 
-          <h2 className="h3 mb-3 mt-5">Informes y documentos oficiales</h2>
+          <h2 className={`h3 mb-3 mt-5 ${textClass}`}>Informes y documentos oficiales</h2>
           {referenciasFiltradas
             .filter(ref => ['informe', 'documento oficial', 'report', 'official'].includes(ref.tipo?.toLowerCase()))
             .map((referencia, index) => (
               <ReferenciasCard 
                 key={referencia.id || index} 
                 {...referencia} 
-                variant="success"
+                variant={getVariant("success")}
+                isDark={isDark}
               />
             ))}
 
-          <h2 className="h3 mb-3 mt-5">Recursos web y otros</h2>
+          <h2 className={`h3 mb-3 mt-5 ${textClass}`}>Recursos web y otros</h2>
           {referenciasFiltradas
             .filter(ref => !['libro', 'artículo', 'articulo', 'book', 'academic', 'informe', 'documento oficial', 'report', 'official'].includes(ref.tipo?.toLowerCase()))
             .map((referencia, index) => (
               <ReferenciasCard 
                 key={referencia.id || index} 
                 {...referencia} 
-                variant="warning"
+                variant={getVariant("warning")}
+                isDark={isDark}
               />
             ))}
         </div>
 
         <div className="col-lg-4">
-          <div className="card mb-4 shadow-sm">
+          <div className={`card mb-4 shadow-sm ${cardClass}`}>
             <div className="card-body">
-              <h3 className="card-title h4">Metodología</h3>
-              <p className="card-text">
+              <h3 className={`card-title h4 ${textClass}`}>Metodología</h3>
+              <p className={`card-text ${textClass}`}>
                 {referenciasData.description || 
                   "La información presentada en este proyecto ha sido cuidadosamente seleccionada a partir de fuentes académicas, libros especializados, publicaciones oficiales del gobierno de Singapur y recursos web reconocidos."}
               </p>
-              <p className="card-text">
+              <p className={`card-text ${textClass}`}>
                 Cada dato ha sido verificado utilizando múltiples fuentes para garantizar su 
                 precisión y relevancia.
               </p>
@@ -158,29 +188,29 @@ const Referencias = () => {
           </div>
 
           {/* Estadísticas */}
-          <div className="card mb-4">
+          <div className={`card mb-4 ${cardClass}`}>
             <div className="card-body">
-              <h3 className="card-title h4">Estadísticas</h3>
+              <h3 className={`card-title h4 ${textClass}`}>Estadísticas</h3>
               <div className="row text-center">
                 {referenciasData.stats && referenciasData.stats.map((stat, index) => (
                   <div key={index} className="col-6 mb-3">
-                    <h4 className="display-6 fw-bold text-primary">{stat.value}</h4>
-                    <p className="text-muted small">{stat.label}</p>
+                    <h4 className={`display-6 fw-bold ${statNumberClass}`}>{stat.value}</h4>
+                    <p className={isDark ? 'text-secondary small' : 'text-muted small'}>{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="card bg-light">
+          <div className={`card ${isDark ? 'bg-dark border-secondary' : 'bg-light'}`}>
             <div className="card-body">
-              <h3 className="card-title h4">Citar este proyecto</h3>
-              <p className="card-text">
+              <h3 className={`card-title h4 ${textClass}`}>Citar este proyecto</h3>
+              <p className={`card-text ${textClass}`}>
                 Si deseas citar este proyecto en tus trabajos académicos, puedes utilizar el 
                 siguiente formato:
               </p>
-              <div className="bg-white p-3 rounded border">
-                <small className="text-muted">
+              <div className={`${citeBgClass} p-3 rounded`}>
+                <small className={citeTextClass}>
                   "Singapur: Una mirada profunda" (2023). Proyecto web educativo sobre la 
                   cultura, economía y desarrollo de Singapur. [En línea] Disponible en: 
                   <span className="d-block mt-1">https://singapur-proyecto.web/</span>

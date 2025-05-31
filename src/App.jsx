@@ -1,28 +1,34 @@
-import React, { Suspense, lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import ThemeProvider from './context/ThemeProvider';
 import Header from './components/layout/Header';
-import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import './App.css';
+import Navbar from './components/layout/Navbar';
+import LoadingFallback from './components/ui/LoadingFallback';
 
-// Componente de carga para Suspense
-const LoadingFallback = () => (
-  <div className="d-flex justify-content-center align-items-center" style={{ height: '8rem' }}>
-    <div className="spinner-border text-primary" role="status">
-      <span className="visually-hidden">Cargando...</span>
-    </div>
-  </div>
-);
+// Corregir importaciones - separar ThemeProvider y useTheme
+import ThemeProvider from './context/ThemeProvider';
+import { useTheme } from './context/ThemeContext';
 
-// Carga perezosa de componentes de página
+// Lazy load components
 const Home = lazy(() => import('./pages/Home'));
 const DetalleSeccion = lazy(() => import('./pages/DetalleSeccion'));
 const Referencias = lazy(() => import('./pages/Referencias'));
 
 function App() {
+  
   return (
     <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+}
+
+// Componente adicional para usar el contexto dentro del Provider
+const AppContent = () => {
+  const { isDark } = useTheme();
+  
+  return (
+    <div className={`app-container ${isDark ? 'bg-dark text-light' : ''}`}>
       <div className="d-flex flex-column min-vh-100 theme-transition">
         <Header />
         <Navbar />
@@ -34,7 +40,7 @@ function App() {
               <Route path="/referencias" element={<Referencias />} />
               <Route path="*" element={
                 <div className="text-center py-5">
-                  <h2 className="display-6">Página no encontrada</h2>
+                  <h2 className={`display-6 ${isDark ? 'text-light' : ''}`}>Página no encontrada</h2>
                   <p className="lead">La página que buscas no existe.</p>
                 </div>
               } />
@@ -43,8 +49,8 @@ function App() {
         </main>
         <Footer />
       </div>
-    </ThemeProvider>
+    </div>
   );
-}
+};
 
 export default App;

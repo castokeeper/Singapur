@@ -3,11 +3,19 @@ import ImageGallery from '../ui/ImageGallery';
 import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
 import ImageWithFallback from '../common/ImageWithFallback';
+// Importar el contexto
+import { useTheme } from '../../context/ThemeContext';
 
 /**
  * Componente que muestra información sobre festividades y tradiciones de Singapur
  */
 const Festividades = () => {
+  const { isDark } = useTheme();
+  
+  // Ajustar la variante de alertas/cards para modo oscuro
+  const cardHeaderClass = isDark ? 'bg-info text-white' : 'bg-warning text-white';
+  const cardBorderClass = isDark ? 'border-info' : 'border-warning';
+
   // Imágenes para la galería
   const imagenesFestividades = [
     {
@@ -154,16 +162,26 @@ const Festividades = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="card border-warning mb-4">
-              <div className="card-header bg-warning text-white">
+            <div className={`card ${cardBorderClass} mb-4`}>
+              <div className={`card-header ${cardHeaderClass}`}>
                 Tradiciones del Año Nuevo Chino
               </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">Reunión familiar en Nochevieja lunar</li>
-                <li className="list-group-item">Intercambio de hongbao (sobres rojos)</li>
-                <li className="list-group-item">Limpieza completa de la casa antes del año nuevo</li>
-                <li className="list-group-item">Desfiles con danza del león y dragón</li>
-                <li className="list-group-item">Decoraciones rojas y doradas para buena suerte</li>
+              <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  Reunión familiar en Nochevieja lunar
+                </li>
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  Intercambio de hongbao (sobres rojos)
+                </li>
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  Limpieza completa de la casa antes del año nuevo
+                </li>
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  Desfiles con danza del león y dragón
+                </li>
+                <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
+                  Decoraciones rojas y doradas para buena suerte
+                </li>
               </ul>
             </div>
           </div>
@@ -274,7 +292,7 @@ const Festividades = () => {
               Cada año tiene un tema diferente que refleja los valores y aspiraciones nacionales.
             </p>
             <p className="card-text">
-              Los singaporenses visten con orgullo los colores nacionales rojo y blanco, y los 
+              Los singapurenses visten con orgullo los colores nacionales rojo y blanco, y los 
               HDB (bloques de viviendas públicas) están decorados con banderas. Las comunidades 
               organizan celebraciones locales que fomentan la cohesión social.
             </p>

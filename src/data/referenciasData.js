@@ -6,7 +6,7 @@ export const referencias = [
     año: 2012,
     editorial: "Marshall Cavendish",
     lugar: "Singapur",
-    categoria: "historia",
+    categoria: "Historia",
     url: "https://www.goodreads.com/book/show/189599.The_Singapore_Story"
   },
   {
@@ -16,7 +16,7 @@ export const referencias = [
     año: 2019,
     editorial: "I.B. Tauris",
     lugar: "Londres",
-    categoria: "historia",
+    categoria: "Historia",
     url: "https://www.bloomsbury.com/uk/singapore-9781350166127/"
   },
   {
@@ -26,7 +26,7 @@ export const referencias = [
     año: 2017,
     editorial: "Springer",
     lugar: "Singapur",
-    categoria: "linguistica",
+    categoria: "Linguistica",
     url: "https://www.springer.com/gp/book/9789811064821"
   },
   {
@@ -34,7 +34,7 @@ export const referencias = [
     titulo: "The Currency of Singapore: A Brief History",
     autores: "Monetary Authority of Singapore",
     año: 2021,
-    categoria: "monetario",
+    categoria: "Monetario",
     url: "https://www.mas.gov.sg/currency/Singapore-Circulation-Currency-Notes"
   }
 ];
