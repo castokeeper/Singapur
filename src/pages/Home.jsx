@@ -4,6 +4,7 @@ import ImageGallery from '../components/ui/ImageGallery';
 import Quote from '../components/common/Quote';
 import Hero from '../components/ui/Hero';
 import { useTheme } from '../context/ThemeContext';
+import { getAssetPath } from '../utils/assetUtils';
 
 const Home = () => {
   const { isDark } = useTheme();
@@ -11,17 +12,17 @@ const Home = () => {
   // Imágenes para la galería principal
   const highlightImages = [
     {
-      src: "/images/singapore-skyline.jpg",
+      src: getAssetPath('/images/singapore-skyline.jpg'),
       alt: "Vista panorámica de Singapur",
       caption: "El impresionante horizonte de Singapur"
     },
     {
-      src: "/images/merlion-statue.jpg",
+      src: getAssetPath('/images/merlion-statue.jpg'),
       alt: "Estatua del Merlion",
       caption: "El icónico Merlion, símbolo de Singapur"
     },
     {
-      src: "/images/gardens-by-the-bay.jpg",
+      src: getAssetPath('/images/gardens-by-the-bay.jpg'),
       alt: "Gardens by the Bay",
       caption: "Los futuristas Supertrees en Gardens by la Bahía"
     }
@@ -30,7 +31,7 @@ const Home = () => {
   return (
     <div className="theme-transition">
       <Hero 
-        backgroundImage="/images/singapore-skyline.jpg"
+        backgroundImage={getAssetPath('/images/singapore-skyline.jpg')}
         title="Singapur: Una Mirada Profunda"
         subtitle="Descubre el fascinante contraste entre tradición y modernidad en esta pequeña nación insular del Sudeste Asiático"
         buttonText="Comenzar Exploración"

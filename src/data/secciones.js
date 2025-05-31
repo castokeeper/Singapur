@@ -1,3 +1,5 @@
+import { getAssetPath } from '../utils/assetUtils';
+
 export const seccionesData = [
   {
     id: 'linguistica',
@@ -87,7 +89,7 @@ export const seccionesData = [
         ],
         imagenes: [
           {
-            src: "/images/singapore-skyline.jpg", // Usando imagen existente en lugar de /images/monetario/dolares-singapur.jpg
+            src: getAssetPath('/images/singapore-skyline.jpg'),
             alt: "Horizonte financiero de Singapur",
             caption: "El distrito financiero de Singapur, centro del sistema monetario del país"
           }

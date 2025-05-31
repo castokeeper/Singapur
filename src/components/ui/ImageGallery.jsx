@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import * as bootstrap from 'bootstrap';
 import ImageWithFallback from '../common/ImageWithFallback';
 import { useTheme } from '../../context/ThemeContext';
+import { getAssetPath } from '../../utils/assetUtils';
 
 /**
  * Componente de galería de imágenes con lightbox
@@ -32,7 +33,7 @@ const ImageGallery = ({ images, title }) => {
               isDark ? 'bg-dark text-light border-secondary' : 'bg-white'
             }`}>
               <ImageWithFallback 
-                src={image.src} 
+                src={getAssetPath(image.src)} 
                 alt={image.alt || `Imagen ${index + 1}`}
                 fallbackSrc="/images/singapore-skyline.jpg" // Imagen de respaldo general
                 className="card-img-top"
