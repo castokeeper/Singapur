@@ -1,67 +1,116 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import IdentidadLinguistica from '../components/sections/IdentidadLinguistica';
-import SistemaMonetario from '../components/sections/SistemaMonetario';
-import FestividadesTradiciones from '../components/sections/FestividadesTradiciones';
-import ModernidadVision from '../components/sections/ModernidadVision';
+import ImageGallery from '../components/ui/ImageGallery';
+import Quote from '../components/common/Quote';
+import Hero from '../components/ui/Hero';
 
 const Home = () => {
-  return (
-    <div>
-      {/* Hero Section */}
-      <div className="relative h-96 overflow-hidden rounded-xl mb-12 shadow-lg">
-        <img 
-          src="/images/singapore_skyline.jpg" 
-          alt="Skyline de Singapur" 
-          className="absolute w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex flex-col justify-center p-8">
-          <h1 className="text-5xl font-bold text-white mb-4">
-            Singapur: Una Mirada Profunda
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl">
-            Del tercer mundo al primero: explorando la extraordinaria transformación de una nación.
-          </p>
-        </div>
-      </div>
-      
-      {/* Navegación de secciones */}
-      <nav className="sticky top-0 z-10 bg-white/90 backdrop-blur-md shadow-sm mb-10 py-3">
-        <div className="flex justify-center overflow-x-auto space-x-6 px-4">
-          <a href="#identidad-linguistica" className="text-blue-600 hover:text-blue-800 whitespace-nowrap">
-            Identidad Lingüística
-          </a>
-          <a href="#sistema-monetario" className="text-blue-600 hover:text-blue-800 whitespace-nowrap">
-            Sistema Monetario
-          </a>
-          <a href="#festividades-tradiciones" className="text-blue-600 hover:text-blue-800 whitespace-nowrap">
-            Festividades y Tradiciones
-          </a>
-          <a href="#modernidad-singapur" className="text-blue-600 hover:text-blue-800 whitespace-nowrap">
-            Modernidad y Visión
-          </a>
-          <Link to="/referencias" className="text-blue-600 hover:text-blue-800 whitespace-nowrap">
-            Referencias
-          </Link>
-        </div>
-      </nav>
+  // Imágenes para la galería principal
+  const highlightImages = [
+    {
+      src: "/images/singapore-skyline.jpg",
+      alt: "Vista panorámica de Singapur",
+      caption: "El impresionante horizonte de Singapur"
+    },
+    {
+      src: "/images/merlion-statue.jpg",
+      alt: "Estatua del Merlion",
+      caption: "El icónico Merlion, símbolo de Singapur"
+    },
+    {
+      src: "/images/gardens-by-the-bay.jpg",
+      alt: "Gardens by the Bay",
+      caption: "Los futuristas Supertrees en Gardens by the Bay"
+    }
+  ];
 
-      {/* Secciones de contenido */}
-      <IdentidadLinguistica />
-      <SistemaMonetario />
-      <FestividadesTradiciones />
-      <ModernidadVision />
-      
-      {/* Botón para volver arriba */}
-      <button 
-        className="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors"
-        onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-      </button>
-    </div>
+  return (
+    <>
+      <Hero 
+        backgroundImage="/images/singapore-skyline.jpg"
+        title="Singapur: Una Mirada Profunda"
+        subtitle="Descubre el fascinante contraste entre tradición y modernidad en esta pequeña nación insular del Sudeste Asiático"
+        buttonText="Comenzar Exploración"
+        buttonLink="/seccion/linguistica"
+      />
+
+      <section className="mb-5">
+        <ImageGallery images={highlightImages} title="Singapur en Imágenes" />
+      </section>
+
+      <section className="mb-5">
+        <h2 className="mb-4">¿Qué Exploraremos?</h2>
+        <div className="row g-4">
+          <div className="col-md-6 col-lg-3">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <div className="text-primary mb-3">
+                  <i className="fas fa-language fa-2x"></i>
+                </div>
+                <h3 className="h5 card-title">Identidad Lingüística</h3>
+                <p className="card-text">Análisis del multilingüismo oficial y su rol en la identidad nacional.</p>
+                <Link to="/seccion/linguistica" className="btn btn-outline-primary mt-2">
+                  Explorar
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-6 col-lg-3">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <div className="text-success mb-3">
+                  <i className="fas fa-dollar-sign fa-2x"></i>
+                </div>
+                <h3 className="h5 card-title">Sistema Monetario</h3>
+                <p className="card-text">Evolución y relevancia del dólar singapurense en la economía global.</p>
+                <Link to="/seccion/monetario" className="btn btn-outline-success mt-2">
+                  Explorar
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-6 col-lg-3">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <div className="text-warning mb-3">
+                  <i className="fas fa-dragon fa-2x"></i>
+                </div>
+                <h3 className="h5 card-title">Festividades</h3>
+                <p className="card-text">Celebraciones multiculturales que reflejan la diversidad étnica del país.</p>
+                <Link to="/seccion/festividades" className="btn btn-outline-warning mt-2">
+                  Explorar
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-6 col-lg-3">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <div className="text-info mb-3">
+                  <i className="fas fa-city fa-2x"></i>
+                </div>
+                <h3 className="h5 card-title">Modernidad</h3>
+                <p className="card-text">El avance tecnológico y la visión de Smart Nation de Singapur.</p>
+                <Link to="/seccion/modernidad" className="btn btn-outline-info mt-2">
+                  Explorar
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <Quote 
+          text="Singapur es una historia extraordinaria de cómo un pequeño país puede prosperar contra todo pronóstico, reinventándose constantemente."
+          author="Lee Hsien Loong, Primer Ministro de Singapur"
+          variant="primary"
+        />
+      </section>
+    </>
   );
 };
 

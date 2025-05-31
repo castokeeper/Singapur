@@ -1,0 +1,26 @@
+// Personalización de colores de Bootstrap
+$primary: #0d6efd;
+$secondary: #6c757d;
+$success: #10b981;
+$warning: #f59e0b;
+$info: #8b5cf6;
+$danger: #ef4444;
+
+// Importar Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Estilos personalizados adicionales
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+}
+
+// Personalización para tema oscuro
+[data-bs-theme="dark"] {
+  --bs-body-bg: #212529;
+  --bs-body-color: #f8f9fa;
+}

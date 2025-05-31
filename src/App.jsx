@@ -1,34 +1,43 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ThemeProvider from './context/ThemeProvider';
 import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import Home from './pages/Home';
-import DetalleSeccion from './pages/DetalleSeccion';
-import Referencias from './pages/Referencias';
 import './App.css';
 
 // Componente de carga para Suspense
 const LoadingFallback = () => (
-  <div className="flex justify-center items-center h-32">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+  <div className="d-flex justify-content-center align-items-center" style={{ height: '8rem' }}>
+    <div className="spinner-border text-primary" role="status">
+      <span className="visually-hidden">Cargando...</span>
+    </div>
   </div>
 );
+
+// Carga perezosa de componentes de página
+const Home = lazy(() => import('./pages/Home'));
+const DetalleSeccion = lazy(() => import('./pages/DetalleSeccion'));
+const Referencias = lazy(() => import('./pages/Referencias'));
 
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+      <div className="d-flex flex-column min-vh-100 theme-transition">
         <Header />
         <Navbar />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="container py-4 flex-grow-1">
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/seccion/:id" element={<DetalleSeccion />} />
               <Route path="/referencias" element={<Referencias />} />
-              <Route path="*" element={<div className="text-center py-10"><h2 className="text-2xl">Página no encontrada</h2></div>} />
+              <Route path="*" element={
+                <div className="text-center py-5">
+                  <h2 className="display-6">Página no encontrada</h2>
+                  <p className="lead">La página que buscas no existe.</p>
+                </div>
+              } />
             </Routes>
           </Suspense>
         </main>
