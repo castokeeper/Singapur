@@ -1,0 +1,54 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+*.pnpm
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+.report/
+
+# Node.js
+/node_modules
+/dist
+/dist-ssr
+/*.local
+/.vitepress/cache
+/.yarn/cache
+/.yarn/unplugged
+.env
+.env.*
+!.env.production.local
+/coverage
+/build
+/out
+
+# IDEs and editors
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.vspscc
+*.csproj
+*.fsproj
+*.vbproj
+*.user
+*.bak
+*.pyc
+*.swp
+*.swo
+*.tmp
+*.iml
+.DS_Store
+
+# Misc
+.cache
+.npm
+.yarn-integrity
+.rollup.cache
+.eslintcache
