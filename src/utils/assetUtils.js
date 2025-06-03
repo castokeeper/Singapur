@@ -9,17 +9,19 @@ export const getAssetPath = (path) => {
   // Normalizar la ruta eliminando dobles barras y espacios
   let cleanPath = path.trim().replace(/\/+/g, '/');
   
-  // Detectar patrones de ruta para estandarizarlos
-  if (cleanPath.startsWith('/images/')) {
-    // Desde raíz: /images/algo.jpg -> ./assets/images/algo.jpg
-    cleanPath = './assets' + cleanPath;
-  } else if (cleanPath.startsWith('../assets/images/') || 
-             cleanPath.startsWith('../images/')) {
-    // Desde relativo: ../assets/images/algo.jpg -> ./assets/images/algo.jpg
-    cleanPath = './' + cleanPath.replace(/^\.\.\//, '');
-  } else if (!cleanPath.startsWith('./')) {
-    // Ningún prefijo: algo.jpg -> ./assets/images/algo.jpg
-    cleanPath = './assets/images/' + cleanPath;
+  // Asegurarnos que todas las rutas empiecen con /
+  if (!cleanPath.startsWith('/')) {
+    cleanPath = '/' + cleanPath;
+  }
+  
+  // Si la ruta comienza con /assets/images, quitar /assets
+  if (cleanPath.startsWith('/assets/images/')) {
+    cleanPath = cleanPath.replace('/assets', '');
+  }
+  
+  // Si la ruta no incluye /images/ pero debería estar en esa carpeta
+  if (!cleanPath.includes('/images/')) {
+    cleanPath = '/images' + cleanPath;
   }
   
   return cleanPath;
