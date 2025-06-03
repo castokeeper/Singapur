@@ -32,7 +32,7 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
-/* Estilos para fondos con imágenes - CORREGIDOS */
+/* Estilos para fondos con imágenes */
 .hero-background {
   background-image: url('/images/hero-bg.jpg');
   background-size: cover;

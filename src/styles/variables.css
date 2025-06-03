@@ -101,12 +101,12 @@
   --z-index-modal: 1050;
   --z-index-tooltip: 1070;
   
-  /* Rutas a imágenes (para cuando se necesiten en CSS) - CORREGIDAS */
-  --img-path-patterns: url('/images/patterns/');
-  --img-path-backgrounds: url('/images/backgrounds/');
-  --img-path-icons: url('/images/icons/');
+  /* Rutas a imágenes (para cuando se necesiten en CSS) */
+  --img-path-patterns: url('@/assets/images/patterns/');
+  --img-path-backgrounds: url('@/assets/images/backgrounds/');
+  --img-path-icons: url('@/assets/images/icons/');
   
-  /* Patrones de fondo - CORREGIDOS */
+  /* Patrones de fondo */
   --pattern-light: url('/images/patterns/light-pattern.png');
   --pattern-dark: url('/images/patterns/dark-pattern.png');
   

@@ -6,23 +6,12 @@
 export const getAssetPath = (path) => {
   if (!path) return '';
   
-  // Normalizar la ruta eliminando dobles barras y espacios
-  let cleanPath = path.trim().replace(/\/+/g, '/');
-  
-  // Asegurarnos que todas las rutas empiecen con /
+  // Asegurarnos de que la ruta comienza con '/'
+  let cleanPath = path.trim();
   if (!cleanPath.startsWith('/')) {
     cleanPath = '/' + cleanPath;
   }
   
-  // Si la ruta comienza con /assets/images, quitar /assets
-  if (cleanPath.startsWith('/assets/images/')) {
-    cleanPath = cleanPath.replace('/assets', '');
-  }
-  
-  // Si la ruta no incluye /images/ pero debería estar en esa carpeta
-  if (!cleanPath.includes('/images/')) {
-    cleanPath = '/images' + cleanPath;
-  }
-  
+  // No agregamos BASE_URL porque las rutas ya son absolutas desde la raíz
   return cleanPath;
 };

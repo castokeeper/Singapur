@@ -2,10 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
@@ -13,28 +12,25 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@assets': path.resolve(__dirname, './assets'),
-      // Alias específicos para imágenes
-      '@images': path.resolve(__dirname, './public/assets/images')
+      '@images': path.resolve(__dirname, './public/images')
     }
   },
-  // Manejar adecuadamente assets estáticos
   build: {
+    outDir: 'dist',
+    assetsInlineLimit: 0, // Evitar inlining de assets pequeños
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.').at(1);
+          const info = assetInfo.name.split('.');
+          const extType = info[info.length - 1];
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'img';
+            return `assets/img/[name]-[hash][extname]`;
           }
-          return `assets/${extType}/[name]-[hash][extname]`;
-        },
-      },
-    },
+          return `assets/[name]-[hash][extname]`;
+        }
+      }
+    }
   },
-  // Configuración para servidor de desarrollo
-  server: {
-    port: 3000,
-    open: true
-  }
+  publicDir: 'public'
 });
