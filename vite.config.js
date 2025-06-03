@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // Usar rutas relativas
+  base: '/Singapur/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
@@ -17,7 +17,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsInlineLimit: 4096,
-    emptyOutDir: true
+    emptyOutDir: true,
+    chunkSizeWarningLimit: 1000 // Aumentado de 500 KB a 1000 KB
   },
   server: {
     port: 5173,

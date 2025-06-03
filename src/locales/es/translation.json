@@ -1,6 +1,7 @@
 {
   "siteTitle": "Singapur: Una Mirada Profunda",
   "siteSubtitle": "Descubre el fascinante contraste entre tradición y modernidad",
+  "siteDescription": "Descubre el fascinante contraste entre tradición y modernidad en esta pequeña nación insular del Sudeste Asiático.",
   "exploreButton": "Comenzar Exploración",
   "navigation": {
     "home": "Inicio",
@@ -11,16 +12,222 @@
     "references": "Referencias"
   },
   "sections": {
-    "whatExplore": "¿Qué Exploraremos?",
+    "whatExplore": "Lo Que Exploraremos",
     "linguisticSection": {
       "title": "Identidad Lingüística",
-      "description": "Análisis del multilingüismo oficial y su rol en la identidad nacional.",
-      "explore": "Explorar"
+      "description": "Análisis del multilingüismo oficial y su papel en la identidad nacional.",
+      "explore": "Explorar",
+      "multilinguismTitle": "Multilingüismo Oficial",
+      "multilinguismP1": "Singapur reconoce cuatro idiomas oficiales: inglés, chino mandarín, malayo y tamil. Esta política refleja la composición multicultural del país y sirve como base para su estrategia de cohesión social.",
+      "multilinguismP2": "El inglés sirve como lengua franca para la administración, los negocios y la educación, mientras que los otros tres idiomas son reconocidos como 'lenguas maternas' para las principales comunidades étnicas. Este enfoque ha contribuido al éxito de Singapur tanto como centro de negocios global como sociedad diversa.",
+      "multilinguismP3": "La 'política bilingüe', introducida en los años 60, requiere que todos los estudiantes singapurenses aprendan tanto inglés como su lengua materna designada, basada en su etnia. Esta política busca proporcionar a los ciudadanos ventajas económicas mientras mantienen sus raíces culturales.",
+      "singlishTitle": "Singlish: Una Expresión Nacional Única",
+      "singlishDesc": "El inglés coloquial singapurense, o 'Singlish', ha evolucionado como un idioma criollo que incorpora elementos del inglés, malayo, hokkien, cantonés, tamil y otros idiomas. Presenta una gramática, sintaxis y vocabulario distintivos que reflejan la sociedad multicultural de Singapur.",
+      "languages": {
+        "english": {
+          "title": "Inglés",
+          "status": "Principal idioma de trabajo",
+          "desc": "El inglés es el idioma principal de la administración, los negocios y la educación. Sirve como un idioma neutral que conecta todos los grupos étnicos y facilita la integración de Singapur en la economía global."
+        },
+        "mandarin": {
+          "title": "Chino Mandarín",
+          "status": "Idioma oficial",
+          "desc": "Promovido a través de la 'Campaña Habla Mandarín' desde 1979, ha reemplazado en gran medida a otros dialectos chinos entre las generaciones más jóvenes. Conecta a los singapurenses con su herencia china mientras ofrece oportunidades económicas en relación con China."
+        },
+        "malay": {
+          "title": "Malayo",
+          "status": "Idioma nacional",
+          "desc": "Como idioma nacional, el malayo tiene importancia ceremonial, apareciendo en el himno nacional y comandos militares. Sirve como lengua materna para la comunidad malaya y facilita conexiones con los vecinos Malasia e Indonesia."
+        },
+        "tamil": {
+          "title": "Tamil",
+          "status": "Idioma oficial",
+          "desc": "El tamil es el idioma indio más hablado en Singapur y sirve como lengua materna designada para la mayoría de los singapurenses de origen indio. Mantiene vínculos culturales con el sur de la India y la diáspora india más amplia."
+        }
+      },
+      "galleryTitle": "Paisaje Lingüístico de Singapur",
+      "languageStats": "Estadísticas de Idiomas",
+      "mostSpokenLanguage": "Idioma Más Hablado en el Hogar",
+      "mandarin": "Mandarín",
+      "mandarin%": "29.9%",
+      "english": "Inglés",
+      "english%": "48.3%",
+      "dialect": "Dialectos Chinos",
+      "dialect%": "8.7%",
+      "malay": "Malayo",
+      "malay%": "9.2%",
+      "tamil": "Tamil",
+      "tamil%": "2.5%",
+      "others": "Otros",
+      "others%": "1.4%",
+      "statsSource": "Fuente: Departamento de Estadísticas de Singapur, 2020",
+      "keyFeatures": "Características Clave de la Política Lingüística",
+      "keyFeature1": "Sistema educativo bilingüe",
+      "keyFeature2": "Inglés como lengua franca",
+      "keyFeature3": "Preservación de la lengua materna",
+      "timeline": {
+        "title": "Evolución de la Política Lingüística",
+        "independence": {
+          "title": "Política Lingüística en la Independencia",
+          "description": "Singapur establece cuatro idiomas oficiales: inglés, mandarín, malayo y tamil."
+        },
+        "bilingualPolicy": {
+          "title": "Política de Educación Bilingüe",
+          "description": "Introducción de la educación bilingüe obligatoria en todas las escuelas."
+        },
+        "speakMandarin": {
+          "title": "Campaña Habla Mandarín",
+          "description": "Lanzamiento de campaña para animar a los singapurenses chinos a hablar mandarín en lugar de dialectos."
+        },
+        "englishMain": {
+          "title": "Inglés como Idioma Principal",
+          "description": "El inglés se convierte en el principal medio de instrucción en todas las escuelas."
+        },
+        "mothertongue": {
+          "title": "Refinamiento de la Política de Lengua Materna",
+          "description": "Ajustes para hacer el aprendizaje de la lengua materna más flexible y contextualizado."
+        },
+        "singlishDebate": {
+          "title": "Debates sobre el Reconocimiento del Singlish",
+          "description": "Las campañas oficiales contra el Singlish coinciden con su creciente reconocimiento como marcador de identidad singapurense."
+        }
+      },
+      "singlishExamples": {
+        "title": "Expresiones Comunes de Singlish",
+        "example1": {
+          "phrase": "¿Can or not?",
+          "meaning": "¿Es posible?/¿Puedes hacerlo?"
+        },
+        "example2": {
+          "phrase": "Lah",
+          "meaning": "Sufijo versátil que añade énfasis (\"¡No te preocupes lah!\")"
+        },
+        "example3": {
+          "phrase": "Kiasu",
+          "meaning": "Miedo a perder; característica que describe comportamiento competitivo"
+        },
+        "example4": {
+          "phrase": "Makan",
+          "meaning": "Comer (del malayo)"
+        },
+        "example5": {
+          "phrase": "Shiok",
+          "meaning": "Delicioso, agradable o satisfactorio"
+        }
+      },
+      "languageCampaigns": {
+        "title": "Campañas Lingüísticas",
+        "speakGoodEnglish": {
+          "title": "Movimiento Habla Buen Inglés",
+          "desc": "Campaña lanzada en 2000 para animar a los singapurenses a hablar inglés gramaticalmente correcto en lugar de Singlish."
+        },
+        "speakMandarin": {
+          "title": "Campaña Habla Mandarín",
+          "desc": "Campaña de larga duración desde 1979 para animar a los singapurenses chinos a hablar mandarín en lugar de dialectos chinos."
+        },
+        "malayLanguage": {
+          "title": "Mes de la Lengua Malaya (Bulan Bahasa)",
+          "desc": "Iniciativa anual para promover el uso y apreciación del idioma y cultura malaya."
+        },
+        "tamilLanguage": {
+          "title": "Festival de la Lengua Tamil",
+          "desc": "Celebración anual para promover el uso del idioma tamil a través de actividades culturales."
+        }
+      },
+      "images": {
+        "multilingualSigns": {
+          "alt": "Señales multilingües en Singapur",
+          "caption": "Señales de calles en los cuatro idiomas oficiales de Singapur"
+        },
+        "schoolBilingual": {
+          "alt": "Educación bilingüe en Singapur",
+          "caption": "Estudiantes aprendiendo tanto inglés como su lengua materna en un aula de Singapur"
+        },
+        "singlish": {
+          "alt": "Singlish en la cultura popular",
+          "caption": "Expresiones Singlish integradas en la comunicación diaria y los medios"
+        },
+        "languageCampaign": {
+          "alt": "Materiales de campaña lingüística",
+          "caption": "Materiales promocionales de las campañas lingüísticas de Singapur"
+        }
+      }
     },
     "monetarySystem": {
       "title": "Sistema Monetario",
       "description": "Evolución y relevancia del dólar singapurense en la economía global.",
-      "explore": "Explorar"
+      "explore": "Explorar",
+      "dollarTitle": "El Dólar de Singapur",
+      "dollarP1": "El dólar singapurense (SGD) ha sido la moneda oficial de la República de Singapur desde 1967, cuando el país estableció su propia autoridad monetaria después de separarse de Malasia. Actualmente es una de las monedas más estables y fuertes de Asia, reflejando la fortaleza económica del país.",
+      "dollarP2": "La Autoridad Monetaria de Singapur (MAS), que funciona como banco central, gestiona la política monetaria principalmente a través de tipos de cambio en lugar de tasas de interés, un enfoque único adaptado a la economía abierta de Singapur que depende en gran medida del comercio exterior.",
+      "dollarP3": "Los billetes actuales presentan al primer presidente de Singapur, Yusof bin Ishak, e incorporan medidas de seguridad avanzadas. Las monedas muestran motivos de flora y fauna local, reflejando la identidad cultural y natural del país.",
+      "globalRanking": "Clasificación Global",
+      "rankPosition": "4°",
+      "rankDescription": "Posición de Singapur en el Índice Global de Centros Financieros",
+      "keyFeatures": "Características Clave",
+      "keyFeature1": "Moneda de reserva en Asia",
+      "keyFeature2": "Alta seguridad anti-falsificación",
+      "keyFeature3": "Política de tipo de cambio gestionado",
+      "galleryTitle": "Sistema Monetario de Singapur",
+      "financialCenterTitle": "Centro Financiero Global",
+      "financialCenterDesc": "Singapur se ha establecido como uno de los principales centros financieros del mundo, compitiendo directamente con Nueva York, Londres y Hong Kong. Su estabilidad política, marco regulatorio transparente y ubicación estratégica lo han posicionado como el centro financiero de referencia en la región Asia-Pacífico.",
+      "banking": {
+        "title": "Banca Internacional",
+        "desc": "Más de 200 bancos tienen presencia en Singapur, incluyendo las principales instituciones financieras mundiales que utilizan la ciudad como base para sus operaciones en el Sudeste Asiático."
+      },
+      "wealthManagement": {
+        "title": "Gestión de Patrimonio",
+        "desc": "El país gestiona más de 4 billones de SGD en activos, posicionándose como el principal centro de gestión de patrimonio de Asia y atrayendo fortunas de toda la región."
+      },
+      "fintech": {
+        "title": "Centro Fintech",
+        "desc": "Con más de 1.400 empresas fintech, Singapur lidera la innovación financiera en áreas como pagos digitales, blockchain, insurtech y banca digital."
+      },
+      "regulation": {
+        "title": "Marco Regulatorio",
+        "desc": "La MAS ha desarrollado un sistema regulatorio robusto pero flexible que equilibra la innovación con la estabilidad, incluyendo sandboxes regulatorios para nuevas tecnologías financieras."
+      },
+      "timeline": {
+        "title": "Evolución del Sistema Monetario",
+        "creation": {
+          "title": "Creación del Dólar de Singapur",
+          "description": "Tras su independencia, Singapur establece su propia moneda, separándose del dólar malasio."
+        },
+        "mas": {
+          "title": "Establecimiento de la MAS",
+          "description": "Se crea la Autoridad Monetaria de Singapur (MAS) como banco central y regulador financiero."
+        },
+        "exchangePolicy": {
+          "title": "Política de Tipo de Cambio",
+          "description": "Adopción de una política de tipo de cambio basada en bandas de fluctuación gestionadas."
+        },
+        "portraitSeries": {
+          "title": "Serie Retrato",
+          "description": "Lanzamiento de la serie Retrato de billetes con características de seguridad avanzadas."
+        },
+        "coreInflation": {
+          "title": "Inflación Subyacente",
+          "description": "MAS comienza a utilizar la inflación subyacente como indicador principal para la política monetaria."
+        },
+        "fintechFestival": {
+          "title": "Festival Fintech de Singapur",
+          "description": "Singapur establece el festival fintech más grande del mundo, fortaleciendo su posición como hub fintech."
+        }
+      },
+      "images": {
+        "notes": {
+          "alt": "Billetes del Dólar de Singapur",
+          "caption": "Serie actual de billetes del dólar singapurense con motivos nacionales"
+        },
+        "mas": {
+          "alt": "Autoridad Monetaria de Singapur",
+          "caption": "El edificio de la Autoridad Monetaria de Singapur (MAS)"
+        },
+        "coins": {
+          "alt": "Monedas de Singapur",
+          "caption": "Serie actual de monedas del dólar singapurense"
+        }
+      }
     },
     "festivals": {
       "title": "Festividades y Tradiciones",
@@ -28,7 +235,7 @@
       "explore": "Explorar",
       "culturalHarmony": "Armonía Cultural",
       "introduction": {
-        "p1": "Singapur celebra una rica variedad de festividades culturales y religiosas que reflejan la diversidad étnica de su población. El calendario festivo oficial reconoce celebraciones de todas las principales religiones y grupos étnicos.",
+        "p1": "Singapur es un crisol de culturas, donde las tradiciones chinas, malayas, indias y occidentales se entrelazan para crear una sociedad vibrante y armoniosa. Esta diversidad se celebra a través de una serie de festividades a lo largo del año, ofreciendo una visión única del rico tapiz cultural del país.",
         "p2": "Las principales festividades incluyen el Año Nuevo Chino, Hari Raya Puasa, Deepavali, Navidad y el Día Nacional de Singapur. Cada celebración se caracteriza por decoraciones distintivas en espacios públicos, eventos comunitarios y tradiciones culinarias específicas.",
         "p3": "El gobierno promueve activamente la participación intercultural en estas festividades como parte de su política de armonía racial, animando a los singapurenses de todos los orígenes a compartir y experimentar las tradiciones de los demás."
       },
@@ -41,19 +248,19 @@
       },
       "galleryTitle": "Festivales Culturales",
       "chineseNewYear": "Año Nuevo Chino",
-      "chineseNewYearDesc": "La celebración más importante para la comunidad china, incluye desfiles, danzas de león y reuniones familiares con intercambio de sobres rojos.",
-      "vesak": "Vesak",
-      "vesakDesc": "Celebración budista del nacimiento, iluminación y fallecimiento de Buda. Los templos se llenan de devotos para ceremonias y ofrendas.",
+      "chineseNewYearDesc": "La celebración más importante para la comunidad china, que incluye desfiles, danzas de leones y dragones, y reuniones familiares para comer \"Lo Hei\" (ensalada de la prosperidad).",
+      "vesak": "Día de Vesak",
+      "vesakDesc": "Celebración budista del nacimiento, iluminación y parinirvana de Buda. Los templos se llenan de devotos para ceremonias y ofrendas.",
       "hariRaya": "Hari Raya Puasa",
-      "hariRayaDesc": "Marca el fin del Ramadán con oraciones especiales, visitas familiares y platos tradicionales como rendang y ketupat.",
-      "hungryGhost": "Festival del Fantasma Hambriento",
-      "hungryGhostDesc": "Conocido por sus carreras de botes dragón y el consumo de zongzi (bollos de arroz glutinoso envueltos en hojas de bambú).",
-      "nationalDay": "Día Nacional",
-      "nationalDayDesc": "Conmemora la independencia de Singapur con un desfile militar, exhibiciones aéreas y espectáculos culturales masivos.",
+      "hariRayaDesc": "Marca el final del Ramadán con oraciones especiales, visitas familiares y platos tradicionales como rendang y ketupat.",
+      "hungryGhost": "Festival del Barco Dragón",
+      "hungryGhostDesc": "Conocido por sus carreras de barcos dragón y consumo de zongzi (bollos de arroz glutinoso envueltos en hojas de bambú).",
+      "nationalDay": "Día Nacional de Singapur",
+      "nationalDayDesc": "Conmemora la independencia de Singapur con un desfile militar, exhibiciones aéreas y masivas actuaciones culturales.",
       "deepavali": "Deepavali",
       "deepavaliDesc": "Festival hindú de las luces que simboliza el triunfo del bien sobre el mal, con iluminación de lámparas y elaborados rangolis (patrones decorativos).",
       "christmas": "Navidad",
-      "christmasDesc": "Celebrada ampliamente con decoraciones en Orchard Road, conciertos y mercados navideños que reflejan la influencia occidental.",
+      "christmasDesc": "Ampliamente celebrada con decoraciones en Orchard Road, conciertos y mercados navideños que reflejan la influencia occidental.",
       "images": {
         "chineseNewYear": {
           "alt": "Celebración del Año Nuevo Chino en Chinatown",
@@ -61,7 +268,7 @@
         },
         "deepavali": {
           "alt": "Celebración de Deepavali en Little India",
-          "caption": "Colorida decoración de luces y rangolis para Deepavali"
+          "caption": "Decoración colorida de luces y rangolis para Deepavali"
         },
         "hariRaya": {
           "alt": "Celebración de Hari Raya Puasa",
@@ -70,32 +277,32 @@
       },
       "traditions": {
         "title": "Tradiciones Culturales",
-        "description": "Más allá de las festividades oficiales, Singapur mantiene tradiciones culturales específicas de cada comunidad étnica. Estas prácticas han evolucionado para adaptarse al contexto urbano y a la sociedad moderna, pero siguen siendo importantes marcadores de identidad.",
-        "subtitle": "Preservando el Patrimonio en la Singapur Moderna",
-        "overview": "Las tradiciones de Singapur mezclan prácticas ancestrales con adaptaciones contemporáneas, creando un paisaje cultural único.",
+        "description": "Más allá de las festividades oficiales, Singapur mantiene tradiciones culturales específicas para cada comunidad étnica. Estas prácticas han evolucionado para adaptarse al contexto urbano y la sociedad moderna, pero siguen siendo importantes marcadores de identidad.",
+        "subtitle": "Preservando el Patrimonio en el Singapur Moderno",
+        "overview": "Las tradiciones de Singapur combinan prácticas ancestrales con adaptaciones contemporáneas, creando un paisaje cultural único.",
         "culinary": {
           "title": "Tradiciones Culinarias",
-          "description": "La gastronomía de cada grupo étnico se destaca durante sus festividades. Los mooncakes durante el Festival del Medio Otoño, el rendang durante Hari Raya, y los dulces durante Deepavali forman parte integral de las celebraciones.",
+          "description": "La cocina de cada grupo étnico destaca durante sus festividades. Los pasteles de luna durante el Festival del Medio Otoño, el rendang durante Hari Raya, y los dulces durante Deepavali son parte integral de las celebraciones.",
           "examples": "Platos Tradicionales Populares",
-          "chineseDishes": "Yusheng (ensalada de la prosperidad), nian gao (pastel de arroz pegajoso), bak kwa (cerdo a la barbacoa)",
+          "chineseDishes": "Yusheng (ensalada de la prosperidad), nian gao (pastel de arroz glutinoso), bak kwa (cerdo barbacoa)",
           "malayDishes": "Rendang, ketupat (pasteles de arroz), kuih (pasteles tradicionales)",
-          "indianDishes": "Murukku, laddu, kesari, diversos platos vegetarianos"
+          "indianDishes": "Murukku, laddu, kesari, varios platos vegetarianos"
         },
         "performingArts": {
           "title": "Artes Escénicas",
-          "description": "La ópera china, el wayang kulit (teatro de sombras malayo) y el bharatanatyam (danza clásica india) se presentan regularmente durante festivales culturales, preservando formas artísticas ancestrales.",
+          "description": "La ópera china, el wayang kulit (teatro de sombras malayo) y el bharatanatyam (danza clásica india) se representan regularmente durante festivales culturales, preservando formas artísticas ancestrales.",
           "preservationEfforts": "Esfuerzos de Preservación",
-          "preservationDescription": "Iniciativas gubernamentales y comunitarias para mantener las artes escénicas tradicionales mediante programas educativos y actuaciones públicas."
+          "preservationDescription": "Iniciativas gubernamentales y comunitarias para mantener las artes escénicas tradicionales a través de programas educativos y actuaciones públicas."
         },
         "familyRituals": {
           "title": "Rituales Familiares",
-          "description": "Las reuniones familiares durante festividades, como la cena de reunión en Año Nuevo Chino o la ruptura del ayuno durante Ramadán, mantienen la cohesión social y la transmisión de valores.",
+          "description": "Reuniones familiares durante festividades, como la cena de reunión durante el Año Nuevo Chino o romper el ayuno durante el Ramadán, mantienen la cohesión social y la transmisión de valores.",
           "modernAdaptations": "Adaptaciones Modernas",
-          "adaptationsDescription": "Cómo los rituales familiares tradicionales se han adaptado a la vida urbana y los estilos de vida ocupados en Singapur."
+          "adaptationsDescription": "Cómo los rituales familiares tradicionales se han adaptado a la vida urbana y a los estilos de vida ocupados en Singapur."
         },
         "festiveMarkets": {
           "title": "Mercados Festivos",
-          "description": "Los bazares temporales como el Pasar Malam durante Ramadán o los mercados de Año Nuevo Chino en Chinatown son espacios vibrantes donde se comercian artículos festivos especiales.",
+          "description": "Bazares temporales como el Pasar Malam durante el Ramadán o los mercados del Año Nuevo Chino en Chinatown son espacios vibrantes donde se comercian artículos festivos especiales.",
           "popularLocations": "Ubicaciones Populares",
           "chinatownMarket": "Mercado callejero de Chinatown durante el Año Nuevo Chino",
           "geylangSerai": "Mercado de Geylang Serai durante el Ramadán",
@@ -103,20 +310,154 @@
         },
         "evolutionOfTraditions": {
           "title": "Evolución de las Tradiciones",
-          "description": "Cómo las tradiciones culturales de Singapur han evolucionado con el tiempo manteniendo su significado central.",
-          "blendingCultures": "Mezcla de Culturas",
-          "blendingDescription": "Ejemplos de cómo las tradiciones se han influenciado mutuamente entre las comunidades étnicas."
+          "description": "Cómo han evolucionado las tradiciones culturales de Singapur con el tiempo mientras mantienen su significado esencial.",
+          "blendingCultures": "Fusión de Culturas",
+          "blendingDescription": "Ejemplos de cómo las tradiciones se han influenciado mutuamente entre comunidades étnicas."
         }
       }
     },
     "modernity": {
-      "title": "Modernidad",
-      "description": "El avance tecnológico y la visión de Smart Nation de Singapur.",
-      "explore": "Explorar"
+      "title": "Modernidad y Visión",
+      "description": "Avance tecnológico y la visión de Nación Inteligente de Singapur.",
+      "explore": "Explorar",
+      "smartNationTitle": "Iniciativa Nación Inteligente",
+      "smartNationP1": "Lanzada en 2014, la iniciativa Nación Inteligente de Singapur busca aprovechar la tecnología para mejorar la calidad de vida de los ciudadanos, crear más oportunidades y construir comunidades más fuertes. La estrategia se centra en servicios gubernamentales digitales, una población digitalmente empoderada y empresas transformadas por la tecnología.",
+      "smartNationP2": "El gobierno ha invertido fuertemente en infraestructura tecnológica, incluyendo una red de fibra óptica nacional, despliegue extensivo de sensores y una plataforma de datos públicos. Esta base permite aplicaciones innovadoras que van desde la telemedicina hasta vehículos autónomos.",
+      "smartNationP3": "El enfoque de Singapur equilibra el avance tecnológico con consideraciones éticas e inclusividad, asegurando que ningún segmento de la sociedad quede rezagado en la transformación digital.",
+      "urbanPlanningTitle": "Planificación Urbana y Sostenibilidad",
+      "urbanPlanningDesc": "El desarrollo urbano de Singapur refleja una visión de 'Ciudad en un Jardín', combinando arquitectura de vanguardia con espacios verdes. Proyectos como Gardens by the Bay ejemplifican el compromiso del país con el desarrollo urbano sostenible que combina innovación tecnológica con conservación ambiental.",
+      "digitalGovernment": {
+        "title": "Gobierno Digital",
+        "desc": "Singapur ha digitalizado más del 94% de los servicios gubernamentales, con plataformas como SingPass y la aplicación OneService creando una interfaz perfecta entre ciudadanos y agencias gubernamentales."
+      },
+      "digitalEconomy": {
+        "title": "Economía Digital",
+        "desc": "Singapur se clasifica como la economía más digitalmente competitiva de Asia, con un próspero ecosistema de startups, más de 80 de las 100 principales empresas tecnológicas del mundo, e iniciativas pioneras en fintech, healthtech y logística inteligente."
+      },
+      "digitalSociety": {
+        "title": "Sociedad Digital",
+        "desc": "Programas como Blueprint de Preparación Digital e Iniciativa Silver Infocomm aseguran que todos los singapurenses, independientemente de su edad o ingresos, tengan acceso a habilidades y herramientas tecnológicas necesarias para participar en la economía digital."
+      },
+      "keyFeatures": "Aspectos Clave de la Modernidad de Singapur",
+      "keyFeature1": "Integración de tecnología y planificación urbana",
+      "keyFeature2": "Equilibrio entre eficiencia y habitabilidad",
+      "keyFeature3": "Enfoque político con visión de futuro",
+      "galleryTitle": "Paisaje Moderno de Singapur",
+      "keyProjects": {
+        "title": "Proyectos Clave de Nación Inteligente",
+        "digitalIdentity": {
+          "title": "Identidad Digital Nacional",
+          "desc": "SingPass proporciona autenticación digital segura y firmas digitales para los ciudadanos, permitiendo acceso a más de 2.000 servicios gubernamentales y del sector privado."
+        },
+        "sensorsNetwork": {
+          "title": "Plataforma de Sensores de Nación Inteligente",
+          "desc": "Una red nacional de sensores y dispositivos IoT que recopilan datos sobre todo, desde calidad del aire hasta flujos peatonales, permitiendo una gestión urbana basada en datos."
+        },
+        "payments": {
+          "title": "Pagos Electrónicos",
+          "desc": "El sistema PayNow de Singapur permite transferencias instantáneas entre cuentas bancarias y empresas usando solo un número de teléfono o ID, avanzando hacia una sociedad sin efectivo."
+        },
+        "autonomousVehicles": {
+          "title": "Vehículos Autónomos",
+          "desc": "Pruebas de vehículos autónomos en áreas designadas, con planes para desplegar autobuses y shuttles autónomos en localidades seleccionadas para 2025."
+        },
+        "healthtech": {
+          "title": "HealthTech",
+          "desc": "Integración de IA y telesalud en el sistema sanitario, incluyendo la aplicación HealthHub que centraliza registros médicos y servicios."
+        },
+        "cybersecurity": {
+          "title": "Ciberseguridad",
+          "desc": "Estrategia nacional integral de ciberseguridad para proteger infraestructuras críticas y desarrollar talento en este campo en rápida evolución."
+        }
+      },
+      "challengeOpportunities": {
+        "title": "Desafíos y Oportunidades",
+        "aging": {
+          "title": "Envejecimiento de la Población",
+          "desc": "Iniciativas digitales dirigidas a personas mayores, incluyendo sistemas de monitoreo de salud e interfaces simplificadas para servicios esenciales."
+        },
+        "privacy": {
+          "title": "Privacidad de Datos",
+          "desc": "Equilibrar el avance tecnológico con marcos robustos como la Ley de Protección de Datos Personales para salvaguardar la información de los ciudadanos."
+        },
+        "workforce": {
+          "title": "Transformación de la Fuerza Laboral",
+          "desc": "Programas como SkillsFuture para recapacitar a los trabajadores para la economía digital y prepararlos para los trabajos del futuro."
+        },
+        "digital": {
+          "title": "Brecha Digital",
+          "desc": "Iniciativas para asegurar que todos los segmentos de la sociedad se beneficien de la transformación digital, incluyendo dispositivos subvencionados y formación para hogares de bajos ingresos."
+        }
+      },
+      "timeline": {
+        "title": "Camino hacia una Nación Inteligente",
+        "computerization": {
+          "title": "Plan Nacional de Informatización",
+          "description": "Lanzamiento del primer plan nacional de TI para informatizar las funciones del servicio civil."
+        },
+        "itMasterPlan": {
+          "title": "Primer Plan Maestro de TI",
+          "description": "Estrategia para desarrollar Singapur como una 'Isla Inteligente' con infraestructura de TI nacional."
+        },
+        "broadband": {
+          "title": "Red Nacional de Banda Ancha",
+          "description": "Despliegue de red nacional de fibra óptica de alta velocidad que alcanza al 95% de los hogares."
+        },
+        "smartNation": {
+          "title": "Iniciativa Nación Inteligente",
+          "description": "El Primer Ministro Lee Hsien Loong lanza un plan integral para transformar Singapur a través de la tecnología."
+        },
+        "researchInnovation": {
+          "title": "Investigación Innovación Empresa 2020",
+          "description": "Compromiso de S$19 mil millones para I+D en dominios clave incluyendo salud, soluciones urbanas y servicios."
+        },
+        "digitalEconomy": {
+          "title": "Marco de Economía Digital",
+          "description": "Estrategia para acelerar la digitalización en todos los sectores de la economía y sociedad."
+        },
+        "digitalGovernment": {
+          "title": "Plan de Gobierno Digital",
+          "description": "Hoja de ruta para que las agencias gubernamentales aprovechen los datos y nuevas tecnologías para mejorar la prestación de servicios."
+        }
+      },
+      "futureDirections": {
+        "title": "Direcciones Futuras",
+        "description": "Singapur continúa evolucionando su visión de Nación Inteligente con tecnologías emergentes y dinámicas globales cambiantes. El enfoque sigue siendo en soluciones centradas en el humano que mejoran la calidad de vida mientras impulsan el crecimiento económico."
+      },
+      "stats": {
+        "digitalRanking": "Ranking de Competitividad Digital",
+        "rankPosition": "2°",
+        "rankDescription": "Posición de Singapur en el Ranking Mundial de Competitividad Digital del IMD",
+        "highSpeedTitle": "Internet de Alta Velocidad",
+        "highSpeedValue": "98%",
+        "highSpeedDesc": "Cobertura de banda ancha de fibra en hogares",
+        "digitalLiteracyTitle": "Alfabetización Digital",
+        "digitalLiteracyValue": "89%",
+        "digitalLiteracyDesc": "De la población con habilidades digitales básicas",
+        "statsSource": "Fuente: Autoridad de Desarrollo de Medios e Infocomm (IMDA), 2023"
+      },
+      "images": {
+        "smartNation": {
+          "alt": "Centro de comando de Nación Inteligente en Singapur",
+          "caption": "El centro de comando de operaciones digitales monitoreando varios sistemas de ciudad inteligente"
+        },
+        "gardens": {
+          "alt": "Gardens by the Bay en Singapur",
+          "caption": "Supertrees en Gardens by the Bay, combinando tecnología con diseño ambiental"
+        },
+        "autonomous": {
+          "alt": "Pruebas de vehículos autónomos en Singapur",
+          "caption": "Shuttle autónomo siendo probado en un área de pruebas designada en Singapur"
+        },
+        "digitalServices": {
+          "alt": "Quiosco de servicios digitales en Singapur",
+          "caption": "Quiosco gubernamental de autoservicio proporcionando servicios digitales a los ciudadanos"
+        }
+      }
     }
   },
   "timeline": {
-    "festivalCalendar": "Calendario Festivo Anual",
+    "festivalCalendar": "Calendario Anual de Festividades",
     "months": {
       "janFeb": "Enero/Febrero",
       "aprMay": "Abril/Mayo",
@@ -128,9 +469,30 @@
     }
   },
   "quote": {
-    "festivals": "Las festividades en Singapur no son solo celebraciones, sino puentes culturales que permiten a los ciudadanos experimentar y apreciar las tradiciones de sus compatriotas de diferentes etnias.",
+    "festivals": "Las festividades en Singapur no son solo celebraciones, sino puentes culturales que permiten a los ciudadanos experimentar y apreciar las tradiciones de sus compatriotas.",
     "festivalSource": "Lawrence Wong, Ministro de Finanzas de Singapur",
+    "monetarySystem": "El sistema financiero de Singapur representa uno de los mejores ejemplos de cómo una visión clara, políticas consistentes y adaptación a tendencias globales pueden transformar un pequeño mercado local en un centro financiero de clase mundial.",
+    "monetarySystemSource": "Ravi Menon, Director Ejecutivo de MAS",
+    "linguisticPolicy": "La decisión de adoptar el inglés como nuestro idioma de trabajo dio a los singapurenses una ventaja crucial en la economía global, mientras que preservar nuestras lenguas maternas asegura que mantengamos nuestras identidades culturales.",
+    "linguisticPolicySource": "Lee Kuan Yew, Primer Primer Ministro de Singapur",
     "singapore": "Singapur es una historia extraordinaria de cómo un pequeño país puede prosperar contra todo pronóstico, reinventándose constantemente.",
-    "author": "Lee Hsien Loong, Primer Ministro de Singapur"
+    "author": "Lee Hsien Loong, Primer Ministro de Singapur",
+    "modernity": "Nuestro viaje hacia una Nación Inteligente trata de que Singapur aproveche al máximo la TI como catalizador del cambio. Queremos crear nuevos empleos, nuevas oportunidades de negocio, hacer nuestra economía más productiva, nuestras vidas más convenientes y nuestra sociedad más receptiva a las necesidades y aspiraciones de las personas.",
+    "modernitySource": "Lee Hsien Loong, Primer Ministro de Singapur"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "timeline": "Cronología",
+    "keyData": "Datos Clave",
+    "relevantLocations": "Ubicaciones Relevantes"
+  },
+  "accessibility": {
+    "changeLanguage": "Cambiar idioma",
+    "changeTheme": "Cambiar tema",
+    "socialMedia": {
+      "facebook": "Visita nuestra página de Facebook",
+      "twitter": "Síguenos en Twitter",
+      "instagram": "Síguenos en Instagram"
+    }
   }
 }
