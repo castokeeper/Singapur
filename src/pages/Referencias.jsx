@@ -3,7 +3,8 @@ import ReferenciasCard from '../components/sections/ReferenciasCard';
 import { useTheme } from '../context/ThemeContext';
 import ImageGallery from '../components/ui/ImageGallery';
 
-import { referenciasData } from '../data/referencias';
+// Importar ambos: named export y default export
+import referenciasData, { referenciasData as referenciasNamed } from '../data/referencias';
 
 const Referencias = () => {
   const [filtro, setFiltro] = useState('');
@@ -17,20 +18,28 @@ const Referencias = () => {
   const formControlClass = isDark ? 'bg-dark text-light border-secondary' : '';
   const statNumberClass = isDark ? 'text-info' : 'text-primary';
   
-  // Inicializar las referencias
+  // Inicializar las referencias con mejor manejo de errores
   useEffect(() => {
+    // Verificar qué versión de referenciasData está disponible
+    const refData = referenciasData.referencias ? referenciasData : 
+                   referenciasNamed.referencias ? referenciasNamed : 
+                   { referencias: [] };
+    
     // Verificar que referenciasData existe y tiene la estructura correcta
-    if (referenciasData && Array.isArray(referenciasData.referencias)) {
+    if (refData && Array.isArray(refData.referencias)) {
       // Asegurarse de que todas las referencias tienen una categoría válida
-      const refsNormalizadas = referenciasData.referencias.map(ref => ({
+      const refsNormalizadas = refData.referencias.map(ref => ({
         ...ref,
-        categoria: ref.categoria || 'General' // Valor predeterminado si no hay categoría
+        id: ref.id || Math.random().toString(36).substring(2),
+        categoria: ref.categoria || 'General', // Valor predeterminado si no hay categoría
+        titulo: ref.titulo || 'Sin título',
+        autor: ref.autor || 'Autor desconocido'
       }));
       setReferenciasCompletas(refsNormalizadas);
     } else {
       // Si no hay datos, inicializar con array vacío
       setReferenciasCompletas([]);
-      console.error("No se pudieron cargar las referencias o el formato es incorrecto");
+      console.error("No se pudieron cargar las referencias o el formato es incorrecto", refData);
     }
   }, []);
   

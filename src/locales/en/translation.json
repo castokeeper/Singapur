@@ -1,0 +1,498 @@
+{
+  "siteTitle": "Singapore: A Deep Dive",
+  "siteSubtitle": "Discover the fascinating contrast between tradition and modernity",
+  "siteDescription": "Discover the fascinating contrast between tradition and modernity in this small island nation of Southeast Asia.",
+  "exploreButton": "Start Exploration",
+  "navigation": {
+    "home": "Home",
+    "linguisticIdentity": "Linguistic Identity",
+    "monetarySystem": "Monetary System",
+    "festivals": "Festivals",
+    "modernity": "Modernity",
+    "references": "References"
+  },
+  "sections": {
+    "whatExplore": "What We'll Explore",
+    "linguisticSection": {
+      "title": "Linguistic Identity",
+      "description": "Analysis of official multilingualism and its role in national identity.",
+      "explore": "Explore",
+      "multilinguismTitle": "Official Multilingualism",
+      "multilinguismP1": "Singapore recognizes four official languages: English, Mandarin Chinese, Malay, and Tamil. This policy reflects the country's multicultural composition and serves as a foundation for its social cohesion strategy.",
+      "multilinguismP2": "English serves as the lingua franca for administration, business, and education, while the other three languages are recognized as 'mother tongues' for the main ethnic communities. This approach has contributed to Singapore's success as both a global business hub and a diverse society.",
+      "multilinguismP3": "The 'bilingual policy', introduced in the 1960s, requires all Singaporean students to learn both English and their designated mother tongue, based on their ethnicity. This policy aims to provide citizens with economic advantages while maintaining their cultural roots.",
+      "singlishTitle": "Singlish: A Unique National Expression",
+      "singlishDesc": "Colloquial Singaporean English, or 'Singlish', has evolved as a creole language that incorporates elements from English, Malay, Hokkien, Cantonese, Tamil, and other languages. It features distinctive grammar, syntax, and vocabulary that reflect Singapore's multicultural society.",
+      "languages": {
+        "english": {
+          "title": "English",
+          "status": "Main working language",
+          "desc": "English is the primary language of administration, business and education. It serves as a neutral language that connects all ethnic groups and facilitates Singapore's integration into the global economy."
+        },
+        "mandarin": {
+          "title": "Mandarin Chinese",
+          "status": "Official language",
+          "desc": "Promoted through the 'Speak Mandarin Campaign' since 1979, it has largely replaced other Chinese dialects among younger generations. It connects Singaporeans with Chinese heritage while providing economic opportunities in relation to China."
+        },
+        "malay": {
+          "title": "Malay",
+          "status": "National language",
+          "desc": "As the national language, Malay has ceremonial importance, appearing in the national anthem and military commands. It serves as the mother tongue for the Malay community and facilitates connections with neighboring Malaysia and Indonesia."
+        },
+        "tamil": {
+          "title": "Tamil",
+          "status": "Official language",
+          "desc": "Tamil is the most widely spoken Indian language in Singapore and serves as the designated mother tongue for most Indian Singaporeans. It maintains cultural links with South India and the broader Indian diaspora."
+        }
+      },
+      "galleryTitle": "Linguistic Landscape of Singapore",
+      "languageStats": "Language Statistics",
+      "mostSpokenLanguage": "Most Spoken Language at Home",
+      "mandarin": "Mandarin",
+      "mandarin%": "29.9%",
+      "english": "English",
+      "english%": "48.3%",
+      "dialect": "Chinese Dialects",
+      "dialect%": "8.7%",
+      "malay": "Malay",
+      "malay%": "9.2%",
+      "tamil": "Tamil",
+      "tamil%": "2.5%",
+      "others": "Others",
+      "others%": "1.4%",
+      "statsSource": "Source: Singapore Department of Statistics, 2020",
+      "keyFeatures": "Key Features of Language Policy",
+      "keyFeature1": "Bilingual education system",
+      "keyFeature2": "English as lingua franca",
+      "keyFeature3": "Mother tongue preservation",
+      "timeline": {
+        "title": "Evolution of Language Policy",
+        "independence": {
+          "title": "Language Policy at Independence",
+          "description": "Singapore establishes four official languages: English, Mandarin, Malay, and Tamil."
+        },
+        "bilingualPolicy": {
+          "title": "Bilingual Education Policy",
+          "description": "Introduction of mandatory bilingual education in all schools."
+        },
+        "speakMandarin": {
+          "title": "Speak Mandarin Campaign",
+          "description": "Launch of campaign to encourage Chinese Singaporeans to speak Mandarin instead of dialects."
+        },
+        "englishMain": {
+          "title": "English as Primary Language",
+          "description": "English becomes the main medium of instruction in all schools."
+        },
+        "mothertongue": {
+          "title": "Mother Tongue Policy Refinement",
+          "description": "Adjustments to make mother tongue learning more flexible and context-based."
+        },
+        "singlishDebate": {
+          "title": "Singlish Recognition Debates",
+          "description": "Official campaigns against Singlish coincide with its growing recognition as a marker of Singaporean identity."
+        }
+      },
+      "singlishExamples": {
+        "title": "Common Singlish Expressions",
+        "example1": {
+          "phrase": "Can or not?",
+          "meaning": "Is it possible?/Can you do it?"
+        },
+        "example2": {
+          "phrase": "Lah",
+          "meaning": "Versatile suffix that adds emphasis (\"Don't worry lah!\")"
+        },
+        "example3": {
+          "phrase": "Kiasu",
+          "meaning": "Fear of losing out; characteristic describing competitive behavior"
+        },
+        "example4": {
+          "phrase": "Makan",
+          "meaning": "To eat (from Malay)"
+        },
+        "example5": {
+          "phrase": "Shiok",
+          "meaning": "Delicious, enjoyable, or satisfying"
+        }
+      },
+      "languageCampaigns": {
+        "title": "Language Campaigns",
+        "speakGoodEnglish": {
+          "title": "Speak Good English Movement",
+          "desc": "Campaign launched in 2000 to encourage Singaporeans to speak grammatically correct English instead of Singlish."
+        },
+        "speakMandarin": {
+          "title": "Speak Mandarin Campaign",
+          "desc": "Long-running campaign since 1979 to encourage Chinese Singaporeans to speak Mandarin instead of Chinese dialects."
+        },
+        "malayLanguage": {
+          "title": "Malay Language Month (Bulan Bahasa)",
+          "desc": "Annual initiative to promote the use and appreciation of the Malay language and culture."
+        },
+        "tamilLanguage": {
+          "title": "Tamil Language Festival",
+          "desc": "Annual celebration to promote the use of Tamil language through cultural activities."
+        }
+      },
+      "images": {
+        "multilingualSigns": {
+          "alt": "Multilingual signs in Singapore",
+          "caption": "Street signs in the four official languages of Singapore"
+        },
+        "schoolBilingual": {
+          "alt": "Bilingual education in Singapore",
+          "caption": "Students learning both English and their mother tongue in a Singapore classroom"
+        },
+        "singlish": {
+          "alt": "Singlish in popular culture",
+          "caption": "Singlish expressions integrated into daily communication and media"
+        },
+        "languageCampaign": {
+          "alt": "Language campaign materials",
+          "caption": "Promotional materials from Singapore's language campaigns"
+        }
+      }
+    },
+    "monetarySystem": {
+      "title": "Monetary System",
+      "description": "Evolution and relevance of the Singapore dollar in the global economy.",
+      "explore": "Explore",
+      "dollarTitle": "The Singapore Dollar",
+      "dollarP1": "The Singapore dollar (SGD) has been the official currency of the Republic of Singapore since 1967, when the country established its own monetary authority after separating from Malaysia. It is currently one of the most stable and strongest currencies in Asia, reflecting the country's economic strength.",
+      "dollarP2": "The Monetary Authority of Singapore (MAS), which functions as the central bank, manages monetary policy primarily through exchange rates rather than interest rates, a unique approach adapted to Singapore's open economy that depends heavily on foreign trade.",
+      "dollarP3": "The current banknotes feature the first president of Singapore, Yusof bin Ishak, and incorporate advanced security measures. The coins display motifs of local flora and fauna, reflecting the country's cultural and natural identity.",
+      "globalRanking": "Global Ranking",
+      "rankPosition": "4th",
+      "rankDescription": "Singapore's position in the Global Financial Centres Index",
+      "keyFeatures": "Key Features",
+      "keyFeature1": "Reserve currency in Asia",
+      "keyFeature2": "High anti-counterfeiting security",
+      "keyFeature3": "Managed exchange rate policy",
+      "galleryTitle": "Singapore's Monetary System",
+      "financialCenterTitle": "Global Financial Center",
+      "financialCenterDesc": "Singapore has established itself as one of the world's leading financial centers, competing directly with New York, London, and Hong Kong. Its political stability, transparent regulatory framework, and strategic location have positioned it as the financial hub of reference in the Asia-Pacific region.",
+      "banking": {
+        "title": "International Banking",
+        "desc": "More than 200 banks have a presence in Singapore, including the world's leading financial institutions that use the city as a base for their operations in Southeast Asia."
+      },
+      "wealthManagement": {
+        "title": "Wealth Management",
+        "desc": "The country manages more than 4 trillion SGD in assets, positioning itself as Asia's premier wealth management center and attracting fortunes from across the region."
+      },
+      "fintech": {
+        "title": "Fintech Hub",
+        "desc": "With more than 1,400 fintech companies, Singapore leads financial innovation in areas such as digital payments, blockchain, insurtech, and digital banking."
+      },
+      "regulation": {
+        "title": "Regulatory Framework",
+        "desc": "The MAS has developed a robust but flexible regulatory system that balances innovation with stability, including regulatory sandboxes for new financial technologies."
+      },
+      "timeline": {
+        "title": "Evolution of the Monetary System",
+        "creation": {
+          "title": "Creation of the Singapore Dollar",
+          "description": "After its independence, Singapore establishes its own currency, separating from the Malaysian dollar."
+        },
+        "mas": {
+          "title": "Establishment of the MAS",
+          "description": "The Monetary Authority of Singapore (MAS) is created as the central bank and financial regulator."
+        },
+        "exchangePolicy": {
+          "title": "Exchange Rate Policy",
+          "description": "Adoption of an exchange rate policy based on managed fluctuation bands."
+        },
+        "portraitSeries": {
+          "title": "Portrait Series",
+          "description": "Launch of the Portrait series of banknotes with advanced security features."
+        },
+        "coreInflation": {
+          "title": "Core Inflation",
+          "description": "MAS begins to use core inflation as the main indicator for monetary policy."
+        },
+        "fintechFestival": {
+          "title": "Singapore FinTech Festival",
+          "description": "Singapore establishes the world's largest fintech festival, strengthening its position as a fintech hub."
+        }
+      },
+      "images": {
+        "notes": {
+          "alt": "Singapore Dollar Banknotes",
+          "caption": "Current series of Singapore dollar banknotes with national motifs"
+        },
+        "mas": {
+          "alt": "Monetary Authority of Singapore",
+          "caption": "The Monetary Authority of Singapore (MAS) building"
+        },
+        "coins": {
+          "alt": "Singapore Coins",
+          "caption": "Current series of Singapore dollar coins"
+        }
+      }
+    },
+    "festivals": {
+      "title": "Festivals and Traditions",
+      "description": "Multicultural celebrations that reflect Singapore's ethnic diversity.",
+      "explore": "Explore",
+      "culturalHarmony": "Cultural Harmony",
+      "introduction": {
+        "p1": "Singapore is a melting pot of cultures, where Chinese, Malay, Indian, and Western traditions intertwine to create a vibrant and harmonious society. This diversity is celebrated through a series of festivities throughout the year, offering a unique glimpse into the country's rich cultural tapestry.",
+        "p2": "Major festivities include Chinese New Year, Hari Raya Puasa, Deepavali, Christmas, and Singapore National Day. Each celebration is characterized by distinctive decorations in public spaces, community events, and specific culinary traditions.",
+        "p3": "The government actively promotes intercultural participation in these festivities as part of its racial harmony policy, encouraging Singaporeans of all backgrounds to share and experience each other's traditions."
+      },
+      "mainFestivals": "Main Festivals",
+      "communities": {
+        "chinese": "Chinese community",
+        "malay": "Malay community",
+        "indian": "Indian community",
+        "national": "National"
+      },
+      "galleryTitle": "Cultural Festivals",
+      "chineseNewYear": "Chinese New Year",
+      "chineseNewYearDesc": "The most important celebration for the Chinese community, including parades, lion and dragon dancers, and families gathering to eat \"Lo Hei\" (prosperity toss salad).",
+      "vesak": "Vesak Day",
+      "vesakDesc": "Buddhist celebration of the birth, enlightenment, and parinirvana of Buddha. Temples are filled with devotees for ceremonies and offerings.",
+      "hariRaya": "Hari Raya Puasa",
+      "hariRayaDesc": "Marks the end of Ramadan with special prayers, family visits, and traditional dishes like rendang and ketupat.",
+      "hungryGhost": "Dragon Boat Festival",
+      "hungryGhostDesc": "Known for its dragon boat races and consumption of zongzi (glutinous rice dumplings wrapped in bamboo leaves).",
+      "nationalDay": "Singapore National Day",
+      "nationalDayDesc": "Commemorates Singapore's independence with a military parade, aerial displays, and massive cultural performances.",
+      "deepavali": "Deepavali",
+      "deepavaliDesc": "Hindu festival of lights symbolizing the triumph of good over evil, with lamps lighting and elaborate rangolis (decorative patterns).",
+      "christmas": "Christmas",
+      "christmasDesc": "Widely celebrated with decorations on Orchard Road, concerts, and Christmas markets reflecting Western influence.",
+      "images": {
+        "chineseNewYear": {
+          "alt": "Chinese New Year celebration in Chinatown",
+          "caption": "Lights and decorations during Chinese New Year in Chinatown"
+        },
+        "deepavali": {
+          "alt": "Deepavali celebration in Little India",
+          "caption": "Colorful light decoration and rangolis for Deepavali"
+        },
+        "hariRaya": {
+          "alt": "Hari Raya Puasa celebration",
+          "caption": "Families celebrating Hari Raya in Geylang Serai"
+        }
+      },
+      "traditions": {
+        "title": "Cultural Traditions",
+        "description": "Beyond official festivities, Singapore maintains specific cultural traditions for each ethnic community. These practices have evolved to adapt to the urban context and modern society, but remain important markers of identity.",
+        "subtitle": "Preserving Heritage in Modern Singapore",
+        "overview": "Singapore's traditions blend ancestral practices with contemporary adaptations, creating a unique cultural landscape.",
+        "culinary": {
+          "title": "Culinary Traditions",
+          "description": "The cuisine of each ethnic group stands out during their festivities. Mooncakes during the Mid-Autumn Festival, rendang during Hari Raya, and sweets during Deepavali are an integral part of the celebrations.",
+          "examples": "Popular Traditional Dishes",
+          "chineseDishes": "Yusheng (prosperity toss salad), nian gao (sticky rice cake), bak kwa (barbecued pork)",
+          "malayDishes": "Rendang, ketupat (rice cakes), kuih (traditional pastries)",
+          "indianDishes": "Murukku, laddu, kesari, various vegetarian dishes"
+        },
+        "performingArts": {
+          "title": "Performing Arts",
+          "description": "Chinese opera, wayang kulit (Malay shadow theater), and bharatanatyam (Indian classical dance) are regularly performed during cultural festivals, preserving ancestral art forms.",
+          "preservationEfforts": "Preservation Efforts",
+          "preservationDescription": "Government and community initiatives to maintain traditional performing arts through education programs and public performances."
+        },
+        "familyRituals": {
+          "title": "Family Rituals",
+          "description": "Family gatherings during festivities, such as reunion dinner during Chinese New Year or breaking the fast during Ramadan, maintain social cohesion and the transmission of values.",
+          "modernAdaptations": "Modern Adaptations",
+          "adaptationsDescription": "How traditional family rituals have adapted to urban living and busy lifestyles in Singapore."
+        },
+        "festiveMarkets": {
+          "title": "Festive Markets",
+          "description": "Temporary bazaars such as Pasar Malam during Ramadan or Chinese New Year markets in Chinatown are vibrant spaces where special festive items are traded.",
+          "popularLocations": "Popular Locations",
+          "chinatownMarket": "Chinatown Street Market during Chinese New Year",
+          "geylangSerai": "Geylang Serai Market during Ramadan",
+          "littleIndia": "Little India bazaars during Deepavali"
+        },
+        "evolutionOfTraditions": {
+          "title": "Evolution of Traditions",
+          "description": "How Singapore's cultural traditions have evolved over time while maintaining their core significance.",
+          "blendingCultures": "Blending of Cultures",
+          "blendingDescription": "Examples of how traditions have influenced each other across ethnic communities."
+        }
+      }
+    },
+    "modernity": {
+      "title": "Modernity and Vision",
+      "description": "Technological advancement and Singapore's Smart Nation vision.",
+      "explore": "Explore",
+      "smartNationTitle": "Smart Nation Initiative",
+      "smartNationP1": "Launched in 2014, Singapore's Smart Nation initiative aims to harness technology to improve citizens' quality of life, create more opportunities, and build stronger communities. The strategy focuses on digital government services, a digitally empowered population, and businesses transformed by technology.",
+      "smartNationP2": "The government has invested heavily in technology infrastructure, including a nationwide fiber optic network, extensive sensor deployment, and a public data platform. This foundation enables innovative applications ranging from telemedicine to autonomous vehicles.",
+      "smartNationP3": "Singapore's approach balances technological advancement with ethical considerations and inclusivity, ensuring that no segment of society is left behind in the digital transformation.",
+      "urbanPlanningTitle": "Urban Planning and Sustainability",
+      "urbanPlanningDesc": "Singapore's urban development reflects a vision of a 'City in a Garden,' blending cutting-edge architecture with green spaces. Projects like Gardens by the Bay exemplify the country's commitment to sustainable urban development that combines technological innovation with environmental conservation.",
+      "digitalGovernment": {
+        "title": "Digital Government",
+        "desc": "Singapore has digitized over 94% of government services, with platforms like SingPass and the OneService app creating a seamless interface between citizens and government agencies."
+      },
+      "digitalEconomy": {
+        "title": "Digital Economy",
+        "desc": "Singapore ranks as Asia's most digitally competitive economy, with a thriving startup ecosystem, over 80 of the world's top 100 tech companies, and pioneering initiatives in fintech, healthtech, and smart logistics."
+      },
+      "digitalSociety": {
+        "title": "Digital Society",
+        "desc": "Programs like Digital Readiness Blueprint and Silver Infocomm Initiative ensure all Singaporeans, regardless of age or income, have access to technology skills and tools necessary for participation in the digital economy."
+      },
+      "keyFeatures": "Key Aspects of Singapore's Modernity",
+      "keyFeature1": "Integration of technology and urban planning",
+      "keyFeature2": "Balance between efficiency and livability",
+      "keyFeature3": "Forward-looking policy approach",
+      "galleryTitle": "Singapore's Modern Landscape",
+      "keyProjects": {
+        "title": "Key Smart Nation Projects",
+        "digitalIdentity": {
+          "title": "National Digital Identity",
+          "desc": "SingPass provides secure digital authentication and digital signatures for citizens, enabling access to over 2,000 government and private sector services."
+        },
+        "sensorsNetwork": {
+          "title": "Smart Nation Sensor Platform",
+          "desc": "A nationwide network of sensors and IoT devices that collect data on everything from air quality to pedestrian flows, enabling data-driven urban management."
+        },
+        "payments": {
+          "title": "E-Payments",
+          "desc": "Singapore's PayNow system allows instant transfers between bank accounts and businesses using just a phone number or ID, moving toward a cashless society."
+        },
+        "autonomousVehicles": {
+          "title": "Autonomous Vehicles",
+          "desc": "Testing of self-driving vehicles in designated areas, with plans to deploy autonomous buses and shuttles in selected towns by 2025."
+        },
+        "healthtech": {
+          "title": "HealthTech",
+          "desc": "Integration of AI and telehealth into the healthcare system, including the HealthHub app that centralizes medical records and services."
+        },
+        "cybersecurity": {
+          "title": "Cybersecurity",
+          "desc": "Comprehensive national cybersecurity strategy to protect critical infrastructure and develop talent in this rapidly evolving field."
+        }
+      },
+      "challengeOpportunities": {
+        "title": "Challenges and Opportunities",
+        "aging": {
+          "title": "Aging Population",
+          "desc": "Digital initiatives targeting seniors, including health monitoring systems and simplified interfaces for essential services."
+        },
+        "privacy": {
+          "title": "Data Privacy",
+          "desc": "Balancing technological advancement with robust frameworks like the Personal Data Protection Act to safeguard citizens' information."
+        },
+        "workforce": {
+          "title": "Workforce Transformation",
+          "desc": "Programs like SkillsFuture to reskill workers for the digital economy and prepare for jobs of the future."
+        },
+        "digital": {
+          "title": "Digital Divide",
+          "desc": "Initiatives to ensure all segments of society benefit from digital transformation, including subsidized devices and training for lower-income households."
+        }
+      },
+      "timeline": {
+        "title": "Journey to a Smart Nation",
+        "computerization": {
+          "title": "National Computerization Plan",
+          "description": "Launch of the first national IT plan to computerize civil service functions."
+        },
+        "itMasterPlan": {
+          "title": "First IT Master Plan",
+          "description": "Strategy to develop Singapore into an 'Intelligent Island' with nationwide IT infrastructure."
+        },
+        "broadband": {
+          "title": "National Broadband Network",
+          "description": "Rollout of nationwide high-speed fiber optic network reaching 95% of households."
+        },
+        "smartNation": {
+          "title": "Smart Nation Initiative",
+          "description": "Prime Minister Lee Hsien Loong launches comprehensive plan to transform Singapore through technology."
+        },
+        "researchInnovation": {
+          "title": "Research Innovation Enterprise 2020",
+          "description": "S$19 billion commitment to R&D in key domains including health, urban solutions, and services."
+        },
+        "digitalEconomy": {
+          "title": "Digital Economy Framework",
+          "description": "Strategy to accelerate digitalization across all sectors of the economy and society."
+        },
+        "digitalGovernment": {
+          "title": "Digital Government Blueprint",
+          "description": "Roadmap for government agencies to leverage data and new technologies to improve service delivery."
+        }
+      },
+      "futureDirections": {
+        "title": "Future Directions",
+        "description": "Singapore continues to evolve its Smart Nation vision with emerging technologies and changing global dynamics. The focus remains on human-centric solutions that enhance quality of life while driving economic growth."
+      },
+      "stats": {
+        "digitalRanking": "Digital Competitiveness Ranking",
+        "rankPosition": "2nd",
+        "rankDescription": "Singapore's position in the IMD World Digital Competitiveness Ranking",
+        "highSpeedTitle": "High-Speed Internet",
+        "highSpeedValue": "98%",
+        "highSpeedDesc": "Household coverage of fiber broadband",
+        "digitalLiteracyTitle": "Digital Literacy",
+        "digitalLiteracyValue": "89%",
+        "digitalLiteracyDesc": "Of population with basic digital skills",
+        "statsSource": "Source: Infocomm Media Development Authority (IMDA), 2023"
+      },
+      "images": {
+        "smartNation": {
+          "alt": "Smart Nation command center in Singapore",
+          "caption": "The digital operations command center monitoring various smart city systems"
+        },
+        "gardens": {
+          "alt": "Gardens by the Bay in Singapore",
+          "caption": "Supertrees at Gardens by the Bay, combining technology with environmental design"
+        },
+        "autonomous": {
+          "alt": "Autonomous vehicle testing in Singapore",
+          "caption": "Self-driving shuttle being tested at a designated test bed in Singapore"
+        },
+        "digitalServices": {
+          "alt": "Digital services kiosk in Singapore",
+          "caption": "Self-service government kiosk providing digital services to citizens"
+        }
+      }
+    }
+  },
+  "timeline": {
+    "festivalCalendar": "Annual Festival Calendar",
+    "months": {
+      "janFeb": "January/February",
+      "aprMay": "April/May",
+      "mayJun": "May/June",
+      "julAug": "July/August",
+      "aug": "August",
+      "octNov": "October/November",
+      "dec": "December"
+    }
+  },
+  "quote": {
+    "festivals": "Festivals in Singapore are not just celebrations, but cultural bridges that allow citizens to experience and appreciate the traditions of their compatriots.",
+    "festivalSource": "Lawrence Wong, Minister of Finance of Singapore",
+    "monetarySystem": "Singapore's financial system represents one of the best examples of how a clear vision, consistent policies, and adaptation to global trends can transform a small local market into a world-class financial center.",
+    "monetarySystemSource": "Ravi Menon, Managing Director of MAS",
+    "linguisticPolicy": "The decision to adopt English as our working language gave Singaporeans a crucial advantage in the global economy, while preserving our mother tongues ensures we maintain our cultural identities.",
+    "linguisticPolicySource": "Lee Kuan Yew, First Prime Minister of Singapore",
+    "singapore": "Singapore is an extraordinary story of how a small country can prosper against all odds, constantly reinventing itself.",
+    "author": "Lee Hsien Loong, Prime Minister of Singapore",
+    "modernity": "Our Smart Nation journey is about Singapore taking full advantage of IT as a catalyst for change. We want to create new jobs, new business opportunities, and make our economy more productive, our lives more convenient, and our society more responsive to people's needs and aspirations.",
+    "modernitySource": "Lee Hsien Loong, Prime Minister of Singapore"
+  },
+  "common": {
+    "loading": "Loading...",
+    "timeline": "Timeline",
+    "keyData": "Key Data",
+    "relevantLocations": "Relevant Locations"
+  },
+  "accessibility": {
+    "changeLanguage": "Change language",
+    "changeTheme": "Change theme",
+    "socialMedia": {
+      "facebook": "Visit our Facebook page",
+      "twitter": "Follow us on Twitter",
+      "instagram": "Follow us on Instagram"
+    }
+  }
+}

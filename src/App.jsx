@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Navbar from './components/layout/Navbar';
+import Navbar from './components/layout/NavBar';
 import LoadingFallback from './components/ui/LoadingFallback';
 import ThemeProvider from './context/ThemeProvider';
 import { useTheme } from './context/ThemeContext';

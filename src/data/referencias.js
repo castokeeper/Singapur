@@ -52,7 +52,7 @@ export const referenciasData = {
       autor: "Lee Hsien Loong",
       año: 2021,
       institucion: "Prime Minister's Office",
-      url: "https://www.pmo.gov.sg/Newsroom/National-Day-Rally-2021",
+      url: "https://www.pmo.gov.sg/Newsroom/National-Day-Rally-2021-English",
       descripcion: "Discurso oficial donde se abordan temas de políticas lingüísticas.",
       fecha_acceso: "10/01/2023"
     },
@@ -96,7 +96,7 @@ export const referenciasData = {
       autor: "Smart Nation and Digital Government Office",
       año: 2021,
       institucion: "Gobierno de Singapur",
-      url: "https://www.smartnation.gov.sg/report-2021",
+      url: "https://file.go.gov.sg/smartnation2-report.pdf",
       descripcion: "Informe oficial sobre los avances de la iniciativa Smart Nation.",
       fecha_acceso: "25/01/2023"
     },
@@ -107,7 +107,7 @@ export const referenciasData = {
       año: "2000",
       tipo: "libro",
       categoria: "Historia",
-      url: "https://ejemplo.com/libro",
+      url: "https://www.mercadolibre.com.mx/from-third-world-to-first-kuan-yew-lee/p/MLM21174554?matt_tool=28238160&pdp_filters=item_id:MLM2356529460&from=gshop",
       isbn: "978-3-16-148410-0",
       descripcion: "Análisis completo del desarrollo histórico de Singapur"
     },

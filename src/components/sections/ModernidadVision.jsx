@@ -3,118 +3,136 @@ import ImageGallery from '../ui/ImageGallery';
 import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
 import { useTheme } from '../../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 import { getAssetPath } from '../../utils/assetUtils';
+import useViewportSize from '../../hooks/useViewportSize';
 
 /**
  * Componente que muestra información sobre la modernidad y visión de futuro de Singapur
  */
 const ModernidadVision = () => {
   const { isDark } = useTheme();
+  const { t } = useTranslation();
+  const { device } = useViewportSize();
   
-  // Imágenes para la galería con rutas actualizadas
+  // Imágenes para la galería con traducciones
   const imagenesModernidad = [
     {
+      src: getAssetPath("/images/smart-nation-center.jpg"),
+      alt: t('sections.modernity.images.smartNation.alt'),
+      caption: t('sections.modernity.images.smartNation.caption')
+    },
+    {
       src: getAssetPath("/images/gardens-by-the-bay.jpg"),
-      alt: "Gardens by the Bay",
-      caption: "Gardens by the Bay, símbolo de la innovación arquitectónica y sostenibilidad"
+      alt: t('sections.modernity.images.gardens.alt'),
+      caption: t('sections.modernity.images.gardens.caption')
     },
     {
-      src: getAssetPath("/images/changi_airport.jpg"),
-      alt: "Aeropuerto Changi",
-      caption: "El premiado aeropuerto Changi, considerado uno de los mejores del mundo"
+      src: getAssetPath("/images/autonomous-vehicle.jpg"),
+      alt: t('sections.modernity.images.autonomous.alt'),
+      caption: t('sections.modernity.images.autonomous.caption')
     },
     {
-      src: getAssetPath("/images/singapore-skyline.jpg"),
-      alt: "Horizonte de Singapur",
-      caption: "El moderno horizonte de Singapur, reflejo de su desarrollo económico"
+      src: getAssetPath("/images/digital-services.jpg"),
+      alt: t('sections.modernity.images.digitalServices.alt'),
+      caption: t('sections.modernity.images.digitalServices.caption')
     }
   ];
   
-  // Línea de tiempo de desarrollo urbano
+  // Línea de tiempo con datos de traducción
   const hitos = [
     {
-      año: "1965",
-      titulo: "Independencia",
-      descripcion: "Separación de Malasia y fundación de la República independiente de Singapur bajo el liderazgo de Lee Kuan Yew.",
-      importancia: "alta"
+      year: "1980",
+      title: t('sections.modernity.timeline.computerization.title'),
+      description: t('sections.modernity.timeline.computerization.description'),
+      importance: "medium"
     },
     {
-      año: "1972",
-      titulo: "Estrategia industrial",
-      descripcion: "Cambio de política hacia industrias intensivas en tecnología y atracción de inversión extranjera.",
-      importancia: "media"
+      year: "1992",
+      title: t('sections.modernity.timeline.itMasterPlan.title'),
+      description: t('sections.modernity.timeline.itMasterPlan.description'),
+      importance: "medium"
     },
     {
-      año: "1980s",
-      titulo: "Centro financiero",
-      descripcion: "Desarrollo como centro financiero regional con la liberalización del sector bancario.",
-      importancia: "media"
+      year: "2006",
+      title: t('sections.modernity.timeline.broadband.title'),
+      description: t('sections.modernity.timeline.broadband.description'),
+      importance: "medium"
     },
     {
-      año: "2000",
-      titulo: "Focus en conocimiento",
-      descripcion: "Transición hacia una economía basada en el conocimiento con inversiones en biotecnología y educación superior.",
-      importancia: "media"
+      year: "2014",
+      title: t('sections.modernity.timeline.smartNation.title'),
+      description: t('sections.modernity.timeline.smartNation.description'),
+      importance: "high"
     },
     {
-      año: "2014",
-      titulo: "Smart Nation",
-      descripcion: "Lanzamiento de la iniciativa Smart Nation para integrar tecnología en todos los aspectos de la vida urbana.",
-      importancia: "alta"
+      year: "2016",
+      title: t('sections.modernity.timeline.researchInnovation.title'),
+      description: t('sections.modernity.timeline.researchInnovation.description'),
+      importance: "medium"
     },
     {
-      año: "2019",
-      titulo: "Plan Verde 2030",
-      descripcion: "Ambicioso plan de sostenibilidad para combatir el cambio climático y mantener la ciudad habitable.",
-      importancia: "alta"
+      year: "2018",
+      title: t('sections.modernity.timeline.digitalEconomy.title'),
+      description: t('sections.modernity.timeline.digitalEconomy.description'),
+      importance: "high"
+    },
+    {
+      year: "2020",
+      title: t('sections.modernity.timeline.digitalGovernment.title'),
+      description: t('sections.modernity.timeline.digitalGovernment.description'),
+      importance: "high"
     }
   ];
 
   return (
     <div className="modernidad-vision">
       <section className="mb-5">
-        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Ciudad del Futuro</h2>
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.modernity.smartNationTitle')}
+        </h2>
         <div className="row">
           <div className="col-lg-8">
             <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-              Singapur se ha establecido como un modelo global de planificación urbana innovadora, 
-              combinando alta densidad de población con excelente calidad de vida. La ciudad-estado 
-              ha transformado sus limitaciones geográficas en catalizadores para la innovación.
+              {t('sections.modernity.smartNationP1')}
             </p>
             <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-              Con una visión estratégica clara, Singapur ha desarrollado infraestructuras de 
-              vanguardia como el aeropuerto Changi, el sistema de transporte público MRT, y proyectos 
-              emblemáticos como Marina Bay Sands y Gardens by the Bay que han redefinido su horizonte.
+              {t('sections.modernity.smartNationP2')}
             </p>
             <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-              La iniciativa Smart Nation, lanzada en 2014, busca aprovechar la tecnología para 
-              mejorar la vida urbana, implementando soluciones innovadoras en movilidad, salud, 
-              administración pública y servicios al ciudadano.
+              {t('sections.modernity.smartNationP3')}
             </p>
           </div>
           <div className="col-lg-4">
             <div className={`card mb-4 ${isDark ? 'bg-dark border-secondary' : ''}`}>
-              <div className={`card-header ${isDark ? 'bg-success bg-opacity-75' : 'bg-success'} text-white`}>
-                <h5 className="card-title mb-0">Pilares de desarrollo</h5>
+              <div className={`card-header ${isDark ? 'bg-info bg-opacity-75' : 'bg-info'} text-white`}>
+                <h5 className="card-title mb-0">{t('sections.modernity.keyFeatures')}</h5>
               </div>
               <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
                 <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  <span className="fw-medium">Planificación a largo plazo</span>
-                  <i className="fas fa-check-circle text-success"></i>
+                  <span className="fw-medium">{t('sections.modernity.keyFeature1')}</span>
+                  <i className="fas fa-check-circle text-info"></i>
                 </li>
                 <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  <span className="fw-medium">Uso eficiente del espacio</span>
-                  <i className="fas fa-check-circle text-success"></i>
+                  <span className="fw-medium">{t('sections.modernity.keyFeature2')}</span>
+                  <i className="fas fa-check-circle text-info"></i>
                 </li>
                 <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  <span className="fw-medium">Sostenibilidad ambiental</span>
-                  <i className="fas fa-check-circle text-success"></i>
-                </li>
-                <li className={`list-group-item d-flex justify-content-between align-items-center ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
-                  <span className="fw-medium">Innovación tecnológica</span>
-                  <i className="fas fa-check-circle text-success"></i>
+                  <span className="fw-medium">{t('sections.modernity.keyFeature3')}</span>
+                  <i className="fas fa-check-circle text-info"></i>
                 </li>
               </ul>
+            </div>
+
+            {/* Estadísticas digitales */}
+            <div className="card bg-info text-white mb-4">
+              <div className="card-body">
+                <h5 className="card-title">{t('sections.modernity.stats.digitalRanking')}</h5>
+                <p className="display-4 text-center mb-3">{t('sections.modernity.stats.rankPosition')}</p>
+                <p className="card-text text-center">
+                  {t('sections.modernity.stats.rankDescription')}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -122,29 +140,171 @@ const ModernidadVision = () => {
 
       <ImageGallery 
         images={imagenesModernidad} 
-        title="Símbolos de modernidad" 
+        title={t('sections.modernity.galleryTitle')} 
+        variant="info"
       />
 
+      {/* Sección de proyectos clave */}
       <section className="mb-5">
-        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Sostenibilidad Urbana</h2>
-        <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-          A pesar de su limitada extensión territorial, Singapur ha desarrollado estrategias 
-          innovadoras para lograr un desarrollo sostenible que equilibra crecimiento económico, 
-          conservación ambiental y bienestar social.
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.modernity.keyProjects.title')}
+        </h2>
+        
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-id-card text-info me-2"></i>
+                  {t('sections.modernity.keyProjects.digitalIdentity.title')}
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  {t('sections.modernity.keyProjects.digitalIdentity.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-network-wired text-info me-2"></i>
+                  {t('sections.modernity.keyProjects.sensorsNetwork.title')}
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  {t('sections.modernity.keyProjects.sensorsNetwork.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-credit-card text-info me-2"></i>
+                  {t('sections.modernity.keyProjects.payments.title')}
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  {t('sections.modernity.keyProjects.payments.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-car text-info me-2"></i>
+                  {t('sections.modernity.keyProjects.autonomousVehicles.title')}
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  {t('sections.modernity.keyProjects.autonomousVehicles.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-heartbeat text-info me-2"></i>
+                  {t('sections.modernity.keyProjects.healthtech.title')}
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  {t('sections.modernity.keyProjects.healthtech.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
+              <div className="card-body">
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  <i className="fas fa-shield-alt text-info me-2"></i>
+                  {t('sections.modernity.keyProjects.cybersecurity.title')}
+                </h5>
+                <p className={`card-text ${isDark ? 'text-light' : ''}`}>
+                  {t('sections.modernity.keyProjects.cybersecurity.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-5">
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.modernity.urbanPlanningTitle')}
+        </h2>
+        <p className={`mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.modernity.urbanPlanningDesc')}
         </p>
+        
+        {/* Estadísticas adicionales */}
+        <div className="row row-cols-2 row-cols-md-3 g-2 g-md-4 mb-4">
+          <div className="col">
+            <div className={`card ${isDark ? 'bg-dark border-secondary text-light' : 'bg-light'}`}>
+              <div className="card-body text-center p-2 p-md-3">
+                <h5 className={`card-title ${device === 'mobile' ? 'fs-6' : ''}`}>
+                  {t('sections.modernity.stats.highSpeedTitle')}
+                </h5>
+                <p className={`${device === 'mobile' ? 'fs-5' : 'display-4'} fw-bold text-info mb-1`}>
+                  {t('sections.modernity.stats.highSpeedValue')}
+                </p>
+                <p className="text-muted small">{t('sections.modernity.stats.highSpeedDesc')}</p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card ${isDark ? 'bg-dark border-secondary text-light' : 'bg-light'}`}>
+              <div className="card-body text-center p-2 p-md-3">
+                <h5 className={`card-title ${device === 'mobile' ? 'fs-6' : ''}`}>
+                  {t('sections.modernity.stats.digitalLiteracyTitle')}
+                </h5>
+                <p className={`${device === 'mobile' ? 'fs-5' : 'display-4'} fw-bold text-info mb-1`}>
+                  {t('sections.modernity.stats.digitalLiteracyValue')}
+                </p>
+                <p className="text-muted small">{t('sections.modernity.stats.digitalLiteracyDesc')}</p>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className={`card ${isDark ? 'bg-dark border-secondary text-light' : 'bg-light'}`}>
+              <div className="card-body text-center p-2 p-md-3">
+                <div className="d-flex flex-column align-items-center">
+                  <i className="fas fa-laptop-code text-info fa-3x mb-3"></i>
+                  <p className="mb-1">
+                    {t('sections.modernity.digitalEconomy.title')}
+                  </p>
+                  <p className={`${isDark ? 'text-light' : 'text-dark'} small`}>
+                    {t('sections.modernity.digitalEconomy.desc')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p className={`small text-muted mt-2 mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.modernity.stats.statsSource')}
+        </p>
+      </section>
+
+      <section className="mb-5">
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.modernity.challengeOpportunities.title')}
+        </h2>
         
         <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
           <div className="col">
             <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
-                  <i className="fas fa-leaf text-success me-2"></i>
-                  Ciudad Jardín
+                  <i className="fas fa-user-friends text-info me-2"></i>
+                  {t('sections.modernity.challengeOpportunities.aging.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  Desde la visión de Lee Kuan Yew de convertir Singapur en una "Ciudad Jardín", 
-                  el país ha integrado la vegetación en el diseño urbano, con corredores verdes, 
-                  jardines verticales y más de 350 parques.
+                  {t('sections.modernity.challengeOpportunities.aging.desc')}
                 </p>
               </div>
             </div>
@@ -153,13 +313,11 @@ const ModernidadVision = () => {
             <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
-                  <i className="fas fa-water text-success me-2"></i>
-                  Gestión del agua
+                  <i className="fas fa-user-shield text-info me-2"></i>
+                  {t('sections.modernity.challengeOpportunities.privacy.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  El sistema NEWater recicla aguas residuales hasta estándares potables, cubriendo 
-                  hasta el 40% de las necesidades hídricas del país y reduciendo la dependencia 
-                  de importaciones desde Malasia.
+                  {t('sections.modernity.challengeOpportunities.privacy.desc')}
                 </p>
               </div>
             </div>
@@ -168,13 +326,11 @@ const ModernidadVision = () => {
             <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
-                  <i className="fas fa-subway text-success me-2"></i>
-                  Movilidad sostenible
+                  <i className="fas fa-users-cog text-info me-2"></i>
+                  {t('sections.modernity.challengeOpportunities.workforce.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  El sistema de cuotas vehiculares (COE) y peajes electrónicos (ERP) limitan la 
-                  congestión vehicular, mientras que el transporte público eficiente cubre el 78% 
-                  de los desplazamientos en hora punta.
+                  {t('sections.modernity.challengeOpportunities.workforce.desc')}
                 </p>
               </div>
             </div>
@@ -183,13 +339,11 @@ const ModernidadVision = () => {
             <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
-                  <i className="fas fa-building text-success me-2"></i>
-                  Edificios verdes
+                  <i className="fas fa-wifi text-info me-2"></i>
+                  {t('sections.modernity.challengeOpportunities.digital.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  El programa Green Mark certifica edificios sostenibles, con más del 80% 
-                  de edificios proyectados para 2030 con certificación verde, reduciendo el 
-                  consumo energético de la isla.
+                  {t('sections.modernity.challengeOpportunities.digital.desc')}
                 </p>
               </div>
             </div>
@@ -198,16 +352,25 @@ const ModernidadVision = () => {
       </section>
 
       <Quote 
-        text="Singapur es una ciudad creada a partir de la imaginación. Dentro de una generación, hemos pasado de un asentamiento de bajos ingresos a una metrópolis global que supera por mucho nuestro tamaño."
-        author="Lee Hsien Loong, Primer Ministro de Singapur"
-        variant="success"
-        citation="14"
+        text={t('quote.modernity')}
+        author={t('quote.modernitySource')}
+        variant="info"
+        citation="15"
       />
+
+      <div className={`alert ${isDark ? 'alert-info bg-opacity-25' : 'alert-info bg-opacity-25'} mb-5`}>
+        <h5 className="alert-heading">
+          {t('sections.modernity.futureDirections.title')}
+        </h5>
+        <p>
+          {t('sections.modernity.futureDirections.description')}
+        </p>
+      </div>
 
       <Timeline 
         events={hitos} 
-        title="Evolución urbana" 
-        variant="success" 
+        title={t('sections.modernity.timeline.title')} 
+        variant="info" 
       />
     </div>
   );

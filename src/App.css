@@ -619,3 +619,107 @@ body.dark .btn-primary:hover {
     margin: 0 1rem;
   }
 }
+
+/* Añadir al final del archivo */
+
+/* Mejoras responsive */
+@media (max-width: 992px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .hero-container {
+    height: 70vh;
+  }
+  
+  .hero-text-container {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .hero-container {
+    height: 60vh;
+  }
+  
+  .hero-text-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .hero-text-container h1 {
+    font-size: 1.75rem;
+  }
+  
+  .hero-text-container p {
+    font-size: 1rem;
+  }
+  
+  /* Ajustes para cards en móvil */
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Añadir estas media queries para mejorar responsividad */
+
+/* Ajustes para tablets medianas y grandes */
+@media (max-width: 992px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Ajustar tamaño de componentes para evitar desbordamientos */
+  .card-text {
+    font-size: 0.95rem;
+  }
+  
+  /* Ajustar headers secundarios */
+  h2.h3 {
+    font-size: 1.5rem;
+  }
+  
+  /* Ajustes para tablas */
+  .table-responsive {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajustes para teléfonos y tablets pequeñas */
+@media (max-width: 576px) {
+  /* Ajustar padding para contenedores */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Ajustar tamaño y spacing de headers */
+  .display-5 {
+    font-size: 1.8rem;
+  }
+  
+  .h3 {
+    font-size: 1.4rem;
+  }
+  
+  /* Mejorar visibilidad de cards en móvil */
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Aumentar tamaño de botones para mejor tactilidad */
+  .btn {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Ajustar espaciado entre elementos */
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+}

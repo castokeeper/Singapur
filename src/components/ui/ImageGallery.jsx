@@ -15,19 +15,20 @@ const ImageGallery = ({ images, title }) => {
     <div className="image-gallery mb-5">
       {title && <h3 className={`h4 mb-4 ${isDark ? 'text-light' : ''}`}>{title}</h3>}
       
-      <div className="row row-cols-1 row-cols-md-2 g-4">
+      <div className="row g-3">
         {images.map((image, index) => (
-          <div className="col" key={index}>
+          <div key={index} className={`${images.length > 2 ? 'col-md-6 col-lg-4' : 'col-md-6'}`}>
             <div className={`card h-100 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <ImageWithFallback 
                 src={image.src} // ImageWithFallback ya utiliza getAssetPath internamente
                 alt={image.alt || 'Imagen de Singapur'}
-                className="card-img-top"
+                className="card-img-top img-fluid"
                 style={{ objectFit: 'cover', height: '220px' }}
+                loading="lazy"
               />
               <div className={`card-body ${isDark ? 'text-light' : ''}`}>
                 {image.caption && (
-                  <p className={`card-text small ${isDark ? 'text-light' : 'text-muted'}`}>
+                  <p className={`card-text small text-center mb-0 ${isDark ? 'text-light' : ''}`}>
                     {image.caption}
                   </p>
                 )}

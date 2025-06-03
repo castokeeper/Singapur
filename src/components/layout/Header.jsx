@@ -1,30 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext, useTheme } from '../../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Header = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
+  const { currentLanguage } = useLanguage();
+  
+  // Definir textos directamente como fallback
+  const subtitle = currentLanguage === 'en' 
+    ? "Discover the fascinating contrast between tradition and modernity"
+    : "Descubre el fascinante contraste entre tradición y modernidad";
   
   return (
-    <header className="bg-primary text-white py-4">
+    <header className="bg-primary text-white py-3">
       <div className="container">
         <div className="d-flex justify-content-between align-items-center">
           <div>
             <Link to="/" className="text-white text-decoration-none">
-              <h1 className="mb-0 fs-3 fw-bold">Singapur: Una Mirada Profunda</h1>
+              <h1 className="mb-0 fs-3 fw-bold">{t('siteTitle')}</h1>
             </Link>
             <p className="mb-0 small d-none d-md-block">
-              Análisis cultural, económico y social de la Ciudad del León
+              {t('siteSubtitle') || subtitle}
             </p>
           </div>
-          
-          <button 
-            onClick={toggleTheme} 
-            className="btn btn-sm btn-outline-light"
-            aria-label="Cambiar tema"
-          >
-            {theme === 'dark' ? '☀️' : '🌙'}
-          </button>
         </div>
       </div>
     </header>

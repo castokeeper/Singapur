@@ -13,6 +13,7 @@ import Festividades from '../components/sections/FestividadesTradiciones';
 import ModernidadVision from '../components/sections/ModernidadVision';
 
 import { seccionesData } from '../data/secciones';
+import useViewportSize from '../hooks/useViewportSize';
 
 const DetalleSeccion = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const DetalleSeccion = () => {
   const [seccion, setSeccion] = useState(null);
   const [loading, setLoading] = useState(true);
   const { isDark } = useTheme();
+  const { device } = useViewportSize();
 
   useEffect(() => {
     // Simulación de carga de datos
@@ -135,13 +137,17 @@ const DetalleSeccion = () => {
     <div className={`theme-transition ${isDark ? 'text-light' : ''}`}>
       {/* Encabezado de la sección */}
       <div className={getHeaderClass()}>
-        <h1 className="display-5 fw-bold">{seccion.titulo}</h1>
-        <p className="fs-5">{seccion.descripcion}</p>
+        <h1 className={`${device === 'mobile' ? 'h2' : 'display-5'} fw-bold`}>
+          {seccion.titulo}
+        </h1>
+        <p className={`${device === 'mobile' ? 'fs-6' : 'fs-5'}`}>
+          {seccion.descripcion}
+        </p>
       </div>
 
       {/* Contenido principal */}
       <div className="row">
-        <div className="col-lg-8">
+        <div className={device === 'mobile' ? 'col-12 mb-4' : 'col-lg-8'}>
           {/* Renderizar componente específico o contenido genérico */}
           {renderComponenteEspecifico()}
           
@@ -154,8 +160,7 @@ const DetalleSeccion = () => {
             />
           )}
         </div>
-
-        <div className="col-lg-4">
+        <div className={device === 'mobile' ? 'col-12' : 'col-lg-4'}>
           {/* Información lateral */}
           <div className={`card mb-4 shadow-sm ${isDark ? 'bg-dark border-secondary' : ''}`}>
             <div className="card-body">

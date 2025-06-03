@@ -4,122 +4,124 @@ import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
 import ImageWithFallback from '../common/ImageWithFallback';
 import { useTheme } from '../../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 import { getAssetPath } from '../../utils/assetUtils';
+import useViewportSize from '../../hooks/useViewportSize';
 
 /**
  * Componente que muestra información sobre el sistema monetario de Singapur
  */
 const SistemaMonetario = () => {
   const { isDark } = useTheme();
+  const { t } = useTranslation();
+  const { device } = useViewportSize();
   
-  // Imágenes para la galería monetaria con rutas actualizadas
+  // Imágenes para la galería monetaria con rutas actualizadas y claves de traducción
   const imagenesBilletes = [
     {
       src: getAssetPath("/images/sgd-notes.jpg"),
-      alt: "Billetes del dólar de Singapur",
-      caption: "Serie actual de billetes del dólar singapurense con motivos nacionales"
+      alt: t('sections.monetarySystem.images.notes.alt'),
+      caption: t('sections.monetarySystem.images.notes.caption')
     },
     {
       src: getAssetPath("/images/mas-building.jpg"), 
-      alt: "Autoridad Monetaria de Singapur",
-      caption: "El edificio de la Autoridad Monetaria de Singapur (MAS)"
+      alt: t('sections.monetarySystem.images.mas.alt'),
+      caption: t('sections.monetarySystem.images.mas.caption')
     },
     {
       src: getAssetPath("/images/singapore-coins.jpg"),
-      alt: "Monedas de Singapur",
-      caption: "Serie actual de monedas del dólar singapurense"
+      alt: t('sections.monetarySystem.images.coins.alt'),
+      caption: t('sections.monetarySystem.images.coins.caption')
     }
   ];
   
-  // Línea de tiempo del sistema monetario
+  // Línea de tiempo del sistema monetario con claves de traducción
   const eventosMoney = [
     {
-      año: "1967",
-      titulo: "Creación del dólar singapurense",
-      descripcion: "Tras su independencia, Singapur establece su propia moneda separándose del dólar malayo.",
-      importancia: "alta"
+      year: "1967",
+      title: t('sections.monetarySystem.timeline.creation.title'),
+      description: t('sections.monetarySystem.timeline.creation.description'),
+      importance: "high"
     },
     {
-      año: "1971",
-      titulo: "Establecimiento de la MAS",
-      descripcion: "Se crea la Autoridad Monetaria de Singapur (MAS) como banco central y regulador financiero.",
-      importancia: "alta"
+      year: "1971",
+      title: t('sections.monetarySystem.timeline.mas.title'),
+      description: t('sections.monetarySystem.timeline.mas.description'),
+      importance: "high"
     },
     {
-      año: "1985",
-      titulo: "Política cambiaria",
-      descripcion: "Adopción de una política cambiaria basada en bandas de fluctuación administradas.",
-      importancia: "media"
+      year: "1985",
+      title: t('sections.monetarySystem.timeline.exchangePolicy.title'),
+      description: t('sections.monetarySystem.timeline.exchangePolicy.description'),
+      importance: "medium"
     },
     {
-      año: "2002",
-      titulo: "Serie Portrait",
-      descripcion: "Lanzamiento de la serie Portrait de billetes con medidas de seguridad avanzadas.",
-      importancia: "media"
+      year: "2002",
+      title: t('sections.monetarySystem.timeline.portraitSeries.title'),
+      description: t('sections.monetarySystem.timeline.portraitSeries.description'),
+      importance: "medium"
     },
     {
-      año: "2011",
-      titulo: "Core Inflation",
-      descripcion: "MAS comienza a usar la inflación núcleo como indicador principal para la política monetaria.",
-      importancia: "media"
+      year: "2011",
+      title: t('sections.monetarySystem.timeline.coreInflation.title'),
+      description: t('sections.monetarySystem.timeline.coreInflation.description'),
+      importance: "medium"
     },
     {
-      año: "2017",
-      titulo: "Singapore FinTech Festival",
-      descripcion: "Singapur establece el mayor festival fintech del mundo, reforzando su posición como hub fintech.",
-      importancia: "alta"
+      year: "2017",
+      title: t('sections.monetarySystem.timeline.fintechFestival.title'),
+      description: t('sections.monetarySystem.timeline.fintechFestival.description'),
+      importance: "high"
     }
   ];
 
   return (
     <div className="sistema-monetario">
       <section className="mb-5">
-        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>El Dólar de Singapur</h2>
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.monetarySystem.dollarTitle')}
+        </h2>
         <div className="row">
-          <div className="col-lg-8">
+          <div className={device === 'mobile' ? 'col-12 mb-4' : 'col-lg-8'}>
             <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-              El dólar de Singapur (SGD) es la moneda oficial de la República de Singapur desde 1967, 
-              cuando el país estableció su propia autoridad monetaria tras separarse de Malasia. Actualmente, 
-              es una de las monedas más estables y fuertes de Asia, reflejo de la solidez económica del país.
+              {t('sections.monetarySystem.dollarP1')}
             </p>
             <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-              La Autoridad Monetaria de Singapur (MAS), que funciona como banco central, gestiona la política 
-              monetaria principalmente a través del tipo de cambio en lugar de las tasas de interés, un enfoque 
-              único adaptado a la economía abierta y dependiente del comercio exterior de Singapur.
+              {t('sections.monetarySystem.dollarP2')}
             </p>
             <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-              Los billetes actuales presentan al primer presidente de Singapur, Yusof bin Ishak, e incorporan 
-              avanzadas medidas de seguridad. Las monedas muestran motivos de la flora y fauna local, reflejando 
-              la identidad cultural y natural del país.
+              {t('sections.monetarySystem.dollarP3')}
             </p>
           </div>
-          <div className="col-lg-4">
+          <div className={device === 'mobile' ? 'col-12' : 'col-lg-4'}>
             <div className="mb-4">
               <div className="card bg-success text-white">
                 <div className="card-body">
-                  <h5 className="card-title">Ranking Global</h5>
-                  <p className="display-4 text-center mb-3">4º</p>
+                  <h5 className="card-title">{t('sections.monetarySystem.globalRanking')}</h5>
+                  <p className="display-4 text-center mb-3">{t('sections.monetarySystem.rankPosition')}</p>
                   <p className="card-text text-center">
-                    Posición de Singapur en el Índice de Centros Financieros Globales
+                    {t('sections.monetarySystem.rankDescription')}
                   </p>
                 </div>
               </div>
             </div>
             <div className={`card mb-4 ${isDark ? 'bg-dark border-secondary' : ''}`}>
               <div className="card-body">
-                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>Características clave</h5>
+                <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
+                  {t('sections.monetarySystem.keyFeatures')}
+                </h5>
                 <ul className={`list-group list-group-flush ${isDark ? 'bg-dark' : ''}`}>
                   <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
                     <i className="fas fa-chart-line text-success me-2"></i>
-                    Moneda de reserva en Asia
+                    {t('sections.monetarySystem.keyFeature1')}
                   </li>
                   <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
                     <i className="fas fa-lock text-success me-2"></i>
-                    Alta seguridad anticopia
+                    {t('sections.monetarySystem.keyFeature2')}
                   </li>
                   <li className={`list-group-item ${isDark ? 'bg-dark text-light border-secondary' : ''}`}>
                     <i className="fas fa-exchange-alt text-success me-2"></i>
-                    Política cambiaria administrada
+                    {t('sections.monetarySystem.keyFeature3')}
                   </li>
                 </ul>
               </div>
@@ -130,16 +132,16 @@ const SistemaMonetario = () => {
 
       <ImageGallery 
         images={imagenesBilletes} 
-        title="Sistema monetario singapurense" 
+        title={t('sections.monetarySystem.galleryTitle')} 
+        variant="success"
       />
 
       <section className="mb-5">
-        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>Centro Financiero Global</h2>
+        <h2 className={`h3 mb-4 ${isDark ? 'text-light' : ''}`}>
+          {t('sections.monetarySystem.financialCenterTitle')}
+        </h2>
         <p className={`mb-3 ${isDark ? 'text-light' : ''}`}>
-          Singapur se ha consolidado como uno de los principales centros financieros del mundo, 
-          compitiendo directamente con Nueva York, Londres y Hong Kong. Su estabilidad política, 
-          marco regulatorio transparente y ubicación estratégica lo han posicionado como hub 
-          financiero de referencia en Asia-Pacífico.
+          {t('sections.monetarySystem.financialCenterDesc')}
         </p>
         
         <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
@@ -148,12 +150,10 @@ const SistemaMonetario = () => {
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
                   <i className="fas fa-university text-success me-2"></i>
-                  Banca internacional
+                  {t('sections.monetarySystem.banking.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  Más de 200 bancos tienen presencia en Singapur, incluyendo las principales 
-                  instituciones financieras del mundo que utilizan la ciudad como base para 
-                  sus operaciones en el sureste asiático.
+                  {t('sections.monetarySystem.banking.desc')}
                 </p>
               </div>
             </div>
@@ -163,12 +163,10 @@ const SistemaMonetario = () => {
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
                   <i className="fas fa-chart-pie text-success me-2"></i>
-                  Gestión de patrimonios
+                  {t('sections.monetarySystem.wealthManagement.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  El país gestiona más de 4 billones de SGD en activos, posicionándose como 
-                  el principal centro de gestión de patrimonios de Asia y atrayendo fortunas 
-                  de toda la región.
+                  {t('sections.monetarySystem.wealthManagement.desc')}
                 </p>
               </div>
             </div>
@@ -178,11 +176,10 @@ const SistemaMonetario = () => {
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
                   <i className="fas fa-laptop-code text-success me-2"></i>
-                  Hub Fintech
+                  {t('sections.monetarySystem.fintech.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  Con más de 1.400 empresas fintech, Singapur lidera la innovación financiera 
-                  en áreas como pagos digitales, blockchain, seguros tecnológicos y banca digital.
+                  {t('sections.monetarySystem.fintech.desc')}
                 </p>
               </div>
             </div>
@@ -192,12 +189,10 @@ const SistemaMonetario = () => {
               <div className="card-body">
                 <h5 className={`card-title ${isDark ? 'text-light' : ''}`}>
                   <i className="fas fa-balance-scale text-success me-2"></i>
-                  Marco regulatorio
+                  {t('sections.monetarySystem.regulation.title')}
                 </h5>
                 <p className={`card-text ${isDark ? 'text-light' : ''}`}>
-                  La MAS ha desarrollado un sistema regulatorio robusto pero flexible que 
-                  equilibra la innovación con la estabilidad, incluyendo sandbox regulatorios 
-                  para nuevas tecnologías financieras.
+                  {t('sections.monetarySystem.regulation.desc')}
                 </p>
               </div>
             </div>
@@ -206,15 +201,15 @@ const SistemaMonetario = () => {
       </section>
 
       <Quote 
-        text="El sistema financiero de Singapur representa uno de los mejores ejemplos de cómo una visión clara, políticas consistentes y adaptación a las tendencias globales pueden transformar un pequeño mercado local en un centro financiero de clase mundial."
-        author="Ravi Menon, Director Ejecutivo de la MAS"
+        text={t('quote.monetarySystem')}
+        author={t('quote.monetarySystemSource')}
         variant="success"
         citation="8"
       />
 
       <Timeline 
         events={eventosMoney} 
-        title="Evolución del sistema monetario" 
+        title={t('sections.monetarySystem.timeline.title')} 
         variant="success" 
       />
     </div>

@@ -12,18 +12,17 @@ const Quote = ({ text, author, citation, variant = 'primary' }) => {
   // Ajustar variante para modo oscuro si es necesario
   const quoteVariant = isDark && variant === 'warning' ? 'info' : variant;
   const borderClass = `border-${quoteVariant}`;
-  const textClass = isDark ? 'text-light' : '';
   const captionClass = isDark ? 'text-secondary' : 'text-muted';
   
   return (
-    <blockquote className={`blockquote p-4 border-start border-5 ${borderClass} bg-opacity-10 bg-${quoteVariant} rounded theme-transition mb-4`}>
-      <p className={textClass}>{text}</p>
-      {author && (
-        <footer className={`blockquote-footer mt-2 ${isDark ? 'text-secondary' : ''}`}>
-          {author}
-          {citation && <span className={captionClass}> [cite: {citation}]</span>}
-        </footer>
-      )}
+    <blockquote className={`blockquote p-3 p-md-4 border-${variant} ${borderClass}`}>
+      <p className={`fs-5 mb-2 ${isDark ? 'text-light' : ''}`}>
+        {text}
+      </p>
+      <footer className={`blockquote-footer ${isDark ? 'text-light opacity-75' : ''}`}>
+        <cite title={author}>{author}</cite>
+        {citation && <span className={`ms-2 ${captionClass}`}>({citation})</span>}
+      </footer>
     </blockquote>
   );
 };

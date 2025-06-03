@@ -1,0 +1,136 @@
+{
+  "siteTitle": "Singapur: Una Mirada Profunda",
+  "siteSubtitle": "Descubre el fascinante contraste entre tradición y modernidad",
+  "exploreButton": "Comenzar Exploración",
+  "navigation": {
+    "home": "Inicio",
+    "linguisticIdentity": "Identidad Lingüística",
+    "monetarySystem": "Sistema Monetario",
+    "festivals": "Festividades",
+    "modernity": "Modernidad",
+    "references": "Referencias"
+  },
+  "sections": {
+    "whatExplore": "¿Qué Exploraremos?",
+    "linguisticSection": {
+      "title": "Identidad Lingüística",
+      "description": "Análisis del multilingüismo oficial y su rol en la identidad nacional.",
+      "explore": "Explorar"
+    },
+    "monetarySystem": {
+      "title": "Sistema Monetario",
+      "description": "Evolución y relevancia del dólar singapurense en la economía global.",
+      "explore": "Explorar"
+    },
+    "festivals": {
+      "title": "Festividades y Tradiciones",
+      "description": "Celebraciones multiculturales que reflejan la diversidad étnica de Singapur.",
+      "explore": "Explorar",
+      "culturalHarmony": "Armonía Cultural",
+      "introduction": {
+        "p1": "Singapur celebra una rica variedad de festividades culturales y religiosas que reflejan la diversidad étnica de su población. El calendario festivo oficial reconoce celebraciones de todas las principales religiones y grupos étnicos.",
+        "p2": "Las principales festividades incluyen el Año Nuevo Chino, Hari Raya Puasa, Deepavali, Navidad y el Día Nacional de Singapur. Cada celebración se caracteriza por decoraciones distintivas en espacios públicos, eventos comunitarios y tradiciones culinarias específicas.",
+        "p3": "El gobierno promueve activamente la participación intercultural en estas festividades como parte de su política de armonía racial, animando a los singapurenses de todos los orígenes a compartir y experimentar las tradiciones de los demás."
+      },
+      "mainFestivals": "Principales Festividades",
+      "communities": {
+        "chinese": "Comunidad china",
+        "malay": "Comunidad malaya",
+        "indian": "Comunidad india",
+        "national": "Nacional"
+      },
+      "galleryTitle": "Festivales Culturales",
+      "chineseNewYear": "Año Nuevo Chino",
+      "chineseNewYearDesc": "La celebración más importante para la comunidad china, incluye desfiles, danzas de león y reuniones familiares con intercambio de sobres rojos.",
+      "vesak": "Vesak",
+      "vesakDesc": "Celebración budista del nacimiento, iluminación y fallecimiento de Buda. Los templos se llenan de devotos para ceremonias y ofrendas.",
+      "hariRaya": "Hari Raya Puasa",
+      "hariRayaDesc": "Marca el fin del Ramadán con oraciones especiales, visitas familiares y platos tradicionales como rendang y ketupat.",
+      "hungryGhost": "Festival del Fantasma Hambriento",
+      "hungryGhostDesc": "Conocido por sus carreras de botes dragón y el consumo de zongzi (bollos de arroz glutinoso envueltos en hojas de bambú).",
+      "nationalDay": "Día Nacional",
+      "nationalDayDesc": "Conmemora la independencia de Singapur con un desfile militar, exhibiciones aéreas y espectáculos culturales masivos.",
+      "deepavali": "Deepavali",
+      "deepavaliDesc": "Festival hindú de las luces que simboliza el triunfo del bien sobre el mal, con iluminación de lámparas y elaborados rangolis (patrones decorativos).",
+      "christmas": "Navidad",
+      "christmasDesc": "Celebrada ampliamente con decoraciones en Orchard Road, conciertos y mercados navideños que reflejan la influencia occidental.",
+      "images": {
+        "chineseNewYear": {
+          "alt": "Celebración del Año Nuevo Chino en Chinatown",
+          "caption": "Luces y decoraciones durante el Año Nuevo Chino en Chinatown"
+        },
+        "deepavali": {
+          "alt": "Celebración de Deepavali en Little India",
+          "caption": "Colorida decoración de luces y rangolis para Deepavali"
+        },
+        "hariRaya": {
+          "alt": "Celebración de Hari Raya Puasa",
+          "caption": "Familias celebrando Hari Raya en Geylang Serai"
+        }
+      },
+      "traditions": {
+        "title": "Tradiciones Culturales",
+        "description": "Más allá de las festividades oficiales, Singapur mantiene tradiciones culturales específicas de cada comunidad étnica. Estas prácticas han evolucionado para adaptarse al contexto urbano y a la sociedad moderna, pero siguen siendo importantes marcadores de identidad.",
+        "subtitle": "Preservando el Patrimonio en la Singapur Moderna",
+        "overview": "Las tradiciones de Singapur mezclan prácticas ancestrales con adaptaciones contemporáneas, creando un paisaje cultural único.",
+        "culinary": {
+          "title": "Tradiciones Culinarias",
+          "description": "La gastronomía de cada grupo étnico se destaca durante sus festividades. Los mooncakes durante el Festival del Medio Otoño, el rendang durante Hari Raya, y los dulces durante Deepavali forman parte integral de las celebraciones.",
+          "examples": "Platos Tradicionales Populares",
+          "chineseDishes": "Yusheng (ensalada de la prosperidad), nian gao (pastel de arroz pegajoso), bak kwa (cerdo a la barbacoa)",
+          "malayDishes": "Rendang, ketupat (pasteles de arroz), kuih (pasteles tradicionales)",
+          "indianDishes": "Murukku, laddu, kesari, diversos platos vegetarianos"
+        },
+        "performingArts": {
+          "title": "Artes Escénicas",
+          "description": "La ópera china, el wayang kulit (teatro de sombras malayo) y el bharatanatyam (danza clásica india) se presentan regularmente durante festivales culturales, preservando formas artísticas ancestrales.",
+          "preservationEfforts": "Esfuerzos de Preservación",
+          "preservationDescription": "Iniciativas gubernamentales y comunitarias para mantener las artes escénicas tradicionales mediante programas educativos y actuaciones públicas."
+        },
+        "familyRituals": {
+          "title": "Rituales Familiares",
+          "description": "Las reuniones familiares durante festividades, como la cena de reunión en Año Nuevo Chino o la ruptura del ayuno durante Ramadán, mantienen la cohesión social y la transmisión de valores.",
+          "modernAdaptations": "Adaptaciones Modernas",
+          "adaptationsDescription": "Cómo los rituales familiares tradicionales se han adaptado a la vida urbana y los estilos de vida ocupados en Singapur."
+        },
+        "festiveMarkets": {
+          "title": "Mercados Festivos",
+          "description": "Los bazares temporales como el Pasar Malam durante Ramadán o los mercados de Año Nuevo Chino en Chinatown son espacios vibrantes donde se comercian artículos festivos especiales.",
+          "popularLocations": "Ubicaciones Populares",
+          "chinatownMarket": "Mercado callejero de Chinatown durante el Año Nuevo Chino",
+          "geylangSerai": "Mercado de Geylang Serai durante el Ramadán",
+          "littleIndia": "Bazares de Little India durante Deepavali"
+        },
+        "evolutionOfTraditions": {
+          "title": "Evolución de las Tradiciones",
+          "description": "Cómo las tradiciones culturales de Singapur han evolucionado con el tiempo manteniendo su significado central.",
+          "blendingCultures": "Mezcla de Culturas",
+          "blendingDescription": "Ejemplos de cómo las tradiciones se han influenciado mutuamente entre las comunidades étnicas."
+        }
+      }
+    },
+    "modernity": {
+      "title": "Modernidad",
+      "description": "El avance tecnológico y la visión de Smart Nation de Singapur.",
+      "explore": "Explorar"
+    }
+  },
+  "timeline": {
+    "festivalCalendar": "Calendario Festivo Anual",
+    "months": {
+      "janFeb": "Enero/Febrero",
+      "aprMay": "Abril/Mayo",
+      "mayJun": "Mayo/Junio",
+      "julAug": "Julio/Agosto",
+      "aug": "Agosto",
+      "octNov": "Octubre/Noviembre",
+      "dec": "Diciembre"
+    }
+  },
+  "quote": {
+    "festivals": "Las festividades en Singapur no son solo celebraciones, sino puentes culturales que permiten a los ciudadanos experimentar y apreciar las tradiciones de sus compatriotas de diferentes etnias.",
+    "festivalSource": "Lawrence Wong, Ministro de Finanzas de Singapur",
+    "singapore": "Singapur es una historia extraordinaria de cómo un pequeño país puede prosperar contra todo pronóstico, reinventándose constantemente.",
+    "author": "Lee Hsien Loong, Primer Ministro de Singapur"
+  }
+}
