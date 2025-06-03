@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './public/assets'),
       '@images': path.resolve(__dirname, './public/images')
     }
   },
@@ -28,9 +29,18 @@ export default defineConfig({
             return `assets/img/[name]-[hash][extname]`;
           }
           return `assets/[name]-[hash][extname]`;
-        }
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       }
-    }
+    },
+    emptyOutDir: true
   },
-  publicDir: 'public'
+  publicDir: 'public',
+  css: {
+    devSourcemap: true,
+    preprocessorOptions: {
+      // Configurar para manejar correctamente las rutas de imágenes en CSS
+    }
+  }
 });
