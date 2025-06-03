@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Singapur/',
+  base: '/Singapur/', // Esto es crucial para GitHub Pages
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
@@ -16,6 +16,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
     assetsInlineLimit: 4096,
     emptyOutDir: true,
     chunkSizeWarningLimit: 10000 // Aumentado de 500 KB a 1000 KB
