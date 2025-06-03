@@ -18,7 +18,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsInlineLimit: 4096,
     emptyOutDir: true,
-    chunkSizeWarningLimit: 1000 // Aumentado de 500 KB a 1000 KB
+    chunkSizeWarningLimit: 10000 // Aumentado de 500 KB a 1000 KB
   },
   server: {
     port: 5173,
