@@ -64,14 +64,14 @@ body.dark-mode {
 }
 
 .section-linguistica {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/secciones/linguistica-bg.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/secciones/linguistica-bg.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
 
 .section-festividades {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/secciones/festividades-bg.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/secciones/festividades-bg.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;

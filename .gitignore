@@ -1,3 +1,24 @@
+# Dependencias
+node_modules
+.pnp
+.pnp.js
+
+# Archivos de construcción
+dist
+dist-ssr
+*.local
+
+# Archivos de caché
+.vite
+.cache
+
+# Archivos de entorno local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # Logs
 logs
 *.log
@@ -5,50 +26,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-.pnpm-store/
-*.pnpm
+lerna-debug.log*
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
-.report/
-
-# Node.js
-/node_modules
-/dist
-/dist-ssr
-/*.local
-/.vitepress/cache
-/.yarn/cache
-/.yarn/unplugged
-.env
-.env.*
-!.env.production.local
-/coverage
-/build
-/out
-
-# IDEs and editors
-.idea
+# Editor directories
 .vscode
+.idea
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.vspscc
-*.csproj
-*.fsproj
-*.vbproj
-*.user
-*.bak
-*.pyc
-*.swp
-*.swo
-*.tmp
-*.iml
-.DS_Store
-
-# Misc
-.cache
-.npm
-.yarn-integrity
-.rollup.cache
-.eslintcache
+*.sw?

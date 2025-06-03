@@ -19,19 +19,14 @@ const ModernidadVision = () => {
       caption: "Gardens by the Bay, símbolo de la innovación arquitectónica y sostenibilidad"
     },
     {
-      src: getAssetPath("/images/singapore-skyline.jpg"),
-      alt: "Horizonte de Singapur",
-      caption: "El moderno horizonte de Singapur, reflejo de su desarrollo económico"
-    },
-    {
-      src: getAssetPath("/images/changi-airport.jpg"),
+      src: getAssetPath("/images/changi_airport.jpg"),
       alt: "Aeropuerto Changi",
       caption: "El premiado aeropuerto Changi, considerado uno de los mejores del mundo"
     },
     {
-      src: getAssetPath("/images/smart-nation.jpg"),
-      alt: "Iniciativas Smart Nation",
-      caption: "Tecnología urbana como parte de la iniciativa Smart Nation"
+      src: getAssetPath("/images/singapore-skyline.jpg"),
+      alt: "Horizonte de Singapur",
+      caption: "El moderno horizonte de Singapur, reflejo de su desarrollo económico"
     }
   ];
   

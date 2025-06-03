@@ -78,7 +78,7 @@
 
 /* Hero section con imagen de fondo */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hero-bg.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -381,11 +381,11 @@ body.dark .timeline-item {
 
 /* Hero section */
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 body.dark .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Imagen con fallback */
@@ -558,4 +558,64 @@ body.dark .btn-primary {
 body.dark .btn-primary:hover {
   background-color: #1e40af;
   border-color: #1e3a8a;
+}
+
+/* Estilos para el hero - añadir a App.css */
+
+/* Contenedor principal del hero */
+.hero-container {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background-color: #000; /* Fondo negro como fallback */
+}
+
+/* Imagen de fondo del hero */
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.8; /* Ajusta la opacidad para mejorar legibilidad */
+}
+
+/* Overlay con contenido */
+.hero-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa semitransparente */
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Caja de texto */
+.hero-text-container {
+  color: white;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-left: 5%; /* Dar un poco de margen desde la izquierda */
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .hero-container {
+    height: 70vh;
+  }
+  
+  .hero-text-container {
+    max-width: 100%;
+    margin: 0 1rem;
+  }
 }

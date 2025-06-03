@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createHashRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
@@ -42,27 +42,19 @@ const Layout = () => {
   );
 };
 
-// Configuración del router
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        { path: "/", element: <Home /> },
-        { path: "/seccion/:id", element: <DetalleSeccion /> },
-        { path: "/referencias", element: <Referencias /> },
-        { path: "*", element: <NotFound /> }
-      ]
-    }
-  ],
-  { 
-    basename: "/Singapur",
-    future: {
-      v7_relativeSplatPath: true
-    }
+// Definir las rutas
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "", element: <Home /> },
+      { path: "seccion/:id", element: <DetalleSeccion /> },
+      { path: "/referencias", element: <Referencias /> },
+      { path: "*", element: <NotFound /> }
+    ]
   }
-);
+]);
 
 // Componente principal
 function App() {

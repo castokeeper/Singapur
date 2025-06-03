@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReferenciasCard from '../components/sections/ReferenciasCard';
 import { useTheme } from '../context/ThemeContext';
+import ImageGallery from '../components/ui/ImageGallery';
 
-// Importación de ambos archivos de referencias
 import { referenciasData } from '../data/referencias';
-import { referencias } from '../data/referenciasData';
 
 const Referencias = () => {
   const [filtro, setFiltro] = useState('');
@@ -15,210 +14,137 @@ const Referencias = () => {
   // Clases condicionales según el tema
   const headerClass = isDark ? 'p-4 rounded-3 bg-dark border border-secondary mb-4' : 'p-4 rounded-3 bg-light mb-4';
   const textClass = isDark ? 'text-light' : '';
-  const cardClass = isDark ? 'bg-dark border-secondary' : '';
   const formControlClass = isDark ? 'bg-dark text-light border-secondary' : '';
   const statNumberClass = isDark ? 'text-info' : 'text-primary';
-  const citeBgClass = isDark ? 'bg-dark border-secondary' : 'bg-white border';
-  const citeTextClass = isDark ? 'text-secondary' : 'text-muted';
   
-  // Combinar y normalizar referencias de ambas fuentes al cargar el componente
+  // Inicializar las referencias
   useEffect(() => {
-    // Obtener referencias del objeto complejo en referencias.js
-    const refsDeReferenciasJs = referenciasData.references.map(ref => ({
-      id: ref.id.toString(),
-      titulo: ref.text.split('.')[0].trim(),
-      autores: ref.text.includes('(') ? ref.text.split('(')[0].trim() : '',
-      año: ref.text.match(/\((\d{4})\)/) ? ref.text.match(/\((\d{4})\)/)[1] : '',
-      tipo: getMappedType(ref.type),
-      categoria: ref.category,
-      url: ref.url || '',
-      doi: ref.doi || '',
-      isbn: ref.isbn || '',
-      descripcion: ref.text
-    }));
-    
-    // Combinar con las referencias del otro archivo
-    const todasLasRefs = [...refsDeReferenciasJs, ...referencias];
-    
-    // Eliminar duplicados por ID si existen
-    const refsUnicas = todasLasRefs.filter((ref, index, self) => 
-      index === self.findIndex((r) => r.id === ref.id)
-    );
-    
-    setReferenciasCompletas(refsUnicas);
+    // Verificar que referenciasData existe y tiene la estructura correcta
+    if (referenciasData && Array.isArray(referenciasData.referencias)) {
+      // Asegurarse de que todas las referencias tienen una categoría válida
+      const refsNormalizadas = referenciasData.referencias.map(ref => ({
+        ...ref,
+        categoria: ref.categoria || 'General' // Valor predeterminado si no hay categoría
+      }));
+      setReferenciasCompletas(refsNormalizadas);
+    } else {
+      // Si no hay datos, inicializar con array vacío
+      setReferenciasCompletas([]);
+      console.error("No se pudieron cargar las referencias o el formato es incorrecto");
+    }
   }, []);
   
-  // Función para mapear tipos de referencia
-  const getMappedType = (type) => {
-    const mapping = {
-      'academic': 'artículo',
-      'book': 'libro',
-      'official': 'documento oficial',
-      'report': 'informe',
-      'speech': 'discurso',
-      'article': 'artículo',
-      'web': 'sitio web'
-    };
-    return mapping[type] || 'referencia';
-  };
-  
-  // Función para ajustar variantes de color según el tema
-  const getVariant = (baseVariant) => {
-    if (!isDark) return baseVariant;
-    
-    // Ajustar colores para mejor contraste en modo oscuro
-    const variantMap = {
-      'primary': 'primary',
-      'info': 'info',
-      'success': 'success',
-      'warning': 'info', // Cambiar warning a info en modo oscuro
-      'danger': 'danger'
-    };
-    
-    return variantMap[baseVariant] || baseVariant;
-  };
-  
-  // Extraer categorías únicas de las referencias combinadas
-  const categorias = referenciasCompletas.length > 0 
-    ? ['todas', ...new Set(referenciasCompletas.map(ref => ref.categoria))]
-    : ['todas'];
-  
-  // Filtrar referencias por texto y categoría
+  // Filtrar referencias según categoría y texto de búsqueda
   const referenciasFiltradas = referenciasCompletas.filter(ref => {
-    const coincideTexto = 
-      (ref.titulo && ref.titulo.toLowerCase().includes(filtro.toLowerCase())) ||
-      (ref.autores && ref.autores.toLowerCase().includes(filtro.toLowerCase())) ||
-      (ref.descripcion && ref.descripcion.toLowerCase().includes(filtro.toLowerCase()));
-    
-    const coincideCategoria = categoriaSel === 'todas' || ref.categoria === categoriaSel;
-    
-    return coincideTexto && coincideCategoria;
+    const matchCategoria = categoriaSel === 'todas' || ref.categoria === categoriaSel;
+    const matchFiltro = filtro === '' || 
+      ref.titulo?.toLowerCase().includes(filtro.toLowerCase()) ||
+      ref.autor?.toLowerCase().includes(filtro.toLowerCase()) ||
+      ref.descripcion?.toLowerCase().includes(filtro.toLowerCase());
+    return matchCategoria && matchFiltro;
   });
   
-  return (
-    <div className={`theme-transition ${isDark ? 'bg-dark' : ''}`}>
-      <div className={headerClass}>
-        <h1 className={`display-5 fw-bold ${textClass}`}>Referencias</h1>
-        <p className={`fs-5 ${textClass}`}>
-          Fuentes bibliográficas y recursos consultados para la elaboración de este proyecto.
-        </p>
-      </div>
+  // Obtener categorías únicas para el filtro y eliminar valores undefined
+  const categorias = referenciasCompletas.length > 0 
+    ? [...new Set(referenciasCompletas.map(ref => ref.categoria).filter(Boolean))] 
+    : [];
+  
+  // Contar referencias por categoría
+  const contarPorCategoria = (cat) => {
+    return referenciasCompletas.filter(ref => ref.categoria === cat).length;
+  };
 
-      <div className="row">
-        <div className="col-lg-8">
-          <p className={`lead mb-4 ${textClass}`}>
-            Las siguientes referencias han sido utilizadas como fuentes de información para el desarrollo 
-            del contenido presentado en este sitio sobre Singapur.
-          </p>
-          
-          <div className="mb-4">
-            <input 
-              type="text" 
-              className={`form-control mb-2 ${formControlClass}`}
-              placeholder="Buscar por título o autor..."
+  // Renderizar tarjetas de referencias
+  const renderizarTarjetas = () => {
+    return referenciasFiltradas.map(ref => {
+      return (
+        <div className="col-lg-6 col-xl-4" key={ref.id || `ref-${Math.random()}`}>
+          <ReferenciasCard 
+            titulo={ref.titulo}
+            autores={ref.autor}
+            año={ref.año}
+            editorial={ref.editorial}
+            lugar={ref.lugar}
+            url={ref.url}
+            categoria={ref.categoria}
+            descripcion={ref.descripcion}
+            variant={
+              ref.categoria === "historia" ? "primary" : 
+              ref.categoria === "linguistica" ? "info" : 
+              ref.categoria === "monetario" ? "success" : 
+              ref.categoria === "festividades" ? "warning" : "secondary"
+            }
+          />
+        </div>
+      );
+    });
+  };
+  
+  return (
+    <div className="referencias-page">
+      <header className={headerClass}>
+        <h1 className={`h2 mb-3 ${textClass}`}>Referencias y Fuentes</h1>
+        <p className={textClass}>
+          Esta sección incluye todas las fuentes consultadas para la creación de este proyecto sobre Singapur.
+        </p>
+        
+        {/* Filtros */}
+        <div className="row g-3">
+          <div className="col-md-6">
+            <input
+              type="text"
+              className={`form-control ${formControlClass}`}
+              placeholder="Buscar por título, autor o descripción"
               value={filtro}
               onChange={(e) => setFiltro(e.target.value)}
             />
+          </div>
+          <div className="col-md-6">
             <select 
               className={`form-select ${formControlClass}`}
               value={categoriaSel}
               onChange={(e) => setCategoriaSel(e.target.value)}
             >
-              {categorias.map((categoria, index) => (
-                <option key={index} value={categoria}>
-                  {categoria === 'todas' ? 'Todas las categorías' : 
-                    referenciasData.categories.find(cat => cat.id === categoria)?.name || 
-                    (categoria.charAt(0).toUpperCase() + categoria.slice(1))}
+              <option value="todas">Todas las categorías</option>
+              {categorias && categorias.map(cat => (
+                <option key={cat} value={cat}>
+                  {cat && typeof cat === 'string' 
+                    ? cat.charAt(0).toUpperCase() + cat.slice(1)
+                    : 'General'} ({contarPorCategoria(cat)})
                 </option>
               ))}
             </select>
           </div>
-
-          {/* Filtrar referencias por tipo */}
-          <h2 className={`h3 mb-3 ${textClass}`}>Libros y publicaciones académicas</h2>
-          {referenciasFiltradas
-            .filter(ref => ['libro', 'artículo', 'articulo', 'book', 'academic'].includes(ref.tipo?.toLowerCase()))
-            .map((referencia, index) => (
-              <ReferenciasCard 
-                key={referencia.id || index} 
-                {...referencia} 
-                variant={getVariant(index % 2 === 0 ? 'primary' : 'info')}
-                isDark={isDark}
-              />
-            ))}
-
-          <h2 className={`h3 mb-3 mt-5 ${textClass}`}>Informes y documentos oficiales</h2>
-          {referenciasFiltradas
-            .filter(ref => ['informe', 'documento oficial', 'report', 'official'].includes(ref.tipo?.toLowerCase()))
-            .map((referencia, index) => (
-              <ReferenciasCard 
-                key={referencia.id || index} 
-                {...referencia} 
-                variant={getVariant("success")}
-                isDark={isDark}
-              />
-            ))}
-
-          <h2 className={`h3 mb-3 mt-5 ${textClass}`}>Recursos web y otros</h2>
-          {referenciasFiltradas
-            .filter(ref => !['libro', 'artículo', 'articulo', 'book', 'academic', 'informe', 'documento oficial', 'report', 'official'].includes(ref.tipo?.toLowerCase()))
-            .map((referencia, index) => (
-              <ReferenciasCard 
-                key={referencia.id || index} 
-                {...referencia} 
-                variant={getVariant("warning")}
-                isDark={isDark}
-              />
-            ))}
         </div>
-
-        <div className="col-lg-4">
-          <div className={`card mb-4 shadow-sm ${cardClass}`}>
-            <div className="card-body">
-              <h3 className={`card-title h4 ${textClass}`}>Metodología</h3>
-              <p className={`card-text ${textClass}`}>
-                {referenciasData.description || 
-                  "La información presentada en este proyecto ha sido cuidadosamente seleccionada a partir de fuentes académicas, libros especializados, publicaciones oficiales del gobierno de Singapur y recursos web reconocidos."}
-              </p>
-              <p className={`card-text ${textClass}`}>
-                Cada dato ha sido verificado utilizando múltiples fuentes para garantizar su 
-                precisión y relevancia.
-              </p>
-            </div>
+        
+        {/* Estadísticas */}
+        <div className="mt-3 d-flex flex-wrap gap-3">
+          <div className={textClass}>
+            <small>Total: <span className={statNumberClass}>{referenciasCompletas.length}</span></small>
           </div>
-
-          {/* Estadísticas */}
-          <div className={`card mb-4 ${cardClass}`}>
-            <div className="card-body">
-              <h3 className={`card-title h4 ${textClass}`}>Estadísticas</h3>
-              <div className="row text-center">
-                {referenciasData.stats && referenciasData.stats.map((stat, index) => (
-                  <div key={index} className="col-6 mb-3">
-                    <h4 className={`display-6 fw-bold ${statNumberClass}`}>{stat.value}</h4>
-                    <p className={isDark ? 'text-secondary small' : 'text-muted small'}>{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className={`card ${isDark ? 'bg-dark border-secondary' : 'bg-light'}`}>
-            <div className="card-body">
-              <h3 className={`card-title h4 ${textClass}`}>Citar este proyecto</h3>
-              <p className={`card-text ${textClass}`}>
-                Si deseas citar este proyecto en tus trabajos académicos, puedes utilizar el 
-                siguiente formato:
-              </p>
-              <div className={`${citeBgClass} p-3 rounded`}>
-                <small className={citeTextClass}>
-                  "Singapur: Una mirada profunda" (2023). Proyecto web educativo sobre la 
-                  cultura, economía y desarrollo de Singapur. [En línea] Disponible en: 
-                  <span className="d-block mt-1">https://singapur-proyecto.web/</span>
-                </small>
-              </div>
-            </div>
+          <div className={textClass}>
+            <small>Filtradas: <span className={statNumberClass}>{referenciasFiltradas.length}</span></small>
           </div>
         </div>
+      </header>
+      
+      <div className="row g-4">
+        {referenciasCompletas.length > 0 ? (
+          renderizarTarjetas()
+        ) : (
+          <div className="col-12 text-center py-5">
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Cargando...</span>
+            </div>
+            <p className="mt-3">Cargando referencias...</p>
+          </div>
+        )}
+        
+        {referenciasCompletas.length > 0 && referenciasFiltradas.length === 0 && (
+          <div className="col-12 text-center py-5">
+            <p className={`lead ${textClass}`}>No se encontraron referencias que coincidan con tu búsqueda.</p>
+          </div>
+        )}
       </div>
     </div>
   );

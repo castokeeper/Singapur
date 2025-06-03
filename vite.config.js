@@ -8,39 +8,22 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: './', // Usar rutas relativas
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@assets': path.resolve(__dirname, './public/assets'),
-      '@images': path.resolve(__dirname, './public/images')
+      '@': path.resolve(__dirname, './src')
     }
   },
   build: {
     outDir: 'dist',
-    assetsInlineLimit: 0, // Evitar inlining de assets pequeños
-    assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
-          const extType = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            return `assets/img/[name]-[hash][extname]`;
-          }
-          return `assets/[name]-[hash][extname]`;
-        },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
-      }
-    },
+    assetsInlineLimit: 4096,
     emptyOutDir: true
   },
-  publicDir: 'public',
-  css: {
-    devSourcemap: true,
-    preprocessorOptions: {
-      // Configurar para manejar correctamente las rutas de imágenes en CSS
-    }
-  }
+  server: {
+    port: 5173,
+    strictPort: true,
+    host: true,
+    open: true
+  },
+  publicDir: 'public'
 });

@@ -28,11 +28,6 @@ const SistemaMonetario = () => {
       src: getAssetPath("/images/singapore-coins.jpg"),
       alt: "Monedas de Singapur",
       caption: "Serie actual de monedas del dólar singapurense"
-    },
-    {
-      src: getAssetPath("/images/singapore-fintech.jpg"),
-      alt: "Fintech en Singapur",
-      caption: "Festival Fintech de Singapur, reflejo de la innovación financiera del país"
     }
   ];
   

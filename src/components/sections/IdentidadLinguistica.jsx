@@ -4,6 +4,7 @@ import Quote from '../common/Quote';
 import Timeline from '../ui/Timeline';
 import ImageWithFallback from '../common/ImageWithFallback';
 import { useTheme } from '../../context/ThemeContext';
+import { getAssetPath } from '../../utils/assetUtils';
 
 /**
  * Componente que muestra información detallada sobre la identidad lingüística de Singapur
@@ -11,15 +12,15 @@ import { useTheme } from '../../context/ThemeContext';
 const IdentidadLinguistica = () => {
   const { isDark } = useTheme();
 
-  // Imágenes para la galería
+  // Imágenes para la galería - usar getAssetPath para normalizar rutas
   const imagenesLinguistica = [
     {
-      src: "/images/merlion-statue.jpg",
+      src: getAssetPath("/images/merlion-statue.jpg"),
       alt: "Señalización multilingüe en Singapur",
       caption: "Las señales públicas en Singapur incluyen los cuatro idiomas oficiales"
     },
     {
-      src: "/images/singapore-skyline.jpg",
+      src: getAssetPath("/images/singapore-skyline.jpg"),
       alt: "Barrio chino de Singapur",
       caption: "El barrio chino, donde se puede apreciar la influencia del mandarín y los dialectos chinos"
     }

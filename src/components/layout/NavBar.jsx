@@ -1,25 +1,24 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 
 const Navbar = () => {
   // Obtener el tema actual
-  const { theme } = useTheme();
-  
-  // Efecto para inicializar el colapso de Bootstrap
-  useEffect(() => {
-    // Importar dinámicamente Bootstrap para evitar problemas de SSR
-    import('bootstrap/js/dist/collapse');
-  }, []);
+  const { isDark } = useTheme();
   
   // Determinar las clases según el tema actual
-  const navbarClasses = theme === 'dark' 
+  const navbarClasses = isDark 
     ? "navbar navbar-expand-lg bg-dark navbar-dark" 
     : "navbar navbar-expand-lg bg-light navbar-light";
   
   return (
     <nav className={navbarClasses}>
       <div className="container">
+        <NavLink to="/" className="navbar-brand">
+          <img src="/images/singapore-icon.png" alt="Singapur" width="30" height="24" className="d-inline-block align-text-top me-2" />
+          Singapur
+        </NavLink>
+        
         <button 
           className="navbar-toggler" 
           type="button" 

@@ -20,6 +20,7 @@ export const referenciasData = {
       editorial: "HarperCollins",
       descripcion: "Memorias del primer Primer Ministro de Singapur donde detalla el desarrollo del país desde la independencia.",
       isbn: "978-0060197766",
+      categoria: "Historia",
       imageCover: getAssetPath("/images/referencias/book-lee-kuan-yew.jpg")
     },
     {
@@ -98,6 +99,28 @@ export const referenciasData = {
       url: "https://www.smartnation.gov.sg/report-2021",
       descripcion: "Informe oficial sobre los avances de la iniciativa Smart Nation.",
       fecha_acceso: "25/01/2023"
+    },
+    {
+      id: 16,
+      titulo: "Historia de Singapur: De colonia a potencia económica",
+      autor: "Lee Kuan Yew",
+      año: "2000",
+      tipo: "libro",
+      categoria: "Historia",
+      url: "https://ejemplo.com/libro",
+      isbn: "978-3-16-148410-0",
+      descripcion: "Análisis completo del desarrollo histórico de Singapur"
+    },
+    {
+      id: 17,
+      titulo: "El modelo económico singapurense",
+      autor: "Chen Wei Lin",
+      año: "2018",
+      tipo: "artículo",
+      categoria: "Economía",
+      url: "https://ejemplo.com/articulo",
+      doi: "10.1000/xyz123",
+      descripcion: "Estudio sobre las políticas económicas que impulsaron el desarrollo"
     }
   ],
   
@@ -172,12 +195,12 @@ export const referenciasData = {
     {
       dato: "Singapur tiene una de las densidades de millonarios más altas del mundo, con aproximadamente el 5% de los hogares clasificados como millonarios.",
       fuente: "Credit Suisse Global Wealth Report, 2021",
-      categoria: "economía"
+      categoria: "Economía"
     },
     {
       dato: "A pesar de su pequeño tamaño, Singapur es el cuarto centro financiero más importante del mundo, después de Nueva York, Londres y Hong Kong.",
       fuente: "Global Financial Centres Index, 2023",
-      categoria: "economía"
+      categoria: "Economía"
     },
     {
       dato: "El sistema de reserva de agua de Singapur, llamado 'Four National Taps', incluye agua de lluvia recolectada, agua importada de Malasia, agua reciclada (NEWater) y agua desalinizada.",
@@ -211,4 +234,5 @@ export const referenciasData = {
   ]
 };
 
+// Exportar como default también para compatibilidad
 export default referenciasData;
